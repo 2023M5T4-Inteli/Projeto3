@@ -24,7 +24,7 @@
 
 ## 📲 Descrição
 
-A Coover é uma startup inovadora que visa revolucionar a indústria de seguros através da introdução de um modelo de seguro mútuo baseado em blockchain. Com um enfoque no cliente, a Coover pretende utilizar a <b>tecnologia blockchain<b> e uma <b>plataforma web3<b> para criar e desenvolver <b>contratos inteligentes<b> que permitam a realização de operações e validações de processos de forma segura e eficiente em um <b>TestNet aberto<b>. Este modelo inovador de seguro mútuo combinado com a tecnologia blockchain garantirá uma <b>cultura de transparência e confiança<b> na indústria de seguros.
+A Coover é uma startup inovadora que visa revolucionar a indústria de seguros através da introdução de um modelo de seguro mútuo baseado em blockchain, que dê maior enfoque no cliente e nas suas necessidades. Nesse sentido, nós do grupo BlockCoovers desenvolvemos, a partir da tecnologia blockchain, uma plataforma Web3 para criar e desenvolver contratos inteligentes, os quais permitam a realização de operações e validações de processos de forma segura e eficiente em um TestNet aberto. Este modelo inovador de seguro mútuo combinado com a tecnologia blockchain garantirá uma cultura de transparência e confiança na indústria de seguros.
 
 <p align="center">
 <img src="https://cdn.discordapp.com/attachments/937463646181785633/1074747804540481647/Block.jpg" border="0">
@@ -42,9 +42,9 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
         - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/T4_G3_V1_SIBDoc.pdf"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> T4_G3_V1_SIBDoc.pdf<br>
         - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/T4_G3_V1_SIBDoc.docx"><img src="https://user-images.githubusercontent.com/99209356/174968001-e5dfbc94-09e5-43d3-a5ab-60a684e673b3.svg" width="18px" height="18px"></a> T4_G3_V1_SIBDoc.docx<br>
 
-    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a><b>README.md</b> <br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a><b> README.md</b> <br>
 
-<br><br>
+<br>
 
 ## 💻 Configuração para desenvolvimento
 
