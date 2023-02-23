@@ -21,6 +21,7 @@ contract MeuContrato {
     // Armazena a lista de usuários que aceitaram o novo termo
     mapping(address => bool) public termoAceito;
 
+    //referente a usersotries de numero 5
     //carteira que ira armazenar fundos central do contrato
     struct Carteira_central {
     address carteiraCentral;
@@ -37,27 +38,31 @@ contract MeuContrato {
     }
 
     // Modificador que permite apenas que o proprietário do contrato execute a função
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Somente o proprietario do contrato pode executar esta funcao.");
-        _;
-    }
 
     // Endereço do proprietário do contrato
     address owner;
 
     // Construtor do contrato que define a quantidade mínima e máxima de usuários e a data de validade
     constructor(uint _minPessoas, uint _maxPessoas, uint _dataValidade) {
+        quantUsuario = 0;
         owner = msg.sender;
         minPessoas = _minPessoas;
         maxPessoas = _maxPessoas;
         dataValidade = _dataValidade;
         carteiraCentral = Carteira_central(owner, 0);
     }
+        //referente a userstories de numero 4
+        //modificador que da a permissão apenas para o dono do contrato executar uma função
+        modifier onlyOwner() {
+        require(msg.sender == owner, "Somente o proprietario do contrato pode executar esta funcao.");
+        _;
+    }
 
     // Adiciona um novo usuário ao projeto
+    //referente a usersotries 
     function adicionarUsuario(address cliente) public onlyOwner {
         // Verifica se a quantidade máxima de usuários já foi atingida
-        require(quantUsuario == maxPessoas, "O numero maximo de usuarios ja foi atingido.");
+        require(quantUsuario <= maxPessoas, "O numero maximo de usuarios ja foi atingido.");
 
         // Adiciona o usuário à lista de carteiras
         carteira.push(Carteira(cliente, 0));
@@ -68,13 +73,13 @@ contract MeuContrato {
         // Incrementa a quantidade de usuários
         quantUsuario++;
     }
-
+    //referente a user stories 6
     //visualizar carteira
     function visualisarCarteiras() public view returns (Carteira[] memory) {
         return carteira;
 }
 
-
+    // user stories 8 e 9
     // Verifica a viabilidade do contrato
     function viabilidadeContrato() public view returns (uint) {
         if (quantUsuario >= minPessoas && block.timestamp <= dataValidade && quantUsuario <= maxPessoas) {
@@ -111,6 +116,8 @@ function cobrarValor(uint valor) public {
         carteiraCentral.fundos += (valorTotal - comissao);
     }
 }
+
+    //referente a usesotries de numero 10
     //função para tranferir idenização a um úsuario
     function trasferirValor(uint valor,address deletarUsuario ) public {
         for (uint i = 0; i < carteira.length; i++) {
@@ -144,6 +151,7 @@ function cobrarValor(uint valor) public {
     }
 }
 
+//referente a user stories 7
 // Função para renovar o contrato
 function renovarContrato(uint _novaDataValidade) public onlyOwner {
     // Verifica se a nova data de validade é no futuro
