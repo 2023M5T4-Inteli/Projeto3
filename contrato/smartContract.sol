@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 // Contrato inteligente
 contract MeuContrato {
 
-    // Armazena a quantidade de usuários atualmente no projeto
+    // Armazena a quantidade de usuários atualmente no contrato
     uint public quantUsuario;
 
     string private usuario;
@@ -37,8 +37,6 @@ contract MeuContrato {
         uint saldo;
     }
 
-    // Modificador que permite apenas que o proprietário do contrato execute a função
-
     // Endereço do proprietário do contrato
     address owner;
 
@@ -48,8 +46,8 @@ contract MeuContrato {
         owner = msg.sender;
         minPessoas = _minPessoas;
         maxPessoas = _maxPessoas;
-        dataValidade = _dataValidade;
-        carteiraCentral = Carteira_central(owner, 0);
+        dataValidade = (_dataValidade*86400)+block.timestamp;
+        carteiraCentral = Carteira_central(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 0);
     }
         //referente a userstories de numero 4
         //modificador que da a permissão apenas para o dono do contrato executar uma função
@@ -75,9 +73,26 @@ contract MeuContrato {
     }
     //referente a user stories 6
     //visualizar carteira
-    function visualisarCarteiras() public view returns (Carteira[] memory) {
+    function visualizarCarteiras() public view returns (Carteira[] memory) {
         return carteira;
 }
+
+    // Função para remover um usuário do projeto
+    function removerUsuario(address _usuario) public onlyOwner {
+        // Verifica cada carteira do projeto
+        for (uint i = 0; i < carteira.length; i++) {
+            // Verifica se a carteira do usuário corresponde ao endereço fornecido
+            if (carteira[i].carteiraUsuario == _usuario) {
+            // Remove o usuário da lista de carteiras
+            delete carteira[i];
+            // Atualiza o número de usuários
+            quantUsuario--;
+            // Sai do loop
+            break;
+        }
+    }
+}
+
 
     // user stories 8 e 9
     // Verifica a viabilidade do contrato
@@ -93,10 +108,10 @@ contract MeuContrato {
         }
     }
 
-
+//função para verificar se os membros do contrato realizaram o depósito
 function cobrarValor(uint valor) public {
     // Verifica se o contrato está ativo
-    require(viabilidadeContrato() == 1, "O contrato  esta ativo.");
+    require(viabilidadeContrato() == 1, "O contrato esta ativo.");
     // Calcula o valor total a ser cobrado
     uint valorTotal = valor * quantUsuario;
     // Calcula a comissão do dono do contrato
@@ -117,7 +132,7 @@ function cobrarValor(uint valor) public {
     }
 }
 
-    //referente a usesotries de numero 10
+    //referente a userstories de numero 10
     //função para tranferir idenização a um úsuario
     function trasferirValor(uint valor,address deletarUsuario ) public {
         for (uint i = 0; i < carteira.length; i++) {
@@ -135,27 +150,11 @@ function cobrarValor(uint valor) public {
 
 
 
-    // Função para remover um usuário do projeto
-    function removerUsuario(address _usuario) public onlyOwner {
-        // Verifica cada carteira do projeto
-        for (uint i = 0; i < carteira.length; i++) {
-            // Verifica se a carteira do usuário corresponde ao endereço fornecido
-            if (carteira[i].carteiraUsuario == _usuario) {
-            // Remove o usuário da lista de carteiras
-            delete carteira[i];
-            // Atualiza o número de usuários
-            quantUsuario--;
-            // Sai do loop
-            break;
-        }
-    }
-}
-
 //referente a user stories 7
 // Função para renovar o contrato
 function renovarContrato(uint _novaDataValidade) public onlyOwner {
     // Verifica se a nova data de validade é no futuro
-    require(_novaDataValidade > block.timestamp, "A nova data de validade deve ser no futuro.");
+    require(_novaDataValidade*86400+block.timestamp > block.timestamp, "Adicione uma quantidade valida de dias no contrato.");
 
     // Cria um array para armazenar os índices dos usuários que não aceitaram o novo termo
     uint[] memory indicesRemover = new uint[](quantUsuario);
