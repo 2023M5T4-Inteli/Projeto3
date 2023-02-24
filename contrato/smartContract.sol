@@ -21,7 +21,8 @@ contract MeuContrato {
     // Armazena a lista de usuários que aceitaram o novo termo
     mapping(address => bool) public termoAceito;
 
-    //referente a usersotries de numero 5
+    //referente a user stories de número 5, o struct abaixo supre parte dos requisitos desta user storie, ao definir um carteira central para receber os fundos do contrato.
+    //assim como é previsto pela user storie.
     //carteira que ira armazenar fundos central do contrato
     struct Carteira_central {
     address carteiraCentral;
@@ -49,7 +50,9 @@ contract MeuContrato {
         dataValidade = (_dataValidade*86400)+block.timestamp;
         carteiraCentral = Carteira_central(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 0);
     }
-        //referente a userstories de numero 4
+        //referente a userstorie de numero 4, o código abaixo supre a user stories de número 4, pois ao criar o modificador only owner que cede a permissão,
+        //apenas ao dono do contrato. É possível criar o nível de permissão que o gerente de seguros precisa, que e prevista na user storie.
+
         //modificador que da a permissão apenas para o dono do contrato executar uma função
         modifier onlyOwner() {
         require(msg.sender == owner, "Somente o proprietario do contrato pode executar esta funcao.");
@@ -71,8 +74,9 @@ contract MeuContrato {
         // Incrementa a quantidade de usuários
         quantUsuario++;
     }
-    //referente a user stories 6
-    //visualizar carteira
+    //referente a user storie 6, o código abaixo, supre parte da user stories de número 6 ,pois ao criar uma função que permita visualizar carteiras
+    // que fazem parte do contrato, já um passo essencial para permitir que o usuário possa visualizar as pessoas que fazem parte de seu contrato, assim como previsto pela user storie
+    //função que permite visualizar carteiras participantes do contrato
     function visualizarCarteiras() public view returns (Carteira[] memory) {
         return carteira;
 }
@@ -94,13 +98,18 @@ contract MeuContrato {
 }
 
 
-    // user stories 8 e 9
+    // corresponde user storie 8, o código abaixo, supre parte da user stories de número 8, pois ao criar condições que verificam se o contrato está válido e
+    // se possui o número necessário de pessoas para continuar, pode ser usado para garantir que o contrato só seja executado caso atenda as condições para ser iniciado
+    //assim como previsto pela user storie
     // Verifica a viabilidade do contrato
     function viabilidadeContrato() public view returns (uint) {
+        //verifica se o contrato está valido e possui o numero ideal de pessoas para funcionar
         if (quantUsuario >= minPessoas && block.timestamp <= dataValidade && quantUsuario <= maxPessoas) {
             return 1; // Contrato Ativo
+            //verifica se o contrato está valido mas nao possui o numero de pessoas ideal para funcionar
         } else if (quantUsuario < minPessoas && block.timestamp <= dataValidade) {
             return 2; // Contrato em Progresso
+            // verifica se o contrato venceu e não possui o numero de pessoas ideal para funcionar
         } else if (block.timestamp > dataValidade && quantUsuario < minPessoas) {
             return 3; // Contrato Inativo
         } else {
@@ -109,7 +118,7 @@ contract MeuContrato {
     }
 
 //função para verificar se os membros do contrato realizaram o depósito
-function cobrarValor(uint valor) public {
+function cobrarValor(uint valor) public onlyOwner {
     // Verifica se o contrato está ativo
     require(viabilidadeContrato() == 1, "O contrato esta ativo.");
     // Calcula o valor total a ser cobrado
@@ -128,13 +137,16 @@ function cobrarValor(uint valor) public {
             carteira[i].saldo += comissao;
             break;
         }
+        //soma o dinheiro capitado aos fundos do contrato
         carteiraCentral.fundos += (valorTotal - comissao);
     }
 }
 
-    //referente a userstories de numero 10
+    //referente a user storie de número 10, o código abaixo, supre parte da user stories de número 10, pois ao realizar a criação de uma função que transfira dinheiro
+    //do fundo do smartcontract para outra carteira, gera a possibilidade do gestor de seguros realizar a transferência de uma indenização a um membro do contrato
+    //assim como previsto pela user storie
     //função para tranferir idenização a um úsuario
-    function trasferirValor(uint valor,address deletarUsuario ) public {
+    function trasferirValor(uint valor,address deletarUsuario ) public onlyOwner {
         for (uint i = 0; i < carteira.length; i++) {
                     // Verifica se a carteira do usuário corresponde ao endereço fornecido
                     if (carteira[i].carteiraUsuario == deletarUsuario) {
