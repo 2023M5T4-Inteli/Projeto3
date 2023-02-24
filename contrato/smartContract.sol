@@ -7,8 +7,6 @@ contract MeuContrato {
     // Armazena a quantidade de usuários atualmente no contrato
     uint public quantUsuario;
 
-    string private usuario;
-
     // Armazena a data de validade do contrato
     uint public dataValidade;
 
