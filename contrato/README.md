@@ -78,8 +78,8 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 
 ![função transferir Valor](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/C%C3%B3digo%20-%20Imagens/fun%C3%A7%C3%A3o%20transferirValor.png)
 
-## Arquitetura da Solução Diagramada
+## Smart Contract em diagrama de Sequência UML
 &emsp;| --> ![diagrama de Sequência UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/C%C3%B3digo%20-%20Imagens/diagrama%20de%20Sequ%C3%AAncia%20UML.png)<br>
 
-## Smart Contract em diagrama de Sequência UML
+## Arquitetura da Solução Diagramada
 &emsp;| --> <br>
