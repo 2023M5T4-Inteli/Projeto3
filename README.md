@@ -7,6 +7,11 @@
 
 # Desenvolvimento de software para Seguros Mútuos utilizando Blockchain
 
+<p align="center">
+<a href= "https://coover.me/"><img src="https://cdn.discordapp.com/attachments/937463646181785633/1079671974260899910/logo_coovr_verde_2.png" border="0"></a>
+</p>
+<br>
+
 # Projeto: SIB - Smart Insurance Blockchain (Contratos Inteligentes via Blockchain)
 
 ## Grupo 3: BlockCoovers
@@ -32,17 +37,21 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
 </p>
 
 ## 📁 Estrutura de pastas
-    
-- 📁 Projeto4<br>
-    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos">📃</a><b>Documentos</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros">📂</a><b>outros</b> <br>
-            - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Apresenta%C3%A7%C3%B5es">📺</a><b>Apresentações</b> <br>
-            - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Organiza%C3%A7%C3%A3o%20da%20Equipe">📑</a> <b>Organização da Equipe</b> <br>
-            - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Templates">📔</a> <b>Templates</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/T4_G3_V1_SIBDoc.pdf"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> T4_G3_V1_SIBDoc.pdf<br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/T4_G3_V1_SIBDoc.docx"><img src="https://user-images.githubusercontent.com/99209356/174968001-e5dfbc94-09e5-43d3-a5ab-60a684e673b3.svg" width="18px" height="18px"></a> T4_G3_V1_SIBDoc.docx<br>
 
-    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a><b> README.md</b> <br>
+- <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos">📁</a><b>Documentos</b> <br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros">📂</a><b>outros</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Apresenta%C3%A7%C3%B5es">📺</a><b>Apresentações</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/C%C3%B3digo%20-%20Imagens">📷</a><b>Código - Imagens</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Organiza%C3%A7%C3%A3o%20da%20Equipe">📑</a> <b>Organização da Equipe</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Templates">📔</a> <b>Templates</b> <br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/T4_G3_V1_SIBDoc.pdf"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> T4_G3_V1_SIBDoc.pdf<br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/T4_G3_V1_SIBDoc.docx"><img src="https://user-images.githubusercontent.com/99209356/174968001-e5dfbc94-09e5-43d3-a5ab-60a684e673b3.svg" width="18px" height="18px"></a> T4_G3_V1_SIBDoc.docx<br>
+
+- <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contratos">📁</a><b>contrato</b> <br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/contrato/smartContract.sol"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> smartContract.sol<br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/contrato/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a><b> README.md</b> <br>
+
+- <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a><b> README.md</b> <br>
 
 <br>
 
