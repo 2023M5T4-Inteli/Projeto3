@@ -84,7 +84,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 ## Arquitetura da Solução Diagramada
 
 &emsp;&emsp;Abaixo, é possível visualizar a diagramação em blocos da solução a qual estamos desenvolvendo. <br>
-&emsp;| --> <br>
+&emsp;| --> ![diagrama em blocos](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/C%C3%B3digo%20-%20Imagens/diagrama%20em%20blocos%20da%20solu%C3%A7%C3%A3o.jpg)<br>
 &emsp;&emsp;A diagramação em blocos é uma técnica de organização visual de informações em que o conteúdo é dividido em blocos, cada um com uma função específica e sendo possível fazer linhas que representem as conexões ou interações entre as funções. A diagramação em blocos será usada como forma de criar uma hierarquia visual clara, com os elementos mais importantes e relevantes em destaque, refletindo em um melhor entendimento.<br>
 
 &emsp;&emsp;Para melhor compreensão da construção de cada componente do diagrama, esta é uma lista dos principais componentes e uma breve descrição de suas interações:<br>
