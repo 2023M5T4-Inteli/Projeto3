@@ -17,7 +17,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 <br>
 
 ### 1.1 - Variáveis do contrato:
-  &emsp; **quantUsuario**: variável do tipo uint, ela é responsável por armazenar a quantidade de usuários dentro do contrato.<br>
+        &emsp; **quantUsuario**: variável do tipo uint, ela é responsável por armazenar a quantidade de usuários dentro do contrato.<br>
 	&emsp;**DataValidade**: variável do tipo uint, que é responsável por armazenar quantos dias o contrato ainda irá ficar em vigor.<br>
 	&emsp;**minPessoas**: variável do tipo uint, que é responsável por armazenar o número mínimo de pessoas para o funcionamento do contrato.<br>
 	&emsp;**maxPessoas**: variável do tipo uint, que é responsável por armazenar o número máximo de pessoas para o funcionamento do contrato.<br>
