@@ -13,6 +13,8 @@ contract MeuContrato {
     // Armazena a quantidade mínima e máxima de usuários permitida no projeto
     uint public minPessoas;
     uint public maxPessoas;
+    //armazena a taxa de administração do contrato
+    uint public taxaAdmin;
     //indica a carteira cenral do projeto
     Carteira_central public carteiraCentral;
 
@@ -34,19 +36,21 @@ contract MeuContrato {
     struct Carteira {
         address carteiraUsuario;
         uint saldo;
+        uint valorAparelho;
     }
 
     // Endereço do proprietário do contrato
     address owner;
 
     // Construtor do contrato que define a quantidade mínima e máxima de usuários e a data de validade
-    constructor(uint _minPessoas, uint _maxPessoas, uint _dataValidade) {
+    constructor(uint _minPessoas, uint _maxPessoas, uint _dataValidade, uint _taxaAdmin) {
         quantUsuario = 0;
         owner = msg.sender;
         minPessoas = _minPessoas;
         maxPessoas = _maxPessoas;
         dataValidade = (_dataValidade*86400)+block.timestamp;
-        carteiraCentral = Carteira_central(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 0);
+        carteiraCentral = Carteira_central(address(this), 0);
+        taxaAdmin = _taxaAdmin;
     }
         //referente a userstorie de numero 4, o código abaixo supre a user stories de número 4, pois ao criar o modificador only owner que cede a permissão,
         //apenas ao dono do contrato. É possível criar o nível de permissão que o gerente de seguros precisa, que e prevista na user storie.
@@ -64,7 +68,7 @@ contract MeuContrato {
         require(quantUsuario <= maxPessoas, "O numero maximo de usuarios ja foi atingido.");
 
         // Adiciona o usuário à lista de carteiras
-        carteira.push(Carteira(cliente, 0));
+        carteira.push(Carteira(cliente, 0, 0));
 
         // Adiciona o usuário à lista de termos aceitos
         termoAceito[cliente] = true;
@@ -139,6 +143,7 @@ function cobrarValor(uint valor) public onlyOwner {
         carteiraCentral.fundos += (valorTotal - comissao);
     }
 }
+
 
     //referente a user storie de número 10, o código abaixo, supre parte da user stories de número 10, pois ao realizar a criação de uma função que transfira dinheiro
     //do fundo do smartcontract para outra carteira, gera a possibilidade do gestor de seguros realizar a transferência de uma indenização a um membro do contrato
