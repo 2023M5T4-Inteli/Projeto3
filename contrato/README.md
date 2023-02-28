@@ -17,6 +17,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 <br>
 
 ### 1.1 - Variáveis do contrato:
+<ul>
         &emsp; **quantUsuario**: variável do tipo uint, ela é responsável por armazenar a quantidade de usuários dentro do contrato.<br>
 	&emsp;**DataValidade**: variável do tipo uint, que é responsável por armazenar quantos dias o contrato ainda irá ficar em vigor.<br>
 	&emsp;**minPessoas**: variável do tipo uint, que é responsável por armazenar o número mínimo de pessoas para o funcionamento do contrato.<br>
@@ -24,7 +25,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 	&emsp;**termoAceito**: variável do tipo bool, que é responsável por armazenar se uma pessoa aceitou ou não os termos do contrato.<br>
 	&emsp;**carteira[]**: é um array responsável por armazenar informações sobre cada carteira participante do contrato.<br>
   &emsp;**owner**: é um address, que é responsável por armazenar o endereço do dono do contrato. <br>
-<br>
+<br></ul>
 ### 1.2 - Structs do contrato:
 
 &emsp;&emsp;|-->O “struct" é usado para definir uma estrutura de dados personalizada, sendo muito semelhante a uma classe em outras linguagens de programação, pois pode ter membros (campos) e funções associadas a ela. Entretanto, ela não herda nada de outros structs.<br>
