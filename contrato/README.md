@@ -92,7 +92,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 
 **Cliente/Usuário**<br>
 <ul><li>Os clientes são os proprietários dos aparelhos e os que desejam contratar um seguro. Nesse sentido, além de fornecerem as informações referentes ao seus próprios aparelhos (para contratação do seguro), irão se conectar à plataforma para navegarem nas diversas oportunidades. <br>
-<li>_Obs_: Também precisarão se conectar com uma carteira a partir da MetaMask.<br>
+<li><em>Obs</em>: Também precisarão se conectar com uma carteira a partir da MetaMask.<br>
 </ul>
 
 **Coover (Administradores)**<br>
@@ -108,7 +108,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 <ul><li>O sistema da Seguradora é a fonte que faz a interligação entre a interface do usuário e os Smart Contracts em Blockchain. Podem receber requisições dos clientes, referentes à transações ou até mesmo modificar certos processos. Dessa forma, os administradores do sistema contam com toda a capacidade de gerenciar os seguros.<br></ul>
 
 **Rede Blockchain**<br>
-<ul><li>Rede responsável por guardar os Smart contracts, além de garantir segurança e imutabilidade dos registros, de forma que as transações não necessitem de um intermediário. <br></ul>
+<ul><li>Rede responsável por guardar os Smart contracts, além de garantir segurança e imutabilidade dos registros, de forma que as transações não necessitem de um intermediário.<br></ul>
 
 **Smart Contracts**<br>
 <ul><li>Sistema onde os termos e os conteúdos são estruturados, englobando todas as regras de negócio do seguro mútuo. São executados na rede blockchain e possuem todas as cláusulas que são acordadas entre os integrantes e a seguradora, de acordo com a regra de negócio. Não só isso, mas automatizam as transações relacionadas à indenizações, ao momento que são aprovadas pela Coover.<br></ul>
