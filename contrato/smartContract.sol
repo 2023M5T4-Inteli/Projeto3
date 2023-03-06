@@ -60,15 +60,19 @@ contract MeuContrato {
     }
     //função para uma carteira adicionar dinheiro no smart contract
         function adicionarDinheiro() public payable{
-            uint taxa = 10;
-            //calcula taxa adiministrativa
+            //armazena a taxa do adminstrador
+            uint taxa = taxaAdmin;
+            //armazena o valor do deposito
+            uint valorDeposito = msg.value;
+            //armazena o valor que o úsuario deve receber, uma vez calculada a taxa adiministrativa
+            uint valorUsuario = valorDeposito - (valorDeposito * taxa / 100);
+            //passa pelas carteiras de membros do contrato
             for (uint i = 0; i < carteira.length; i++) {
             // Verifica se a carteira do usuário corresponde ao endereço fornecido
                 if (carteira[i].carteiraUsuario == msg.sender) {
             // Adiciona os fundos a carteira do úsuario, tirando a taxa adiministrativa e a tranferindo para a coover
-                carteira[i].saldo += msg.value - (msg.value * taxa / 100);
-
-                fundosAdm += msg.value * (taxa / 100);
+                carteira[i].saldo += valorUsuario;
+                fundosAdm += valorDeposito - valorUsuario;
                 // Sai do loop
                 break;
         }
