@@ -13,17 +13,14 @@ contract MeuContrato {
     //armazena a taxa de administração do contrato
     uint public taxaAdmin;
     //indica a carteira cenral do projeto
-    Carteira_central public carteiraCentral;
     // Armazena a lista de usuários que aceitaram o novo termo
     mapping(address => bool) public termoAceito;
     mapping(address => Carteira) public integrante;
     //referente a user stories de número 5, o struct abaixo supre parte dos requisitos desta user storie, ao definir um carteira central para receber os fundos do contrato.
     //assim como é previsto pela user storie.
-    //carteira que ira armazenar fundos central do contrato
-    struct Carteira_central {
+    //carteira que ira armazenar informações sobre a carteira da coover
     address carteiraCentral;
-    uint fundos;
-    }
+    uint fundosAdm;
     // Armazena a lista de carteiras de usuários
     Carteira[] public carteira;
     // Estrutura para armazenar a carteira de um usuário
@@ -40,8 +37,9 @@ contract MeuContrato {
         owner = msg.sender;
         minPessoas = _minPessoas;
         maxPessoas = _maxPessoas;
-        carteiraCentral = Carteira_central(address(this), 0);
         taxaAdmin = _taxaAdmin;
+        carteiraCentral = msg.sender;
+        fundosAdm = 0;
     }
         //referente a userstorie de numero 4, o código abaixo supre a user stories de número 4, pois ao criar o modificador only owner que cede a permissão,
         //apenas ao dono do contrato. É possível criar o nível de permissão que o gerente de seguros precisa, que e prevista na user storie.
@@ -62,11 +60,15 @@ contract MeuContrato {
     }
     //função para uma carteira adicionar dinheiro no smart contract
         function adicionarDinheiro() public payable{
+            uint taxa = 10;
+            //calcula taxa adiministrativa
             for (uint i = 0; i < carteira.length; i++) {
             // Verifica se a carteira do usuário corresponde ao endereço fornecido
                 if (carteira[i].carteiraUsuario == msg.sender) {
-            // Adiciona os fundos a carteira do úsuario
-                carteira[i].saldo += msg.value;
+            // Adiciona os fundos a carteira do úsuario, tirando a taxa adiministrativa e a tranferindo para a coover
+                carteira[i].saldo += msg.value - (msg.value * taxa / 100);
+
+                fundosAdm += msg.value * (taxa / 100);
                 // Sai do loop
                 break;
         }
@@ -97,7 +99,12 @@ contract MeuContrato {
     //função que permite visualizar carteiras participantes do contrato
     function visualizarCarteiras() public view returns (Carteira[] memory) {
         return carteira;
-}
+    }
+    //função para ver os fundos do administrador do contrato
+    function verSaldoAdm() external view returns(uint){
+                return fundosAdm;
+        }
+
     // Função para remover um usuário do projeto
     function removerUsuario(address _usuario) public onlyOwner {
         // Verifica cada carteira do projeto
@@ -136,30 +143,6 @@ contract MeuContrato {
     return true;
 }
     ///////////
-//função para verificar se os membros do contrato realizaram o depósito
-function cobrarValor(uint valor) public onlyOwner {
-    // Verifica se o contrato está ativo
-    require(viabilidadeContrato() == 1, "O contrato esta ativo.");
-    // Calcula o valor total a ser cobrado
-    uint valorTotal = valor * quantUsuario;
-    // Calcula a comissão do dono do contrato
-    uint comissao = (valorTotal * 2) / 100;
-    // Divide o valor total entre os usuários do contrato
-    uint valorPorUsuario = (valorTotal - comissao) / quantUsuario;
-    // Cobre o valor de cada usuário
-    for (uint i = 0; i < carteira.length; i++) {
-        carteira[i].saldo -= valorPorUsuario;
-    }
-    // Transfere a comissão para o dono do contrato
-    for (uint i = 0; i < carteira.length; i++) {
-        if (carteira[i].carteiraUsuario == owner) {
-            carteira[i].saldo += comissao;
-            break;
-        }
-        //soma o dinheiro capitado aos fundos do contrato
-        carteiraCentral.fundos += (valorTotal - comissao);
-    }
-}
     //referente a user storie de número 10, o código abaixo, supre parte da user stories de número 10, pois ao realizar a criação de uma função que transfira dinheiro
     //do fundo do smartcontract para outra carteira, gera a possibilidade do gestor de seguros realizar a transferência de uma indenização a um membro do contrato
     //assim como previsto pela user storie
@@ -169,7 +152,7 @@ function cobrarValor(uint valor) public onlyOwner {
                     // Verifica se a carteira do usuário corresponde ao endereço fornecido
                     if (carteira[i].carteiraUsuario == deletarUsuario) {
                     //retira o valor da carteira de fundos
-                    carteiraCentral.fundos -= valor;
+                    fundosAdm -= valor;
                     // adiciona o valor a carteira do úsuario
                     carteira[i].saldo += valor;
                     // Sai do loop
