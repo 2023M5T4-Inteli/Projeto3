@@ -38,7 +38,7 @@ contract MeuContrato {
         minPessoas = _minPessoas;
         maxPessoas = _maxPessoas;
         taxaAdmin = _taxaAdmin;
-        carteiraCentral = msg.sender;
+        carteiraCentral = payable(msg.sender);
         fundosAdm = 0;
     }
         //referente a userstorie de numero 4, o código abaixo supre a user stories de número 4, pois ao criar o modificador only owner que cede a permissão,
@@ -54,7 +54,7 @@ contract MeuContrato {
         // Verifica se a quantidade máxima de usuários já foi atingida
         require(quantUsuario <= maxPessoas, "O numero maximo de usuarios ja foi atingido.");
         // Adiciona o usuário à lista de carteiras com seu saldo e valor do telefone
-        carteira.push(Carteira(cliente, valorAssegurado, 0));
+        carteira.push(Carteira(payable(cliente), valorAssegurado, 0));
         // Incrementa a quantidade de usuários
         quantUsuario++;
     }
@@ -92,7 +92,7 @@ contract MeuContrato {
     }
 
     //função para ver quanto de dinheiro tem no contrato 
-    function contratoDinheiro() public view returns (uint) {
+    function contratoSaldo() public view returns (uint) {
     uint balance = address(this).balance; // retorna quanto de fundo o contrato tem
     return  balance;
 }
@@ -108,6 +108,13 @@ contract MeuContrato {
     function verSaldoAdm() external view returns(uint){
                 return fundosAdm;
         }
+    //função para o administrador conseguir retirar os fundos do contrato
+    function retirarTaxas(uint256 quantidade) public onlyOwner{
+    //confere se o contrato tem dinheiro suficiente
+    require(address(this).balance >= quantidade, "Saldo insuficiente no contrato");
+    //trafere o dinheiro solicitado pelo adiministrador
+    payable(msg.sender).transfer(quantidade);
+    }
 
     // Função para remover um usuário do projeto
     function removerUsuario(address _usuario) public onlyOwner {
@@ -140,38 +147,15 @@ contract MeuContrato {
         }
     }
     ///////////
-    function depositTokens(address _tokenAddress, uint256 _amount) public returns (bool) {
-    IERC20 token = IERC20(_tokenAddress);
-    require(token.allowance(msg.sender, address(this)) >= _amount, "Allowance not set");
-    require(token.transferFrom(msg.sender, address(this), _amount), "Transfer failed");
-    return true;
-}
+//     function depositTokens(address _tokenAddress, uint256 _amount) public returns (bool) {
+//     IERC20 token = IERC20(_tokenAddress);
+//     require(token.allowance(msg.sender, address(this)) >= _amount, "Allowance not set");
+//     require(token.transferFrom(msg.sender, address(this), _amount), "Transfer failed");
+//     return true;
+// }
     ///////////
     //referente a user storie de número 10, o código abaixo, supre parte da user stories de número 10, pois ao realizar a criação de uma função que transfira dinheiro
     //do fundo do smartcontract para outra carteira, gera a possibilidade do gestor de seguros realizar a transferência de uma indenização a um membro do contrato
     //assim como previsto pela user storie
-    //função para tranferir idenização a um úsuario
-    function trasferirValor(uint valor,address deletarUsuario ) public onlyOwner {
-        for (uint i = 0; i < carteira.length; i++) {
-                    // Verifica se a carteira do usuário corresponde ao endereço fornecido
-                    if (carteira[i].carteiraUsuario == deletarUsuario) {
-                    //retira o valor da carteira de fundos
-                    fundosAdm -= valor;
-                    // adiciona o valor a carteira do úsuario
-                    carteira[i].saldo += valor;
-                    // Sai do loop
-                    break;
-                }
-        }
-    }
 
-    function transferir(uint256 valor) external payable {
-        // Verifica se o remetente da transação é o dono da carteira Metamask
-        require(msg.sender == tx.origin, "n e prop");
-        // Verifica se o valor da transação é igual ao valor especificado
-        require(msg.value == valor, "dif value");
-        // Transfere o valor especificado de Ether para o contrato
-        address payable contrato = payable(address(this));
-        contrato.transfer(valor);
-    }
 }
