@@ -7,6 +7,8 @@ Ela pode irá incluir algumas informações como<br>
 &emsp;***|--> Requisitos de Negócio implementado;***<br>
 &emsp;***|--> Descrição da Arquitetura da Solução diagramada;***<br>
 &emsp;***|--> Comportamento do Smart Contract em diagrama de sequência UML;***<br>
+&emsp;***|--> Ambiente de desenvolvimento;***<br>
+
 
 ## 🎯 O objetivo:
 &emsp;&emsp;|-->O smart contract possui como objetivo geral armazenar e garantir que os parâmetros para o funcionamento do contrato sejam atendidos, armazenando informações úteis sobre os membros do contrato, garantindo que as transações sejam feitas de forma segura e previsível. Garantindo que o que foi acordado vai ser executado de forma segura e imutável.<br>
@@ -117,8 +119,22 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 **TestNet** <br>
 <ul><li>Rede de testes na Blockchain, usada com objetivo de prevenir erros e riscos de gastos desnecessários, além de ser visto como local para testes e validações, antes de ser aplicado na Mainnet (Rede principal).<br></ul>
 
+## Documentação do Deploy e Testes de Smart Contracts
+
+ &emsp;&emsp; O Solitdiy é a peça central da nossa solução de SmartContract. No entanto, na documentação de nosso projeto, é explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente com a tecnologia e garantir o sucesso de nosso SmartContract. Com a combinação dessas tecnologias, podemos fornecer aos usuários uma solução completa e segura para suas necessidades de negócios baseadas em blockchain.  Com isso utilizamos..... 
+  
+<br><br>
+  
+**Truffle** <br><ul><li> Truffle é uma ferramenta de desenvolvimento que utiliza a Ethereum Virtual Machine (EVM) para simplificar os processos de desenvolvimento em áreas de blockchain e dApps. Com o objetivo de fornecer diversas implementações, compilações, testes e gerenciamento, a ferramenta visa atender às diferentes necessidades dos desenvolvedores e criar um ambiente mais facilitador e eficiente.<br>
+<li><em></em> Com o objetivo de facilitar e melhorar nossos processos, estamos utilizando o framework de ferramentas Truffle para criar interações de front-end com os smart contracts, compilar e implantar automaticamente os contratos inteligentes em diferentes redes, e desenvolver testes automatizados. Devido a sua eficiência, concluímos que a Truffle é a melhor opção para atender aos nossos objetivos nesse momento no projeto.</ul><br>
+  
+**MetaMask** <br>
+<ul><li>MetaMask é uma carteira de criptomoeda usada para interagir com o blockchain Ethereum. Ela permite que os usuários acessem sua carteira Ethereum por meio de uma extensão de navegador ou aplicativo móvel, que pode ser usado para interagir com aplicativos descentralizados.<br>
+<li> Reconhecemos que a utilização da carteira digital Metamask é essencial para garantir a segurança entre o usuário e a rede blockchain. Dessa forma, nossos usuários podem explorar nossa solução com segurança, maior autonomia, integração e facilidade, princípios fundamentais da extensão da carteira digital Metamask.</ul><br>
+  
 ## Histórico de Lançamento
 
 <ul><li>24/02/2023 - Criação do Readme.md da documentação do Smart Contract</li></ul>
 <ul><li>26/02/2023 - Criação da pasta código - imagens</li></ul>
 <ul><li>26/02/2023 - Atualização do Readme.md da documentação do Smart Contract</li></ul>
+<ul><li>07/03/2023 - Atualização na estrutura da documentação do Deploy e Teste do Smart Contract</li></ul>
