@@ -116,6 +116,27 @@ contract MeuContrato {
     payable(msg.sender).transfer(quantidade);
     }
 
+    function indenizar(address _indenizado,uint256 valorIndenizacao) public onlyOwner{
+    //confere se o contrato tem dinheiro suficiente
+    require(address(this).balance >= valorIndenizacao, "Saldo insuficiente no contrato");
+    //calcula quanto % do valor total dos aparelhos assegurados a retirada representa
+    uint valorTotalAssegurado = 0;
+    for (uint i = 0; i < carteira.length; i++){
+        valorTotalAssegurado += carteira[i].valorAparelho;
+    }
+    //calcula quanto deve ser tirado do saldo de cada usuario em % do saldo de cada participante
+    uint valorDecrecido = valorIndenizacao / valorTotalAssegurado;
+    //trafere o dinheiro para quem vai ser indenizado
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == _indenizado) {
+                payable(_indenizado).transfer(valorIndenizacao);
+                for (uint i = 0; i < carteira.length; i++){
+                    carteira[i].saldo = carteira[i].saldo - (carteira[i].valorAparelho * valorDecrecido);
+                }
+            }
+        }
+    }
+
     // Função para remover um usuário do projeto
     function removerUsuario(address _usuario) public onlyOwner {
         // Verifica cada carteira do projeto
