@@ -132,10 +132,39 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
   
 **Truffle** <br><ul><li> Truffle é uma ferramenta de desenvolvimento que utiliza a Ethereum Virtual Machine (EVM) para simplificar os processos de desenvolvimento em áreas de blockchain e dApps. Com o objetivo de fornecer diversas implementações, compilações, testes e gerenciamento, a ferramenta visa atender às diferentes necessidades dos desenvolvedores e criar um ambiente mais facilitador e eficiente.<br>
 <li><em></em> Com o objetivo de facilitar e melhorar nossos processos, estamos utilizando o framework de ferramentas Truffle para criar interações de front-end com os smart contracts, compilar e implantar automaticamente os contratos inteligentes em diferentes redes, e desenvolver testes automatizados. Devido a sua eficiência, concluímos que a Truffle é a melhor opção para atender aos nossos objetivos nesse momento no projeto.</ul><br>
-  
+ 
+ &emsp;&emsp; O código abaixo mostra que a biblioteca Truffle foi instalada com sucesso no contrato, e identifica a versão sendo utilizada: 
+  <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/truffle_instalacao.jpeg"/> <br>
+ 
+ 
 **MetaMask** <br>
 <ul><li>MetaMask é uma carteira de criptomoeda usada para interagir com o blockchain Ethereum. Ela permite que os usuários acessem sua carteira Ethereum por meio de uma extensão de navegador ou aplicativo móvel, que pode ser usado para interagir com aplicativos descentralizados.<br>
 <li> Reconhecemos que a utilização da carteira digital Metamask é essencial para garantir a segurança entre o usuário e a rede blockchain. Dessa forma, nossos usuários podem explorar nossa solução com segurança, maior autonomia, integração e facilidade, princípios fundamentais da extensão da carteira digital Metamask.</ul><br>
+
+<br> 
+
+&emsp;&emsp; O primeiro passo para realizar a integração entre a sua carteira Metamask com seu Smart Contract é acessar o Metamsak na barra de extensões <br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo1_metamask.png"/> <br>
+ 
+ 
+  &emsp;&emsp; Após instalar Metamask no navergador,abrir na aba de tarefas <br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo2_metamask.png"/> <br>
+ 
+ &emsp;&emsp; Abrir a aba de 'Networks' e aprte 'show/hide' <br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo3_metamask.png"/> <br>
+ 
+  &emsp;&emsp; Ative o 'show test networks' <br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo4_metamask.png"/> <br>
+ 
+
+   &emsp;&emsp; Volte ao Menu, clique em 'Networks' e selecione 'Goerli test networks' <br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo5_metamask.png"/> <br>
+ 
+ 
+  &emsp;&emsp; Configuração do Metamask está completa<br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo6_metamask.png"/> <br>
+ 
+ 
   
 ## Histórico de Lançamento
 
