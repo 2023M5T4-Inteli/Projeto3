@@ -31,6 +31,7 @@ contract MeuContrato {
         address carteiraUsuario;
         uint valorAparelho;
         uint saldo;
+        uint IMEI;
     }
     
     // Endereço do proprietário do contrato, que é o ADMINISTRADOR [IMPORTANTE: apenas o proprietário pode adicionar e remover usuários]
@@ -56,13 +57,13 @@ contract MeuContrato {
     }
     
     // Adicionar um novo usuário ao projeto
-    function adicionarUsuario(address cliente,uint valorAssegurado) public apenasAdmin {
-        
+    function adicionarUsuario(address cliente,uint valorAssegurado, uint imei) public apenasAdmin {
+       
         // Verifica se a quantidade máxima de usuários já foi atingida
         require(quantUsuario <= maxPessoas, "O numero maximo de usuarios ja foi atingido.");
         
         // Adiciona o usuário à lista de carteiras com seu saldo e valor do aparelho celular
-        carteira.push(Carteira(payable(cliente), valorAssegurado, 0));
+        carteira.push(Carteira(payable(cliente), valorAssegurado, 0, imei));
         
         // Incrementa a quantidade de usuários
         quantUsuario++;
@@ -147,28 +148,49 @@ contract MeuContrato {
     //assim como previsto pela user storie
     //função para tranferir idenização a um úsuario
     // Função para o administrador conseguir fornecer a indenização a um membro do contrato
-    function indenizar(address _indenizado,uint256 valorIndenizacao) public apenasAdmin{
-    
+    function indenizar(address _indenizado,uint256 valorIndenizacao, uint _IMEI) public apenasAdmin{
+        
         //confere se o contrato tem dinheiro suficiente
         require(address(this).balance >= valorIndenizacao, "Saldo insuficiente no contrato");
+        
+        //valor indenizado
+        uint valorID = valorIndenizacao;
+        
+        //confere retira primeiro tudo o saldo de quem pediu a indenização
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == _indenizado && carteira[i].IMEI == _IMEI){
+                if(carteira[i].saldo >= valorID){
+                    carteira[i].saldo -= valorID;
+                }
+                if(carteira[i].saldo <= valorID){
+                    valorID -= carteira[i].saldo;
+                    carteira[i].saldo = 0;
+                }
+            }
+        }
         
         //calcula quantos % do valor total dos aparelhos assegurados, a retirada representa
         uint valorTotalAssegurado = 0;
         
         // passa pelas carteiras do contrato e soma o valor total dos aparelhos assegurados
-        for (uint i = 0; i < carteira.length; i++){ 
+        for (uint i = 0; i < carteira.length; i++){
             valorTotalAssegurado += carteira[i].valorAparelho;
+            if (carteira[i].carteiraUsuario == _indenizado){
+                valorTotalAssegurado -= carteira[i].valorAparelho;
+            }
         }
-
+        
         //calcula quanto deve ser retirado do saldo de cada usuario em %, do saldo de cada participante.
-        uint valorDecrecido = valorIndenizacao / valorTotalAssegurado;
+        uint valorDecrecido = valorID / valorTotalAssegurado;
         
         //trafere o dinheiro para quem vai ser indenizado e diminui o valor relativo ao aparelho de cada usuário
         for (uint i = 0; i < carteira.length; i++){
             if (carteira[i].carteiraUsuario == _indenizado) {
                 payable(_indenizado).transfer(valorIndenizacao);
                 for (uint i = 0; i < carteira.length; i++){
-                    carteira[i].saldo = carteira[i].saldo - (carteira[i].valorAparelho * valorDecrecido);
+                    if (carteira[i].carteiraUsuario != _indenizado){
+                        carteira[i].saldo = carteira[i].saldo - (carteira[i].valorAparelho * valorDecrecido);
+                    }
                 }
             }
         }
