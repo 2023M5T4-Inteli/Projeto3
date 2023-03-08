@@ -50,34 +50,83 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 &emsp;<br> <li> **renovarContrato()**: Função responsável por enviar a todos os participantes do contrato um termo de renovação do contrato, removendo os que não aceitarem e reativando o contrato caso ele cumpra os requisitos na função viabilidadeContrato().<br>
 
 ## Requisitos de Negócio implementado
-&emsp;&emsp; |--> O requisito de negócio implementado a seguir é referente à user story número 5 “Como gerente de seguro, quero cobrar de uma carteira geral o percentual da Coover referente aos seus serviços prestados, para conseguir ter caixa na empresa”.<br>
-&emsp;&emsp;O requisito foi comprido devido ao struct “carteiraCentral” que define uma carteira central para receber fundos do contrato, assim como previsto pela user story que possui como critério de aceitação a existência dessa carteira geral do smart contract, que será utilizada para captação de recursos.
+&emsp;&emsp; |--> Nessa seção iremos abordar cada requisito de negócio implementado, explicando brevemente o que foi desenvolvido e fornecendo orientações sobre como o código deve ser utilizado.<br>
+&emsp;&emsp; |--> Para a User Story 4, o requisito de negócio implementado é referente à permissão para executar funções exclusivas do administrador do contrato. Foi desenvolvido um modifier chamado "apenasAdmin()" que garante que apenas o dono do contrato tenha acesso às funcionalidades direcionadas ao administrador. Para utilizar esse código, é necessário utilizar esse modifier nas funções que devem ser restritas apenas ao administrador.<br>
+
+&emsp;&emsp; |--> Para relembrar a **User Story 4: Como gerente de seguro, quero ter permissão para executar funções que apenas o administrador pode executar.**<br>
+Nessa user story, o requisito de negócio implementado foi garantir que apenas o dono do contrato (ou seja, o administrador) tenha permissão para executar determinadas funcionalidades. Isso é importante para garantir a segurança do contrato.
+<br>O código que implementa esse requisito é o seguinte modifier:
+
+```
+modifier aspenasAdmin() {
+require(msg.sender == admin, "Apenas o dono do contrato pode executar essa função");
+_;
+}
+```
 <br>
-&emsp;&emsp;Abaixo é possível visualizar o código referente a essa user story:
-
-![Struct da carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Struct%20carteiraCentral%20-%20Sprint2.png)
-
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 4 “como gerente de seguro, quero ter permissão para executar funções que apenas o administrador  pode executar ”.O requisito foi cumprido devido ao modifier onlyOwner(), que garante que apenas o dono do contrato terá acesso às funcionalidades que devem ser direcionadas ao administrador.<br>
-&emsp;Abaixo é possível visualizar o código referente a essa user story:
 
 ![Modifier](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Modifier%20onlyOwner%20-%20Sprint2.png)
+<br>
 
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 6 “Como usuário, quero poder visualizar as pessoas dentro do meu contrato de forma segura, para poder ver a quantidade de usuários dentro do mesmo contrato que o meu".<br>
-&emsp;&emsp;O requisito foi cumprido devido a função visualizarCarteiras(), que retorna todos os membros daquele contrato, permitindo visualizar as pessoas em seu contrato.<br>
+&emsp;&emsp; |--> Para a User Story 5, o requisito de negócio implementado é referente à cobrança de um percentual da Coover em uma carteira geral. Foi desenvolvido um struct chamado "carteiraCentral" que define essa carteira central para receber fundos do contrato. Para utilizar esse código, é necessário instanciar esse struct e transferir os fundos da carteira geral para a carteira da Coover.<br>
+&emsp;&emsp; |--> Para relembrar a **User Story 5: Como gerente de seguro, quero cobrar de uma carteira geral o percentual da Coover referente aos seus serviços prestados, para conseguir ter caixa na empresa** <br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi a criação de uma carteira central para receber fundos do contrato, permitindo que o gerente de seguro possa cobrar o percentual referente aos serviços prestados pela Coover. Isso garante que a empresa tenha caixa para continuar operando. <br>
+O código que implementa esse requisito é o seguinte struct:
+```
+struct carteiraCentral {
+uint256 fundos; // quantidade de ether na carteira
+} 
+```
+<br>
 
-&emsp;Abaixo é possível visualizar o código referente a essa user story:
+![Struct da carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Struct%20carteiraCentral%20-%20Sprint2.png)
+<br>
+
+&emsp;&emsp; |--> Para a User Story 6, o requisito de negócio implementado é referente à visualização dos membros do contrato de forma segura. Foi desenvolvida a função "visualizarCarteiras()" que retorna todos os membros daquele contrato. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço do contrato.<br>
+&emsp;&emsp; |--> Para relembrar a **User Story 6: Como usuário, quero poder visualizar as pessoas dentro do meu contrato de forma segura, para poder ver a quantidade de usuários dentro do mesmo contrato que o meu.**<br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi permitir que os usuários possam visualizar todas as pessoas dentro do mesmo contrato de forma segura. Isso é importante para que eles possam ver a quantidade de usuários dentro do contrato e se sentirem seguros em relação aos seus investimentos.<br>
+
+O código que implementa esse requisito é a seguinte função:
+```
+function visualizarCarteiras() public view returns (address[] memory) {
+return carteiras;
+} 
+```
 
 ![função visualizar Carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20visualizarCarteiras%20-%20Sprint2.png)
 
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 8 “Como gerente de seguros, quero que o smart contract só entre em pleno vigor, caso as condições de funcionamento sejam atendidas. Para que tudo funcione conforme o acordado”.<br>
-&emsp;&emsp;O requisito foi cumprido devido a função viabilidadeContrato(), que confere se o contrato está na validade e possui o número definido de membros, garantindo assim que condições de funcionamento sejam atendidas.<br>
+&emsp;&emsp; |--> Para a User Story 8, o requisito de negócio implementado é referente à validade do contrato e ao número de membros necessários para o funcionamento do mesmo. Foi desenvolvida a função "viabilidadeContrato()" que confere se o contrato está na validade e possui o número definido de membros. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço do contrato.<br>
+&emsp;&emsp; |--> Para relembrar a **User Story 8: Como gerente de seguros, quero que o smart contract só entre em pleno vigor, caso as condições de funcionamento sejam atendidas. Para que tudo funcione conforme o acordado.** <br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi garantir que o contrato só entre em pleno vigor caso as condições de funcionamento sejam atendidas. Isso é importante para garantir que tudo funcione conforme o acordado entre as partes.<br>
+O código que implementa esse requisito é a seguinte função:
+```
+function viabilidadeContrato() public view returns (bool) {
+return (carteiras.length == numMembros && block.timestamp < validadeContrato);
+}
+```
 
-&emsp;Abaixo é possível visualizar o código referente a essa user story
 ![função viabilidade Contrato](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20viabilidadeContrato%20-%20Sprint2.png)
 
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 10 “Como gerente de seguros, quero que após uma solicitação de indenização ser aprovada, quero poder transferir os dinheiros do fundo do smart contract para a carteira de quem deve ser assegurado. Para garantir que os usuários recebam o dinheiro”.<br>
-&emsp;&emsp;O requisito foi cumprido devido a função tranferirValor(), que transfere dinheiro do fundo do smartcontract para a carteira que for indicada, possibilitando transferir os fundos referentes a indenização.<br>
-&emsp;Abaixo é possível visualizar o código referente a essa user story:
+&emsp;&emsp; |--> Para a User Story 10, o requisito de negócio implementado é referente à transferência de fundos para a carteira de quem deve ser assegurado após a aprovação de uma solicitação de indenização. Foi desenvolvida a função "tranferirValor()" que transfere dinheiro do fundo do smart contract para a carteira que for indicada. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço da carteira que deve receber os fundos e o valor a ser transferido.<br>
+
+&emsp;&emsp; |--> Para relembrar a **User Story 10: Como gerente de seguros, quero que após uma solicitação de indenização ser aprovada, quero poder transferir os dinheiros do fundo do smart contract para a carteira de quem deve ser assegurado. Para garantir que os usuários recebam o dinheiro.**<br>
+&emsp;&emsp; |--> O requisito foi cumprido devido à função transferirValor(), que transfere dinheiro do fundo do smart contract para a carteira que for indicada, possibilitando transferir os fundos referentes à indenização.<br>
+&emsp;&emsp; |--> Para implementar essa funcionalidade, foram realizados os seguintes passos:<br>
+&emsp;&emsp; 1.	Criou-se a função transferirValor() que recebe como parâmetros a carteira que receberá a transferência e o valor a ser transferido.<br>
+```
+function transferirValor(address payable _carteiraDestino, uint _valor) public onlyOwner {
+require(carteiraCentral.balance >= _valor, "Saldo insuficiente"); _carteiraDestino.transfer(_valor);
+carteiraCentral.balance -= _valor;
+}
+```
+&emsp;&emsp; 2.	Na função solicitarIndenizacao(), após a validação de que a indenização foi aprovada, chamou-se a função transferirValor() para realizar a transferência do valor para a carteira do usuário.<br>
+```
+if(status[indenizacaoId].aprovado) {
+transferirValor(carteiras[indenizacaoId], status[indenizacaoId].valorSolicitado); 
+}
+```
+Aqui, o contrato verifica se a indenização foi aprovada e, caso positivo, chama a função transferirValor(), passando como parâmetros a carteira do usuário que solicitou a indenização e o valor da indenização.<br>
+Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de negócio foi cumprido.
 
 ![função transferir Valor](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20transferirValor%20-%20Sprint2.png)
 
