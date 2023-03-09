@@ -181,7 +181,7 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 
 ## Documentação do Deploy e Testes de Smart Contracts
 
- &emsp;&emsp; O Solitdiy é a peça central da nossa solução de SmartContract. No entanto, na documentação de nosso projeto, é explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente com a tecnologia e garantir o sucesso de nosso SmartContract. Com a combinação dessas tecnologias, podemos fornecer aos usuários uma solução completa e segura para suas necessidades de negócios baseadas em blockchain.  Com isso utilizamos..... 
+ &emsp;&emsp; O Solidity é a peça central da nossa solução em SmartContract. No entanto, outras tecnologias também são necessárias, por isso, será explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente em conjunto com o Solidity, garantindo o sucesso do SmartContract.
   
 <br>
   
@@ -205,8 +205,10 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
  truffle --version
  ```
 
-  &emsp;&emsp; O seguinte código deve aparecer na sua tela, ele mostra que a biblioteca Truffle foi instalada com sucesso no contrato, e identifica a versão sendo utilizada:
+  &emsp;&emsp; O seguinte código deve aparecer no seu terminal, ele mostra que a biblioteca Truffle foi instalada com sucesso no contrato, e identifica a versão sendo utilizada:
   <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/truffle_instalacao.jpeg"/> <br>
+ 
+ <li>Inserir aqui o diário de bordo sobre o Truffle (dificuldades e experiências pessoais na hora de instalar e configurar. Adcione na documentação também! (Anexos))
  
  
  <br>
@@ -238,6 +240,7 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
   &emsp;&emsp; Pronto! A configuração do Metamask está completa!<br><br>
  <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo6_metamask.png"/> <br>
  
+ <li>Inserir aqui o diário de bordo sobre o MetaMask (dificuldades e experiências pessoais na hora de instalar e configurar. Adcione na documentação também! (Anexos))
  
   
 ## Histórico de Lançamento
