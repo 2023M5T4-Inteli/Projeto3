@@ -6,6 +6,7 @@ Ela pode irá incluir algumas informações como<br>
 &emsp;***|--> A estrutura do contrato inteligente, incluindo suas funções, variáveis e eventos;***<br>
 &emsp;***|--> Requisitos de Negócio implementado;***<br>
 &emsp;***|--> Descrição da Arquitetura da Solução diagramada;***<br>
+&emsp;***|--> Descrição do Diagrama de Implementação UML;***<br>
 &emsp;***|--> Comportamento do Smart Contract em diagrama de sequência UML;***<br>
 &emsp;***|--> Ambiente de desenvolvimento;***<br>
 
