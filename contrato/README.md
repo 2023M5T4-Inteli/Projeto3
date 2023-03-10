@@ -140,11 +140,11 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 ![diagrama de Sequência UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20de%20Sequ%C3%AAncia%20UML%20-%20Sprint3.png)<br>
 
 ## Descrição do Diagrama de Implantação UML
-&emsp;&emsp; <br>
+&emsp;&emsp; Um diagrama de implementação UML é um diagrama que descreve a arquitetura física de um sistema de software, incluindo o que cada parte armazena e sua utilidade para o sistema em geral. Ele representa os componentes do sistema, como servidores, computadores, e como eles se relacionam entre si para criar uma solução completa.<br>
 
-&emsp;&emsp; <br>
+&emsp;&emsp; O diagrama de implementação UML desenvolvido tem como objetivo ajudar a equipe a visualizar a infraestrutura e conexões necessárias para o funcionamento do sistema e a identificar possíveis problemas de implantação.  <br>
 
-&emsp;&emsp; <br>
+&emsp;&emsp; Com esse diagrama é possível observar tanto o que ocorre em todos os dispositivos que participam do processo de funcionamento da solução. Desde dos que entram em contato com clientes, como o computador do usuário de do administrador. Até o servidor que hospeda o frontend,backend e banco de dados, e a testnet que irá comunicar com a carteira dos utilizadores da solução e com backend do sistema. Abaixo e possivel visualizar o iagrama de implementação UML:  <br>
 
 ![Diagrama de Implantação UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Templates/diagrama_implanta%C3%A7%C3%A3o_uml.drawio.png)
 
