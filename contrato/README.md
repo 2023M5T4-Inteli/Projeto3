@@ -50,44 +50,98 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 &emsp;<br> <li> **renovarContrato()**: Função responsável por enviar a todos os participantes do contrato um termo de renovação do contrato, removendo os que não aceitarem e reativando o contrato caso ele cumpra os requisitos na função viabilidadeContrato().<br>
 
 ## Requisitos de Negócio implementado
-&emsp;&emsp; |--> O requisito de negócio implementado a seguir é referente à user story número 5 “Como gerente de seguro, quero cobrar de uma carteira geral o percentual da Coover referente aos seus serviços prestados, para conseguir ter caixa na empresa”.<br>
-&emsp;&emsp;O requisito foi comprido devido ao struct “carteiraCentral” que define uma carteira central para receber fundos do contrato, assim como previsto pela user story que possui como critério de aceitação a existência dessa carteira geral do smart contract, que será utilizada para captação de recursos.
+&emsp;&emsp; |--> Nessa seção iremos abordar cada requisito de negócio implementado, explicando brevemente o que foi desenvolvido e fornecendo orientações sobre como o código deve ser utilizado.<br>
+&emsp;&emsp; |--> Para a User Story 4, o requisito de negócio implementado é referente à permissão para executar funções exclusivas do administrador do contrato. Foi desenvolvido um modifier chamado "apenasAdmin()" que garante que apenas o dono do contrato tenha acesso às funcionalidades direcionadas ao administrador. Para utilizar esse código, é necessário utilizar esse modifier nas funções que devem ser restritas apenas ao administrador.<br>
+
+&emsp;&emsp; |--> Para relembrar a **User Story 4: Como gerente de seguro, quero ter permissão para executar funções que apenas o administrador pode executar.**<br>
+Nessa user story, o requisito de negócio implementado foi garantir que apenas o dono do contrato (ou seja, o administrador) tenha permissão para executar determinadas funcionalidades. Isso é importante para garantir a segurança do contrato.
+<br>O código que implementa esse requisito é o seguinte modifier:
+
+```
+modifier aspenasAdmin() {
+require(msg.sender == admin, "Apenas o dono do contrato pode executar essa função");
+_;
+}
+```
 <br>
-&emsp;&emsp;Abaixo é possível visualizar o código referente a essa user story:
-
-![Struct da carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Struct%20carteiraCentral%20-%20Sprint2.png)
-
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 4 “como gerente de seguro, quero ter permissão para executar funções que apenas o administrador  pode executar ”.O requisito foi cumprido devido ao modifier onlyOwner(), que garante que apenas o dono do contrato terá acesso às funcionalidades que devem ser direcionadas ao administrador.<br>
-&emsp;Abaixo é possível visualizar o código referente a essa user story:
 
 ![Modifier](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Modifier%20onlyOwner%20-%20Sprint2.png)
+<br>
 
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 6 “Como usuário, quero poder visualizar as pessoas dentro do meu contrato de forma segura, para poder ver a quantidade de usuários dentro do mesmo contrato que o meu".<br>
-&emsp;&emsp;O requisito foi cumprido devido a função visualizarCarteiras(), que retorna todos os membros daquele contrato, permitindo visualizar as pessoas em seu contrato.<br>
+&emsp;&emsp; |--> Para a User Story 5, o requisito de negócio implementado é referente à cobrança de um percentual da Coover em uma carteira geral. Foi desenvolvido um struct chamado "carteiraCentral" que define essa carteira central para receber fundos do contrato. Para utilizar esse código, é necessário instanciar esse struct e transferir os fundos da carteira geral para a carteira da Coover.<br>
+&emsp;&emsp; |--> Para relembrar a **User Story 5: Como gerente de seguro, quero cobrar de uma carteira geral o percentual da Coover referente aos seus serviços prestados, para conseguir ter caixa na empresa** <br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi a criação de uma carteira central para receber fundos do contrato, permitindo que o gerente de seguro possa cobrar o percentual referente aos serviços prestados pela Coover. Isso garante que a empresa tenha caixa para continuar operando. <br>
+O código que implementa esse requisito é o seguinte struct:
+```
+struct carteiraCentral {
+uint256 fundos; // quantidade de ether na carteira
+} 
+```
+<br>
 
-&emsp;Abaixo é possível visualizar o código referente a essa user story:
+![Struct da carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Struct%20carteiraCentral%20-%20Sprint2.png)
+<br>
+
+&emsp;&emsp; |--> Para a User Story 6, o requisito de negócio implementado é referente à visualização dos membros do contrato de forma segura. Foi desenvolvida a função "visualizarCarteiras()" que retorna todos os membros daquele contrato. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço do contrato.<br>
+&emsp;&emsp; |--> Para relembrar a **User Story 6: Como usuário, quero poder visualizar as pessoas dentro do meu contrato de forma segura, para poder ver a quantidade de usuários dentro do mesmo contrato que o meu.**<br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi permitir que os usuários possam visualizar todas as pessoas dentro do mesmo contrato de forma segura. Isso é importante para que eles possam ver a quantidade de usuários dentro do contrato e se sentirem seguros em relação aos seus investimentos.<br>
+
+O código que implementa esse requisito é a seguinte função:
+```
+function visualizarCarteiras() public view returns (address[] memory) {
+return carteiras;
+} 
+```
 
 ![função visualizar Carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20visualizarCarteiras%20-%20Sprint2.png)
 
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 8 “Como gerente de seguros, quero que o smart contract só entre em pleno vigor, caso as condições de funcionamento sejam atendidas. Para que tudo funcione conforme o acordado”.<br>
-&emsp;&emsp;O requisito foi cumprido devido a função viabilidadeContrato(), que confere se o contrato está na validade e possui o número definido de membros, garantindo assim que condições de funcionamento sejam atendidas.<br>
+&emsp;&emsp; |--> Para a User Story 8, o requisito de negócio implementado é referente à validade do contrato e ao número de membros necessários para o funcionamento do mesmo. Foi desenvolvida a função "viabilidadeContrato()" que confere se o contrato está na validade e possui o número definido de membros. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço do contrato.<br>
+&emsp;&emsp; |--> Para relembrar a **User Story 8: Como gerente de seguros, quero que o smart contract só entre em pleno vigor, caso as condições de funcionamento sejam atendidas. Para que tudo funcione conforme o acordado.** <br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi garantir que o contrato só entre em pleno vigor caso as condições de funcionamento sejam atendidas. Isso é importante para garantir que tudo funcione conforme o acordado entre as partes.<br>
+O código que implementa esse requisito é a seguinte função:
+```
+function viabilidadeContrato() public view returns (bool) {
+return (carteiras.length == numMembros && block.timestamp < validadeContrato);
+}
+```
 
-&emsp;Abaixo é possível visualizar o código referente a essa user story
 ![função viabilidade Contrato](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20viabilidadeContrato%20-%20Sprint2.png)
 
-&emsp;&emsp;O requisito de negócio implementado a seguir é referente à user story número 10 “Como gerente de seguros, quero que após uma solicitação de indenização ser aprovada, quero poder transferir os dinheiros do fundo do smart contract para a carteira de quem deve ser assegurado. Para garantir que os usuários recebam o dinheiro”.<br>
-&emsp;&emsp;O requisito foi cumprido devido a função tranferirValor(), que transfere dinheiro do fundo do smartcontract para a carteira que for indicada, possibilitando transferir os fundos referentes a indenização.<br>
-&emsp;Abaixo é possível visualizar o código referente a essa user story:
+&emsp;&emsp; |--> Para a User Story 10, o requisito de negócio implementado é referente à transferência de fundos para a carteira de quem deve ser assegurado após a aprovação de uma solicitação de indenização. Foi desenvolvida a função "tranferirValor()" que transfere dinheiro do fundo do smart contract para a carteira que for indicada. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço da carteira que deve receber os fundos e o valor a ser transferido.<br>
+
+&emsp;&emsp; |--> Para relembrar a **User Story 10: Como gerente de seguros, quero que após uma solicitação de indenização ser aprovada, quero poder transferir os dinheiros do fundo do smart contract para a carteira de quem deve ser assegurado. Para garantir que os usuários recebam o dinheiro.**<br>
+&emsp;&emsp; |--> O requisito foi cumprido devido à função transferirValor(), que transfere dinheiro do fundo do smart contract para a carteira que for indicada, possibilitando transferir os fundos referentes à indenização.<br>
+&emsp;&emsp; |--> Para implementar essa funcionalidade, foram realizados os seguintes passos:<br>
+&emsp;&emsp; 1.	Criou-se a função transferirValor() que recebe como parâmetros a carteira que receberá a transferência e o valor a ser transferido.<br>
+```
+function transferirValor(address payable _carteiraDestino, uint _valor) public onlyOwner {
+require(carteiraCentral.balance >= _valor, "Saldo insuficiente"); _carteiraDestino.transfer(_valor);
+carteiraCentral.balance -= _valor;
+}
+```
+&emsp;&emsp; 2.	Na função solicitarIndenizacao(), após a validação de que a indenização foi aprovada, chamou-se a função transferirValor() para realizar a transferência do valor para a carteira do usuário.<br>
+```
+if(status[indenizacaoId].aprovado) {
+transferirValor(carteiras[indenizacaoId], status[indenizacaoId].valorSolicitado); 
+}
+```
+Aqui, o contrato verifica se a indenização foi aprovada e, caso positivo, chama a função transferirValor(), passando como parâmetros a carteira do usuário que solicitou a indenização e o valor da indenização.<br>
+Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de negócio foi cumprido.
 
 ![função transferir Valor](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20transferirValor%20-%20Sprint2.png)
 
 ## Smart Contract em diagrama de Sequência UML
-![diagrama de Sequência UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20de%20Sequ%C3%AAncia%20UML%20-%20Sprint2.png)<br>
+
+&emsp;&emsp;Um diagrama de sequência UML é um tipo de diagrama de interação que mostra a interação entre os objetos e/ou participantes em um sistema ao longo do tempo. Ele ilustra a ordem das mensagens trocadas entre os objetos e como eles colaboram para alcançar um objetivo comum. <br>
+&emsp;&emsp;Os diagramas de sequência UML são úteis para entender o fluxo de informações em um sistema, permitindo que os desenvolvedores e analistas de sistemas entendam a lógica do sistema e detectem possíveis problemas de design ou implementação. Eles também podem ser usados para documentar e comunicar o comportamento do sistema para outras partes interessadas. <br>
+&emsp;&emsp;Abaixo há um diagrama de sequência UML que representa o fluxo de interações entre os participantes do processo de aprovação de membros em um grupo de seguro, incluindo a carteira do usuário, o usuário, a plataforma web (usuário), o administrador do seguro (AdminCoover), a plataforma web (administrador) e o contrato inteligente (Smart Contract). As setas representam as mensagens trocadas entre os participantes, indicando o fluxo de controle. Cada caixa vertical representa um participante, com suas ações e respostas organizadas em uma linha horizontal. <br>
+
+![diagrama de Sequência UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20de%20Sequ%C3%AAncia%20UML%20-%20Sprint3.png)<br>
 
 ## Arquitetura da Solução Diagramada
 
-&emsp;&emsp;Abaixo, é possível visualizar a diagramação em blocos da solução a qual estamos desenvolvendo. <br>
-![diagrama em blocos](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20em%20blocos%20da%20solu%C3%A7%C3%A3o%20-%20Sprint2.jpg)<br>
+&emsp;&emsp;Abaixo, é possível visualizar a diagramação em blocos da solução a qual estamos desenvolvendo. <br><br>
+![diagrama em blocos](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20em%20blocos%20da%20solu%C3%A7%C3%A3o%20-%20Sprint3.jpg)<br>
 
 &emsp;&emsp;A diagramação em blocos é uma técnica de organização visual de informações em que o conteúdo é dividido em blocos, cada um com uma função específica e sendo possível fazer linhas que representem as conexões ou interações entre as funções. A diagramação em blocos será usada como forma de criar uma hierarquia visual clara, com os elementos mais importantes e relevantes em destaque, refletindo em um melhor entendimento.<br>
 
@@ -110,27 +164,84 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 **Sistema da Seguradora (Coover)**<br>
 <ul><li>O sistema da Seguradora é a fonte que faz a interligação entre a interface do usuário e os Smart Contracts em Blockchain. Podem receber requisições dos clientes, referentes à transações ou até mesmo modificar certos processos. Dessa forma, os administradores do sistema contam com toda a capacidade de gerenciar os seguros.<br></ul>
 
+ **Smart Contracts**<br>
+<ul><li>Sistema onde os termos e os conteúdos são estruturados, englobando todas as regras de negócio do seguro mútuo. São executados na rede blockchain e possuem todas as cláusulas que são acordadas entre os integrantes e a seguradora, de acordo com a regra de negócio. Não só isso, mas automatizam as transações relacionadas à indenizações, ao momento que são aprovadas pela Coover.<br></ul>
+ 
+ **Deploy**<br>
+ <ul><li>Deploy é o processo de implantação de um smart contract na blockchain, tornando-o disponível para ser usado e executado pelos usuários da rede. A principal diferença entre o deploy na rede Goerli e na rede Ganache é que a primeira é uma rede de testes pública que permite aos desenvolvedores testar seus contratos em um ambiente semelhante ao da rede principal da Ethereum, enquanto a segunda é uma rede de testes privada que permite aos desenvolvedores testar contratos em um ambiente controlado localmente.<br></ul>
+ 
+  **API do Nó da Rede**<br>
+ <ul><li>A Infura é uma plataforma de infraestrutura em nuvem que fornece acesso a APIs de nós de blockchain, incluindo Ethereum, IPFS e outros. A API Infura permite que desenvolvedores e usuários finais se conectem a esses nós sem a necessidade de executar seus próprios Nós. Isso simplifica e acelera o desenvolvimento de aplicativos descentralizados e serviços relacionados à blockchain.<br></ul>
+ 
 **Rede Blockchain**<br>
 <ul><li>Rede responsável por guardar os Smart contracts, além de garantir segurança e imutabilidade dos registros, de forma que as transações não necessitem de um intermediário.<br></ul>
-
-**Smart Contracts**<br>
-<ul><li>Sistema onde os termos e os conteúdos são estruturados, englobando todas as regras de negócio do seguro mútuo. São executados na rede blockchain e possuem todas as cláusulas que são acordadas entre os integrantes e a seguradora, de acordo com a regra de negócio. Não só isso, mas automatizam as transações relacionadas à indenizações, ao momento que são aprovadas pela Coover.<br></ul>
 
 **TestNet** <br>
 <ul><li>Rede de testes na Blockchain, usada com objetivo de prevenir erros e riscos de gastos desnecessários, além de ser visto como local para testes e validações, antes de ser aplicado na Mainnet (Rede principal).<br></ul>
 
 ## Documentação do Deploy e Testes de Smart Contracts
 
- &emsp;&emsp; O Solitdiy é a peça central da nossa solução de SmartContract. No entanto, na documentação de nosso projeto, é explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente com a tecnologia e garantir o sucesso de nosso SmartContract. Com a combinação dessas tecnologias, podemos fornecer aos usuários uma solução completa e segura para suas necessidades de negócios baseadas em blockchain.  Com isso utilizamos..... 
+ &emsp;&emsp; O Solidity é a peça central da nossa solução em SmartContract. No entanto, outras tecnologias também são necessárias, por isso, será explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente em conjunto com o Solidity, garantindo o sucesso do SmartContract.
   
-<br><br>
+<br>
   
 **Truffle** <br><ul><li> Truffle é uma ferramenta de desenvolvimento que utiliza a Ethereum Virtual Machine (EVM) para simplificar os processos de desenvolvimento em áreas de blockchain e dApps. Com o objetivo de fornecer diversas implementações, compilações, testes e gerenciamento, a ferramenta visa atender às diferentes necessidades dos desenvolvedores e criar um ambiente mais facilitador e eficiente.<br>
 <li><em></em> Com o objetivo de facilitar e melhorar nossos processos, estamos utilizando o framework de ferramentas Truffle para criar interações de front-end com os smart contracts, compilar e implantar automaticamente os contratos inteligentes em diferentes redes, e desenvolver testes automatizados. Devido a sua eficiência, concluímos que a Truffle é a melhor opção para atender aos nossos objetivos nesse momento no projeto.</ul><br>
-  
+ 
+**Configurando o Truffle**
+ <br>
+ 
+  &emsp;&emsp;Atenção: Antes de partirmos para o Truffle, é necessário ter um um projeto no VS Code com NodeJS e Git instalados! <br><br>
+
+  &emsp;&emsp;Primeiro, no terminal, escreva o seguinte comando para instalar a biblioteca do Truffle globalmente: <br><br>
+           
+ ```
+ npm install -g truffle
+ ```
+ 
+ &emsp;&emsp;Depois, digite o comando a seguir para conferir se a biblioteca foi instalada e sua versão: <br><br>
+ 
+ ```
+ truffle --version
+ ```
+
+  &emsp;&emsp; O seguinte código deve aparecer no seu terminal, ele mostra que a biblioteca Truffle foi instalada com sucesso no contrato, e identifica a versão sendo utilizada:
+  <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/truffle_instalacao.jpeg"/> <br>
+ 
+ <li>Inserir aqui o diário de bordo sobre o Truffle (dificuldades e experiências pessoais na hora de instalar e configurar. Adcione na documentação também! (Anexos))
+ 
+ 
+ <br>
+ 
 **MetaMask** <br>
 <ul><li>MetaMask é uma carteira de criptomoeda usada para interagir com o blockchain Ethereum. Ela permite que os usuários acessem sua carteira Ethereum por meio de uma extensão de navegador ou aplicativo móvel, que pode ser usado para interagir com aplicativos descentralizados.<br>
 <li> Reconhecemos que a utilização da carteira digital Metamask é essencial para garantir a segurança entre o usuário e a rede blockchain. Dessa forma, nossos usuários podem explorar nossa solução com segurança, maior autonomia, integração e facilidade, princípios fundamentais da extensão da carteira digital Metamask.</ul><br>
+ 
+**Configurando o MetaMask**
+ <br>
+
+  &emsp;&emsp;O primeiro passo para realizar a integração entre a sua carteira Metamask com seu Smart Contract é localizar o Metamask na barra de extensões do seu navegador <br><br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo1_metamask.png"/> <br>
+ 
+  &emsp;&emsp; Após localizar o Metamask no navegador, acesse-o <br><br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo2_metamask.png"/> <br>
+ 
+  &emsp;&emsp; Abra a aba de 'Networks' e aperte em 'Show/hide' <br><br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo3_metamask.png"/> <br>
+ 
+  &emsp;&emsp; Ative o 'Show test network' (OFF -> ON) <br><br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo4_metamask.png"/> <br>
+ 
+
+  &emsp;&emsp; Volte ao Menu do MetaMask, clique em 'Networks' e selecione 'Goerli test networks' <br><br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo5_metamask.png"/> <br>
+ 
+ 
+  &emsp;&emsp; Pronto! A configuração do Metamask está completa!<br><br>
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo6_metamask.png"/> <br>
+ 
+ <li>Inserir aqui o diário de bordo sobre o MetaMask (dificuldades e experiências pessoais na hora de instalar e configurar. Adcione na documentação também! (Anexos))
+ 
   
 ## Histórico de Lançamento
 
