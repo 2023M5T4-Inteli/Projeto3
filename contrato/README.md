@@ -144,7 +144,7 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 
 &emsp;&emsp; O diagrama de implementação UML desenvolvido tem como objetivo ajudar a equipe a visualizar a infraestrutura e conexões necessárias para o funcionamento do sistema e a identificar possíveis problemas de implantação.  <br>
 
-&emsp;&emsp; Com esse diagrama é possível observar tanto o que ocorre em todos os dispositivos que participam do processo de funcionamento da solução. Desde dos que entram em contato com clientes, como o computador do usuário de do administrador. Até o servidor que hospeda o frontend,backend e banco de dados, e a testnet que irá comunicar com a carteira dos utilizadores da solução e com backend do sistema. Abaixo e possivel visualizar o iagrama de implementação UML:  <br>
+&emsp;&emsp; Com esse diagrama é possível observar tanto o que ocorre em todos os dispositivos que participam do processo de funcionamento da solução. Desde dos que entram em contato com clientes, como o computador do usuário de do administrador. Até o servidor que hospeda o frontend,backend e banco de dados, e a testnet que irá comunicar com a carteira dos utilizadores da solução e com backend do sistema. Abaixo é possível visualizar o diagrama de implementação UML:  <br>
 
 ![Diagrama de Implantação UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Templates/diagrama_implanta%C3%A7%C3%A3o_uml.drawio.png)
 
