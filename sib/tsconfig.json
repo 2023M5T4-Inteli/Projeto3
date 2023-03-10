@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "assets/icons/vercel.jsx", "assets/icons/Seta.jsx", "pages/branco.js", "pages/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "assets/icons/vercel.jsx", "assets/icons/Seta.jsx"],
   "exclude": ["node_modules"]
 }
