@@ -5,8 +5,8 @@ Ela pode irá incluir algumas informações como<br>
 &emsp;***|--> Uma visão geral do contrato inteligente, incluindo seu propósito e objetivos;*** <br>
 &emsp;***|--> A estrutura do contrato inteligente, incluindo suas funções, variáveis e eventos;***<br>
 &emsp;***|--> Requisitos de Negócio implementado;***<br>
-&emsp;***|--> Descrição da Arquitetura da Solução diagramada;***<br>
-&emsp;***|--> Descrição do Diagrama de Implementação UML;***<br>
+&emsp;***|--> Descrição da Arquitetura da Solução em Diagrama de Blocos;***<br>
+&emsp;***|--> Descrição do Diagrama de Implantação UML;***<br>
 &emsp;***|--> Comportamento do Smart Contract em diagrama de sequência UML;***<br>
 &emsp;***|--> Ambiente de desenvolvimento;***<br>
 
@@ -138,6 +138,15 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 &emsp;&emsp;Abaixo há um diagrama de sequência UML que representa o fluxo de interações entre os participantes do processo de aprovação de membros em um grupo de seguro, incluindo a carteira do usuário, o usuário, a plataforma web (usuário), o administrador do seguro (AdminCoover), a plataforma web (administrador) e o contrato inteligente (Smart Contract). As setas representam as mensagens trocadas entre os participantes, indicando o fluxo de controle. Cada caixa vertical representa um participante, com suas ações e respostas organizadas em uma linha horizontal. <br>
 
 ![diagrama de Sequência UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20de%20Sequ%C3%AAncia%20UML%20-%20Sprint3.png)<br>
+
+## Descrição do Diagrama de Implantação UML
+&emsp;&emsp; <br>
+
+&emsp;&emsp; <br>
+
+&emsp;&emsp; <br>
+
+![Diagrama de Implantação UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Templates/diagrama_implanta%C3%A7%C3%A3o_uml.drawio.png)
 
 ## Arquitetura da Solução Diagramada
 
