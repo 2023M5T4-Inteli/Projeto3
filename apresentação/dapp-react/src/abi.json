@@ -1,0 +1,255 @@
+[
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_minPessoas",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxPessoas",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_taxaAdmin",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "carteira",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "carteiraUsuario",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "valorAparelho",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "saldo",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxPessoas",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minPessoas",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "quantUsuario",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "taxaAdmin",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "cliente",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "valorAssegurado",
+          "type": "uint256"
+        }
+      ],
+      "name": "adicionarUsuario",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "adicionarDinheiro",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "verSaldo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "contratoSaldo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "visualizarCarteiras",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "carteiraUsuario",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "valorAparelho",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "saldo",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct MeuContrato.Carteira[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "verSaldoAdm",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "quantidade",
+          "type": "uint256"
+        }
+      ],
+      "name": "retirarTaxas",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_indenizado",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "valorIndenizacao",
+          "type": "uint256"
+        }
+      ],
+      "name": "indenizar",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_usuario",
+          "type": "address"
+        }
+      ],
+      "name": "removerUsuario",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "viabilidadeContrato",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
