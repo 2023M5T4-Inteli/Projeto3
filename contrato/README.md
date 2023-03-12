@@ -42,7 +42,7 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 - **carteiraUsuario**: é um elemento do tipo "address" e armazena o endereço da carteira do usuário.
 - **valorAparelho**: é um elemento do tipo "uint" e armazena o valor do aparelho celular do usuário.
 - **saldo**: é um elemento do tipo "uint" e armazena o saldo da carteira do usuário.
--**IMEI**:  é um elemento do tipo "uint" e armazena o número de IMEI do aparelho celular do usuário.
+- **IMEI**:  é um elemento do tipo "uint" e armazena o número de IMEI do aparelho celular do usuário.
 
 &emsp;Esses elementos são usados para armazenar informações relevantes sobre a carteira do usuário dentro do smart contract.<br>
 
@@ -101,10 +101,10 @@ Nessa user story, o requisito de negócio implementado foi garantir que apenas o
 <br>O código que implementa esse requisito é o seguinte modifier:
 
 ```
-modifier aspenasAdmin() {
-require(msg.sender == admin, "Apenas o dono do contrato pode executar essa função");
-_;
-}
+modifier apenasAdmin() {
+        require(msg.sender == admin, "Somente o proprietario do contrato pode executar esta funcao.");
+        _;
+    }
 ```
 <br>
 
@@ -113,12 +113,16 @@ _;
 
 &emsp;&emsp; |--> Para a User Story 5, o requisito de negócio implementado é referente à cobrança de um percentual da Coover em uma carteira geral. Foi desenvolvido um struct chamado "carteiraCentral" que define essa carteira central para receber fundos do contrato. Para utilizar esse código, é necessário instanciar esse struct e transferir os fundos da carteira geral para a carteira da Coover.<br>
 &emsp;&emsp; |--> Para relembrar a **User Story 5: Como gerente de seguro, quero cobrar de uma carteira geral o percentual da Coover referente aos seus serviços prestados, para conseguir ter caixa na empresa** <br>
-&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi a criação de uma carteira central para receber fundos do contrato, permitindo que o gerente de seguro possa cobrar o percentual referente aos serviços prestados pela Coover. Isso garante que a empresa tenha caixa para continuar operando. <br>
+&emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi a criação de uma carteira central para receber fundos do contrato, permitindo que o gerente de seguro possa cobrar o percentual referente aos serviços prestados pela Coover. Isso garante que a empresa tenha caixa para continuar operando.<br>
+
 O código que implementa esse requisito é o seguinte struct:
 ```
-struct carteiraCentral {
-uint256 fundos; // quantidade de ether na carteira
-} 
+    struct Carteira {
+        address carteiraUsuario;
+        uint valorAparelho;
+        uint saldo;
+        uint IMEI;
+    }
 ```
 <br>
 
@@ -131,9 +135,9 @@ uint256 fundos; // quantidade de ether na carteira
 
 O código que implementa esse requisito é a seguinte função:
 ```
-function visualizarCarteiras() public view returns (address[] memory) {
-return carteiras;
-} 
+    function visualizarCarteiras() public view returns (Carteira[] memory) {
+        return carteira;
+    } 
 ```
 
 ![função visualizar Carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20visualizarCarteiras%20-%20Sprint2.png)
@@ -143,9 +147,19 @@ return carteiras;
 &emsp;&emsp; |--> Nessa user story, o requisito de negócio implementado foi garantir que o contrato só entre em pleno vigor caso as condições de funcionamento sejam atendidas. Isso é importante para garantir que tudo funcione conforme o acordado entre as partes.<br>
 O código que implementa esse requisito é a seguinte função:
 ```
-function viabilidadeContrato() public view returns (bool) {
-return (carteiras.length == numMembros && block.timestamp < validadeContrato);
-}
+    function viabilidadeContrato() public view returns (uint) {
+        
+        //Verifica se o contrato está válido mas não possui o número ideal de pessoas para funcionar
+        if (quantUsuario >= minPessoas  && quantUsuario <= maxPessoas) {
+            return 1; // Contrato Ativo
+            
+        //Verifica se o contrato está válido mas não possui o número de pessoas ideal para funcionar
+        } else if (quantUsuario < minPessoas || quantUsuario >= maxPessoas) {
+            return 2; // Contrato em Progresso        
+        } else {
+            revert("Erro ao verificar o contrato");
+        }
+    }
 ```
 
 ![função viabilidade Contrato](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20viabilidadeContrato%20-%20Sprint3.png)
