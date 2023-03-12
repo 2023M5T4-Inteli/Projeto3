@@ -20,35 +20,79 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 <br>
 
 ### 1.1 - Variáveis do contrato:
-&emsp;<li> **quantUsuario**: variável do tipo uint, ela é responsável por armazenar a quantidade de usuários dentro do contrato.<br>
-&emsp;<li> **DataValidade**: variável do tipo uint, que é responsável por armazenar quantos dias o contrato ainda irá ficar em vigor.<br>
-&emsp;<li> **minPessoas**: variável do tipo uint, que é responsável por armazenar o número mínimo de pessoas para o funcionamento do contrato.<br>
-&emsp;<li> **maxPessoas**: variável do tipo uint, que é responsável por armazenar o número máximo de pessoas para o funcionamento do contrato.<br>
-&emsp;<li> **termoAceito**: variável do tipo bool, que é responsável por armazenar se uma pessoa aceitou ou não os termos do contrato.<br>
-&emsp;<li> **carteira[]**: é um array responsável por armazenar informações sobre cada carteira participante do contrato.<br>
-&emsp;<li> **owner**: é um address, que é responsável por armazenar o endereço do dono do contrato. <br>
+&emsp;As variáveis globais ou variáveis de estado são declarações de variáveis que ficam no nível do contrato e podem ser acessadas por todas as funções do contrato. Elas são usadas para armazenar informações importantes para o funcionamento do contrato. No código fornecido, existem várias variáveis globais, como 
+- **quantUsuario**: variável do tipo uint, ela é responsável por armazenar a quantidade de usuários dentro do contrato.
 
+- **minPessoas** e **maxPessoas**: variável do tipo uint, são responsável por armazenar a quantidade mínima e máxima de usuários permitidos por contrato.
+
+- **taxaAdmin**: variável tipo uint que armazena a taxa de administração do contrato.
+
+- **carteiraCentral**: variável do tipo address, que é responsável por armazenar informações sobre a carteira da Coover.
+
+- **fundosAdm**: variável tipo uint que armazena o total de fundos coletados como taxa de administração.
+
+- **carteira**: armazena a lista de carteiras de usuários, que são definidas usando a struct Carteira.
+
+- **admin**: variável do tipo address, onde armazena o endereço do proprietário do contrato, que é o administrador.
 
 ### 1.2 - Structs do contrato:
 
-&emsp;&emsp;|-->O “struct" é usado para definir uma estrutura de dados personalizada, sendo muito semelhante a uma classe em outras linguagens de programação, pois pode ter membros (campos) e funções associadas a ela. Entretanto, ela não herda nada de outros structs.<br>
-&emsp;Abaixo há alguns structs definidos no nosso smart contract.
-&emsp;<br> <li> **Carteira_central**: struct responsável por atribuir características a carteira que guarda os fundos do contrato.
-&emsp;<br> <li> **carteiraCentral**: tipo address que armazena o endereço da carteira do contrato.
-&emsp;<br> <li> **fundos**: do tipo uint, armazena o quanto de fundos a carteira central possui.
-&emsp;<br> <li> **Carteira**: esse struct possui dois membros ou campos denominados, carteiraUsuario e saldo, respectivamente. O primeiro é do tipo address, que é uma variável que contém um endereço, usado para identificar contas e contratos na blockchain. O segundo é do tipo uint, que informa o saldo que o usuário possui no contrato.
-<br>
-### 1.3 - Modifiers:
-&emsp;<br> <li> **onlyowner()**: modificador responsável por garantir que apenas o dono do contrato irá poder executar uma função.<br>
+&emsp;&emsp;|-->O “struct `Carteira`" é uma estrutura de dados que é usada para armazenar informações sobre a carteira de um usuário. No código fornecido, a struct Carteira armazena o endereço da carteira do usuário, o valor do aparelho celular, o saldo da carteira do usuário e o número de IMEI do aparelho celular.<br>
+
+&emsp;Abaixo há a estrutura dentro do `struct Carteira` definida no nosso smart contract.
+
+- **carteiraUsuario**: é um elemento do tipo "address" e armazena o endereço da carteira do usuário.
+- **valorAparelho**: é um elemento do tipo "uint" e armazena o valor do aparelho celular do usuário.
+- **saldo**: é um elemento do tipo "uint" e armazena o saldo da carteira do usuário.
+-**IMEI**:  é um elemento do tipo "uint" e armazena o número de IMEI do aparelho celular do usuário.
+
+&emsp;Esses elementos são usados para armazenar informações relevantes sobre a carteira do usuário dentro do smart contract.<br>
+
+### 1.3 - constructor:
+&emsp;O constructor é uma função especial que é executada apenas uma vez, quando o contrato é criado. É usado para inicializar as variáveis globais do contrato com valores iniciais. No código fornecido, o constructor recebe três parâmetros: _minPessoas, _maxPessoas e _taxaAdmin.<br>
+
+&emsp;Dentro do constructor, são executadas as seguintes ações:
+
+- **quantUsuario = 0;**: inicializa a variável global quantUsuario com o valor zero.
+- **admin = msg.sender;**: define o endereço que criou o contrato como o proprietário/administrador do contrato.
+- **minPessoas = _minPessoas;**: define o valor do parâmetro _minPessoas como o valor inicial da variável global minPessoas.
+- **maxPessoas = _maxPessoas;**: define o valor do parâmetro _maxPessoas como o valor inicial da variável global maxPessoas.
+- **taxaAdmin = _taxaAdmin;**: define o valor do parâmetro _taxaAdmin como o valor inicial da variável global taxaAdmin.
+- **carteiraCentral = payable(msg.sender);**: define o endereço que criou o contrato como a carteira central, que é a carteira que receberá a taxa de administração do contrato. O payable indica que a carteira pode receber pagamentos.
+- **fundosAdm = 0;**: inicializa a variável global fundosAdm com o valor zero.
+
+### 1.4 - Modifiers:
+&emsp;&emsp;O nosso smart contract define um modificador chamado `apenasAdmin`. Esse modificador é utilizado para limitar o acesso a uma função somente ao proprietário do contrato (administrador).<br>
+
+&emsp;&emsp;O modificador é uma função especial que modifica o comportamento de outra função. No caso desse modificador, ele é adicionado antes de uma função que deve ser executada somente pelo administrador. Se a pessoa que chama a função não for o administrador, a execução da função será interrompida e a mensagem de erro "Somente o proprietario do contrato pode executar esta funcao." será exibida.<br>
+
+&emsp;&emsp;O modificador "apenasAdmin" ajuda a garantir que somente o proprietário do contrato possa executar funções críticas e sensíveis que poderiam afetar o estado do contrato ou os fundos mantidos dentro dele.<br>
+
+- **apenasAdmin()**: modificador responsável por garantir que apenas o proprietário do contrato irá poder executar uma função.
 
 ### 1.4 - Funções do contrato:
-&emsp;<br> <li> **visualizarCarteiras()**: Função responsável por retornar todas as carteiras que fazem parte do contrato.
-&emsp;<br> <li> **adicionarUsuario()**: Função responsável por adicionar usuário ao projeto, verificando se o grupo possui um máximo de pessoas atingidas.
-&emsp;<br> <li> **removerUsuario()**: Função responsável por remover usuário do projeto, excluindo sua conta.
-&emsp;<br> <li> **viabilidadeContrato()**: Função responsável por verificar se existe um número necessário de pessoas para continuar, podendo ser usado para garantir que o contrato só seja executado caso atenda as condições para ser iniciado.
-&emsp;<br> <li> **cobrarValor()**: Função responsável por verificar se os membros do contrato realizaram o depósito.
-&emsp;<br> <li> **transferirValor()**: Função responsável por transferir fundo do smart contract para outra carteira, onde gera a possibilidade do gestor de seguros realizar a transferência de uma indenização a um membro do contrato.
-&emsp;<br> <li> **renovarContrato()**: Função responsável por enviar a todos os participantes do contrato um termo de renovação do contrato, removendo os que não aceitarem e reativando o contrato caso ele cumpra os requisitos na função viabilidadeContrato().<br>
+&emsp;&emsp;Uma função no smart contract é um trecho de código que realiza uma tarefa específica dentro do contrato. As funções podem ser chamadas por outras funções dentro do contrato ou por usuários externos ao contrato, através de transações na blockchain.<br>
+
+&emsp;&emsp;Uma função pode receber parâmetros de entrada, executar um conjunto de instruções e retornar um valor ou uma transação. As funções podem modificar o estado do contrato, que é a informação armazenada na blockchain, ou apenas consultar o estado atual do contrato, sem modificá-lo.<br>
+
+&emsp;&emsp;As funções são essenciais para a interação dos usuários com o contrato e para a execução das regras de negócio definidas pelo contrato.<br>
+&emsp;Abaixo há a lista de todas as funções utilizadas no smart contract:<br>
+
+- **adicionarUsuario**: Essa função adiciona um novo usuário ao projeto, verifica se a quantidade máxima de usuários já foi atingida, adiciona o usuário à lista de carteiras com seu saldo e valor do aparelho celular e incrementa a quantidade de usuários.
+
+- **adicionarDinheiro**: Essa função é utilizada para uma carteira adicionar dinheiro no smart contract, ela também armazena a taxa do adminstrador, armazena o valor do depósito, armazena o valor que o usuário deve receber, uma vez calculada a taxa administrativa. Essa função também passa pelas carteiras de membros do contrato, verifica se a carteira do usuário corresponde ao endereço de quem chamou a função, adiciona os fundos a carteira do usuário, tirando a taxa adiministrativa e a transferindo para a Coover.
+
+- **verSaldo**: Essa função é utilizada para ver o saldo da carteira que está chamando a função, onde verifica se a carteira do usuário corresponde ao endereço fornecido e retorna o saldo do usuário.
+
+- **contratoSaldo**: Essa função é utilizada para ver quanto de dinheiro tem dentro do contrato e retorna quanto de fundo o contrato possui.
+
+- **visualizarCarteiras**: Essa função que permite visualizar carteiras participantes do contrato e retorna as carteiras.
+
+- **verSaldoAdmin**: Essa função é utilizada para ver o saldo do administrador do contrato e retorna o saldo do administrador.
+ 
+- **retirarTaxas**: Essa função é utilizada para o administrador conseguir retirar as taxas do contrato (retirar o valor que o administrador ganha, o qual já estará destinado a ele), ela também confere se o contrato tem dinheiro suficiente e transfere o valor já "separado" das taxas cobradas para o adiministrador, quando chama esta função.
+
+- **indenizar**: Essa função é utlizada para transferir a indenização a um usuário, conferindo se o contrato tem dinheiro suficiente. Elas também retira primeiro todo o saldo de quem pediu a indenização e transfere o valor da indenização para o usuário.
 
 ## Requisitos de Negócio implementado
 &emsp;&emsp; |--> Nessa seção iremos abordar cada requisito de negócio implementado, explicando brevemente o que foi desenvolvido e fornecendo orientações sobre como o código deve ser utilizado.<br>
@@ -66,7 +110,7 @@ _;
 ```
 <br>
 
-![Modifier](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Modifier%20onlyOwner%20-%20Sprint2.png)
+![Modifier](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Modifier%20apenasAdmin%20-%20Sprint3.png)
 <br>
 
 &emsp;&emsp; |--> Para a User Story 5, o requisito de negócio implementado é referente à cobrança de um percentual da Coover em uma carteira geral. Foi desenvolvido um struct chamado "carteiraCentral" que define essa carteira central para receber fundos do contrato. Para utilizar esse código, é necessário instanciar esse struct e transferir os fundos da carteira geral para a carteira da Coover.<br>
@@ -80,7 +124,7 @@ uint256 fundos; // quantidade de ether na carteira
 ```
 <br>
 
-![Struct da carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Struct%20carteiraCentral%20-%20Sprint2.png)
+![Struct da carteira](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Struct%20Carteira%20-%20Sprint3.png)
 <br>
 
 &emsp;&emsp; |--> Para a User Story 6, o requisito de negócio implementado é referente à visualização dos membros do contrato de forma segura. Foi desenvolvida a função "visualizarCarteiras()" que retorna todos os membros daquele contrato. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço do contrato.<br>
@@ -106,30 +150,73 @@ return (carteiras.length == numMembros && block.timestamp < validadeContrato);
 }
 ```
 
-![função viabilidade Contrato](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20viabilidadeContrato%20-%20Sprint2.png)
+![função viabilidade Contrato](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20viabilidadeContrato%20-%20Sprint3.png)
 
-&emsp;&emsp; |--> Para a User Story 10, o requisito de negócio implementado é referente à transferência de fundos para a carteira de quem deve ser assegurado após a aprovação de uma solicitação de indenização. Foi desenvolvida a função "tranferirValor()" que transfere dinheiro do fundo do smart contract para a carteira que for indicada. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço da carteira que deve receber os fundos e o valor a ser transferido.<br>
+&emsp;&emsp; |--> Para a User Story 10, o requisito de negócio implementado é referente à transferência de fundos para a carteira de quem deve ser assegurado após a aprovação de uma solicitação de indenização. Foi desenvolvida a função `indenizar` que transfere dinheiro do fundo do smart contract para a carteira que for indicada. Para utilizar esse código, é necessário chamar a função e passar como argumento o endereço da carteira que deve receber os fundos e o valor a ser transferido.<br>
 
 &emsp;&emsp; |--> Para relembrar a **User Story 10: Como gerente de seguros, quero que após uma solicitação de indenização ser aprovada, quero poder transferir os dinheiros do fundo do smart contract para a carteira de quem deve ser assegurado. Para garantir que os usuários recebam o dinheiro.**<br>
-&emsp;&emsp; |--> O requisito foi cumprido devido à função transferirValor(), que transfere dinheiro do fundo do smart contract para a carteira que for indicada, possibilitando transferir os fundos referentes à indenização.<br>
+&emsp;&emsp; |--> O requisito foi cumprido devido à função `indenizar()`, que transfere dinheiro do fundo do smart contract para a carteira que for indicada, possibilitando transferir os fundos referentes à indenização.<br>
 &emsp;&emsp; |--> Para implementar essa funcionalidade, foram realizados os seguintes passos:<br>
-&emsp;&emsp; 1.	Criou-se a função transferirValor() que recebe como parâmetros a carteira que receberá a transferência e o valor a ser transferido.<br>
+&emsp;&emsp; 1.	Criou-se a função `indenizar()` que recebe como parâmetros o endereço carteira que receberá a transferência, o valor a ser transferido e o IMEI.<br>
+
 ```
-function transferirValor(address payable _carteiraDestino, uint _valor) public onlyOwner {
-require(carteiraCentral.balance >= _valor, "Saldo insuficiente"); _carteiraDestino.transfer(_valor);
-carteiraCentral.balance -= _valor;
-}
+function indenizar(address _indenizado,uint256 valorIndenizacao, uint _IMEI) public apenasAdmin{
+        
+        //confere se o contrato tem dinheiro suficiente
+        require(address(this).balance >= valorIndenizacao, "Saldo insuficiente no contrato");
+        
+        //valor indenizado
+        uint valorID = valorIndenizacao;
+        
+        //confere retira primeiro tudo o saldo de quem pediu a indenização
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == _indenizado && carteira[i].IMEI == _IMEI){
+                if(carteira[i].saldo >= valorID){
+                    carteira[i].saldo -= valorID;
+                }
+                if(carteira[i].saldo <= valorID){
+                    valorID -= carteira[i].saldo;
+                    carteira[i].saldo = 0;
+                }
+            }
+        }
 ```
+        
+![função de indenizar - parte 1](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20indenizar%20-%20parte1%20-%20Sprint3.png)
+
 &emsp;&emsp; 2.	Na função solicitarIndenizacao(), após a validação de que a indenização foi aprovada, chamou-se a função transferirValor() para realizar a transferência do valor para a carteira do usuário.<br>
+
 ```
-if(status[indenizacaoId].aprovado) {
-transferirValor(carteiras[indenizacaoId], status[indenizacaoId].valorSolicitado); 
-}
+        //calcula quantos % do valor total dos aparelhos assegurados, a retirada representa
+        uint valorTotalAssegurado = 0;
+        
+        // passa pelas carteiras do contrato e soma o valor total dos aparelhos assegurados
+        for (uint i = 0; i < carteira.length; i++){
+            valorTotalAssegurado += carteira[i].valorAparelho;
+            if (carteira[i].carteiraUsuario == _indenizado){
+                valorTotalAssegurado -= carteira[i].valorAparelho;
+            }
+        }
+        
+        //calcula quanto deve ser retirado do saldo de cada usuario em %, do saldo de cada participante.
+        uint valorDecrecido = valorID / valorTotalAssegurado;
+        
+        //trafere o dinheiro para quem vai ser indenizado e diminui o valor relativo ao aparelho de cada usuário
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == _indenizado) {
+                payable(_indenizado).transfer(valorIndenizacao);
+                for (uint i = 0; i < carteira.length; i++){
+                    if (carteira[i].carteiraUsuario != _indenizado){
+                        carteira[i].saldo = carteira[i].saldo - (carteira[i].valorAparelho * valorDecrecido);
+                    }
+                }
+            }
+        }
+    }
 ```
-Aqui, o contrato verifica se a indenização foi aprovada e, caso positivo, chama a função transferirValor(), passando como parâmetros a carteira do usuário que solicitou a indenização e o valor da indenização.<br>
 Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de negócio foi cumprido.
 
-![função transferir Valor](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20transferirValor%20-%20Sprint2.png)
+![função indenizar - parte 2](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/fun%C3%A7%C3%A3o%20indenizar%20-%20parte2%20-%20Sprint3.png)
 
 ## Smart Contract em diagrama de Sequência UML
 
@@ -258,4 +345,6 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 <ul><li>24/02/2023 - Criação do Readme.md da documentação do Smart Contract</li></ul>
 <ul><li>26/02/2023 - Criação da pasta código - imagens</li></ul>
 <ul><li>26/02/2023 - Atualização do Readme.md da documentação do Smart Contract</li></ul>
-<ul><li>07/03/2023 - Atualização na estrutura da documentação do Deploy e Teste do Smart Contract</li></ul>
+<ul><li>07/03/2023 - Atualização na estrutura da documentação do Deploy e Teste do Smart Contract</li>
+<ul><li>12/03/2023 - Atualização da Estrutura do Smart Contract com explicação textual</li>
+</ul>
