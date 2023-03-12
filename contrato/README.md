@@ -5,11 +5,9 @@ Ela pode irá incluir algumas informações como<br>
 &emsp;***|--> Uma visão geral do contrato inteligente, incluindo seu propósito e objetivos;*** <br>
 &emsp;***|--> A estrutura do contrato inteligente, incluindo suas funções, variáveis e eventos;***<br>
 &emsp;***|--> Requisitos de Negócio implementado;***<br>
-&emsp;***|--> Descrição da Arquitetura da Solução em Diagrama de Blocos;***<br>
 &emsp;***|--> Descrição do Diagrama de Implantação UML;***<br>
-&emsp;***|--> Comportamento do Smart Contract em diagrama de sequência UML;***<br>
-&emsp;***|--> Ambiente de desenvolvimento;***<br>
-
+&emsp;***|--> Descrição da Arquitetura da Solução em Diagrama de Blocos;***<br>
+&emsp;***|--> Documentação do Deploy e Testes de Smart Contracts;***<br>
 
 ## 🎯 O objetivo:
 &emsp;&emsp;|-->O smart contract possui como objetivo geral armazenar e garantir que os parâmetros para o funcionamento do contrato sejam atendidos, armazenando informações úteis sobre os membros do contrato, garantindo que as transações sejam feitas de forma segura e previsível. Garantindo que o que foi acordado vai ser executado de forma segura e imutável.<br>
@@ -235,7 +233,7 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 
 ![Diagrama de Implantação UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Templates/diagrama_implanta%C3%A7%C3%A3o_uml.drawio.png)
 
-## Arquitetura da Solução Diagramada
+## Arquitetura da Solução em Diagrama de Blocos
 
 &emsp;&emsp;Abaixo, é possível visualizar a diagramação em blocos da solução a qual estamos desenvolvendo. <br><br>
 ![diagrama em blocos](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/diagrama%20em%20blocos%20da%20solu%C3%A7%C3%A3o%20-%20Sprint3.jpg)<br>
