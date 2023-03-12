@@ -278,20 +278,19 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 
 ## Documentação do Deploy e Testes de Smart Contracts
 
- &emsp;&emsp; O Solidity é a peça central da nossa solução em SmartContract. No entanto, outras tecnologias também são necessárias, por isso, será explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente em conjunto com o Solidity, garantindo o sucesso do SmartContract.
+ &emsp;&emsp; O Solidity é a peça central da nossa solução em SmartContract. No entanto, outras tecnologias também são necessárias, por isso, será explicado detalhadamente como instalar e configurar o MetaMask e o Truffle para que eles possam funcionar perfeitamente em conjunto com o Solidity, garantindo o sucesso do SmartContract.<br>
   
-<br>
-  
-**Truffle** <br><ul><li> Truffle é uma ferramenta de desenvolvimento que utiliza a Ethereum Virtual Machine (EVM) para simplificar os processos de desenvolvimento em áreas de blockchain e dApps. Com o objetivo de fornecer diversas implementações, compilações, testes e gerenciamento, a ferramenta visa atender às diferentes necessidades dos desenvolvedores e criar um ambiente mais facilitador e eficiente.<br>
-<li><em></em> Com o objetivo de facilitar e melhorar nossos processos, estamos utilizando o framework de ferramentas Truffle para criar interações de front-end com os smart contracts, compilar e implantar automaticamente os contratos inteligentes em diferentes redes, e desenvolver testes automatizados. Devido a sua eficiência, concluímos que a Truffle é a melhor opção para atender aos nossos objetivos nesse momento no projeto.</ul><br>
+**Truffle**
+- Truffle é uma ferramenta de desenvolvimento que utiliza a Ethereum Virtual Machine (EVM) para simplificar os processos de desenvolvimento em áreas de blockchain e dApps. Com o objetivo de fornecer diversas implementações, compilações, testes e gerenciamento, a ferramenta visa atender às diferentes necessidades dos desenvolvedores e criar um ambiente mais facilitador e eficiente.
+
+- Com o objetivo de facilitar e melhorar nossos processos, estamos utilizando o framework de ferramentas Truffle para criar interações de front-end com os smart contracts, compilar e implantar automaticamente os contratos inteligentes em diferentes redes, e desenvolver testes automatizados. Devido a sua eficiência, concluímos que a Truffle é a melhor opção para atender aos nossos objetivos nesse momento no projeto.
  
 **Configurando o Truffle**
- <br>
- 
-  &emsp;&emsp;Atenção: Antes de partirmos para o Truffle, é necessário ter um um projeto no VS Code com NodeJS e Git instalados! <br><br>
+<br><br>
+***Atenção: Antes de partirmos para o Truffle, é necessário ter um um projeto no VS Code com NodeJS e Git instalados!*** <br><br>
 
-  &emsp;&emsp;Primeiro, no terminal, escreva o seguinte comando para instalar a biblioteca do Truffle globalmente: <br><br>
-           
+&emsp;&emsp;Primeiro, no terminal, escreva o seguinte comando para instalar a biblioteca do Truffle globalmente: <br>
+
  ```
  npm install -g truffle
  ```
@@ -303,42 +302,49 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
  ```
 
   &emsp;&emsp; O seguinte código deve aparecer no seu terminal, ele mostra que a biblioteca Truffle foi instalada com sucesso no contrato, e identifica a versão sendo utilizada:
-  <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/truffle_instalacao.jpeg"/> <br>
- 
- <li>Inserir aqui o diário de bordo sobre o Truffle (dificuldades e experiências pessoais na hora de instalar e configurar. Adcione na documentação também! (Anexos))
- 
- 
- <br>
- 
-**MetaMask** <br>
-<ul><li>MetaMask é uma carteira de criptomoeda usada para interagir com o blockchain Ethereum. Ela permite que os usuários acessem sua carteira Ethereum por meio de uma extensão de navegador ou aplicativo móvel, que pode ser usado para interagir com aplicativos descentralizados.<br>
-<li> Reconhecemos que a utilização da carteira digital Metamask é essencial para garantir a segurança entre o usuário e a rede blockchain. Dessa forma, nossos usuários podem explorar nossa solução com segurança, maior autonomia, integração e facilidade, princípios fundamentais da extensão da carteira digital Metamask.</ul><br>
- 
-**Configurando o MetaMask**
- <br>
+  
 
-  &emsp;&emsp;O primeiro passo para realizar a integração entre a sua carteira Metamask com seu Smart Contract é localizar o Metamask na barra de extensões do seu navegador <br><br>
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/truffle_instalacao.jpeg"/>
+
+- A configuração do Truffle foi extremamente simples, não havendo grandes dificuldades. A possível real dificuldade pode estar nas pré-condições do ambiente de programação (VS Code com NodeJS e Git instalados), caso a pessoa não tenha experiência nesse tipo de interface, ela pode levar muito tempo pré configurando. Tirando isso, a instalação consiste em dois comandos no terminal, com baixíssimas chances de erro.<br>
+ 
+**MetaMask**
+
+- MetaMask é uma carteira de criptomoeda usada para interagir com o blockchain Ethereum. Ela permite que os usuários acessem sua carteira Ethereum por meio de uma extensão de navegador ou aplicativo móvel, que pode ser usado para interagir com aplicativos descentralizados.
+
+- Reconhecemos que a utilização da carteira digital Metamask é essencial para garantir a segurança entre o usuário e a rede blockchain. Dessa forma, nossos usuários podem explorar nossa solução com segurança, maior autonomia, integração e facilidade, princípios fundamentais da extensão da carteira digital Metamask.
+
+**Configurando o MetaMask**
+
+- MetaMask é uma carteira de criptomoedas usada para interagir com o blockchain Ethereum. Ela permite que os usuários acessem sua carteira Ethereum por meio de uma extensão de navegador ou aplicativo móvel, que pode ser usado para interagir com aplicativos descentralizados.
+
+- Reconhecemos que a utilização da carteira digital MetaMask é essencial para garantir a segurança entre o usuário e a rede blockchain. Dessa forma, nossos usuários podem explorar nossa solução com segurança, maior autonomia, integração e facilidade, princípios fundamentais da extensão da carteira digital Metamask.
+
+&emsp;&emsp;O primeiro passo para realizar a integração entre a sua carteira Metamask com seu Smart Contract é localizar o Metamask na barra de extensões do seu navegador<br>
  <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo1_metamask.png"/> <br>
  
-  &emsp;&emsp; Após localizar o Metamask no navegador, acesse-o <br><br>
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo2_metamask.png"/> <br>
- 
-  &emsp;&emsp; Abra a aba de 'Networks' e aperte em 'Show/hide' <br><br>
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo3_metamask.png"/> <br>
- 
-  &emsp;&emsp; Ative o 'Show test network' (OFF -> ON) <br><br>
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo4_metamask.png"/> <br>
- 
+&emsp;&emsp; Após localizar o Metamask no navegador, acesse-o <br>
 
-  &emsp;&emsp; Volte ao Menu do MetaMask, clique em 'Networks' e selecione 'Goerli test networks' <br><br>
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo5_metamask.png"/> <br>
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo2_metamask.png"/> <br>
  
+&emsp;&emsp; Abra a aba de 'Networks' e aperte em 'Show/hide' <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo3_metamask.png"/> <br>
  
-  &emsp;&emsp; Pronto! A configuração do Metamask está completa!<br><br>
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo6_metamask.png"/> <br>
+&emsp;&emsp; Ative o 'Show test network' (OFF -> ON) <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo4_metamask.png"/>
+<br>
+
+&emsp;&emsp; Volte ao Menu do MetaMask, clique em 'Networks' e selecione 'Goerli test networks'<br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo5_metamask.png"/> <br>
+
+&emsp;&emsp; Pronto! A configuração do Metamask está completa!<br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/passo6_metamask.png"/> <br>
  
- <li>Inserir aqui o diário de bordo sobre o MetaMask (dificuldades e experiências pessoais na hora de instalar e configurar. Adcione na documentação também! (Anexos))
- 
+- A instalação primária do MetaMask não é difícil, se comportando como mais uma extensão do navegador web. Porém, a configuração já demanda mais atenção: o MetaMask possui várias funções e opções, sendo esteticamente semelhantes, o que pode confundir o usuário nesse momento, podendo ser necessário refazer o passo a passo da configuração. Além disso, o principal problema que o time teve foi na rede do MetaMask em si: durante o deploy tentamos adicionar o Goerli Faucet à nossa carteira para concluir a atividade, no entanto, o site estava instável, dificultando a conclusão. O problema persistiu e, como resultado, optamos por fazer o deploy usando a rede local do Ganache. No dia seguinte, o website estava mais estável, o que me permitiu adicionarmos criptomoedas à nossa carteira e finalmente fazer o deploy na rede de testes Goerli. 
   
 ## Histórico de Lançamento
 
@@ -347,4 +353,5 @@ Com esses passos, a funcionalidade foi implementada com sucesso e o requisito de
 <ul><li>26/02/2023 - Atualização do Readme.md da documentação do Smart Contract</li></ul>
 <ul><li>07/03/2023 - Atualização na estrutura da documentação do Deploy e Teste do Smart Contract</li>
 <ul><li>12/03/2023 - Atualização da Estrutura do Smart Contract com explicação textual</li>
+<ul><li>12/03/2023 - Revisão da Documentação do Deploy e Testes de Smart Contracts</li>
 </ul>
