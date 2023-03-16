@@ -34,12 +34,21 @@ contract MeuContrato {
         uint IMEI;
     }
 
+    // Armazena a lista de usuarios a serem aprovados
     Aprovar[] public aprovar;
 
+    // Estrutura para armazenar um pedido de entrada no smart contract
     struct Aprovar {
         address carteiraUsuario;
         uint valorAparelho;
         uint IMEI;
+    }
+
+   Indenizacao[] public indenizacao;
+    struct Indenizacao{
+        address carteiraUsuario;
+        uint valorPedido;
+        string justificativa;
     }
     
     // Endereço do proprietário do contrato, que é o ADMINISTRADOR [IMPORTANTE: apenas o proprietário pode adicionar e remover usuários]
@@ -232,6 +241,16 @@ contract MeuContrato {
             }
         }
     }
+
+    //função para enviar solicitacao de aprovacao de indenizacao
+    function solicitacaoIndenizacao(uint valorID,string memory valorAparelho) public {
+        // Adiciona o usuário à lista de carteiras que pediram indenizacao
+        indenizacao.push(Indenizacao(msg.sender, valorID, valorAparelho));  
+    }  
+
+
+ 
+
 
     // Função para remover um usuário do projeto
     function removerUsuario(address _usuario) public apenasAdmin {
