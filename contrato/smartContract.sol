@@ -33,6 +33,14 @@ contract MeuContrato {
         uint saldo;
         uint IMEI;
     }
+
+    Aprovar[] public aprovar;
+
+    struct Aprovar {
+        address carteiraUsuario;
+        uint valorAparelho;
+        uint IMEI;
+    }
     
     // Endereço do proprietário do contrato, que é o ADMINISTRADOR [IMPORTANTE: apenas o proprietário pode adicionar e remover usuários]
     address admin; // nota-se que encurtamos o nome para ser melhor para o código.
@@ -55,10 +63,39 @@ contract MeuContrato {
         require(msg.sender == admin, "Somente o proprietario do contrato pode executar esta funcao.");
         _;
     }
+
+    function solicitacaoAprovacao(uint valorAparelho, uint imei) public {
+        // Adiciona o usuário à lista de carteiras com seu saldo e valor do aparelho celular
+        aprovar.push(Aprovar(msg.sender, valorAparelho, imei));  
+    }   
+
+     function verSolicitacao() external view apenasAdmin returns(Aprovar[] memory) {
+         return aprovar;
+     }
+
+    function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
+        if (resposta == 0){
+            for (uint i = 0; i < aprovar.length; i++) {
+                if (aprovar[i].carteiraUsuario == usuario){
+                    delete aprovar[i];
+                }
+            }
+        }
+
+        if (resposta == 1){
+            for (uint i = 0; i < aprovar.length; i++) {
+                if (aprovar[i].carteiraUsuario == usuario){
+                adicionarUsuario(aprovar[i].carteiraUsuario, aprovar[i].valorAparelho ,aprovar[i].IMEI);
+                }
+            }
+        }
+    }
+
+
     
     // Adicionar um novo usuário ao projeto
     function adicionarUsuario(address cliente,uint valorAssegurado, uint imei) public apenasAdmin {
-       
+        
         // Verifica se a quantidade máxima de usuários já foi atingida
         require(quantUsuario <= maxPessoas, "O numero maximo de usuarios ja foi atingido.");
         
@@ -149,13 +186,13 @@ contract MeuContrato {
     //função para tranferir idenização a um úsuario
     // Função para o administrador conseguir fornecer a indenização a um membro do contrato
     function indenizar(address _indenizado,uint256 valorIndenizacao, uint _IMEI) public apenasAdmin{
-        
+    
         //confere se o contrato tem dinheiro suficiente
         require(address(this).balance >= valorIndenizacao, "Saldo insuficiente no contrato");
-        
         //valor indenizado
-        uint valorID = valorIndenizacao;
-        
+        uint valorID = valorIndenizacao; 
+
+
         //confere retira primeiro tudo o saldo de quem pediu a indenização
         for (uint i = 0; i < carteira.length; i++){
             if (carteira[i].carteiraUsuario == _indenizado && carteira[i].IMEI == _IMEI){
@@ -168,18 +205,18 @@ contract MeuContrato {
                 }
             }
         }
-        
+            
         //calcula quantos % do valor total dos aparelhos assegurados, a retirada representa
         uint valorTotalAssegurado = 0;
         
         // passa pelas carteiras do contrato e soma o valor total dos aparelhos assegurados
-        for (uint i = 0; i < carteira.length; i++){
+        for (uint i = 0; i < carteira.length; i++){ 
             valorTotalAssegurado += carteira[i].valorAparelho;
             if (carteira[i].carteiraUsuario == _indenizado){
                 valorTotalAssegurado -= carteira[i].valorAparelho;
             }
         }
-        
+
         //calcula quanto deve ser retirado do saldo de cada usuario em %, do saldo de cada participante.
         uint valorDecrecido = valorID / valorTotalAssegurado;
         
