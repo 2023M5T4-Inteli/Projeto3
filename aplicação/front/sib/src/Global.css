@@ -1,0 +1,79 @@
+
+
+.main {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #151A20;
+
+}
+
+.teste {
+    background-color: black;
+    color: black;
+}
+
+.Alinhamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    background-color: #151A20;
+
+}
+
+.logo {
+
+    margin-top: 15.83%;
+}
+
+.text-center {
+
+    margin-top: 60px;
+    color: white;
+    padding-inline: 20%;
+
+
+}
+
+.Bt {
+    background-color: #02DE82;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Lexend Deca';
+    font-size: 35px;
+    border-radius: 8px;
+    padding-inline: 50px;
+    width: 60%;
+    font-style: bold;
+}
+
+.link {
+    font-style: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Lexend Deca';
+}
+
+.central {
+    height: 100vh
+
+
+
+}
+
+.Alinhamento-bt {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 30px;
+}
