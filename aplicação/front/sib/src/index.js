@@ -4,19 +4,24 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Home } from './routers/Home';
 import { Enter } from './routers/Enter';
+import { SaibaMais } from './routers/SaibaMais';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 const router = createBrowserRouter ([
   {
-    path: "/",
+    path: "/Home",
     element: <Home/>,
   },
   {
     path: "/Enter",
     element: <Enter/>,
   },
-])
+  {
+    path: "/SaibaMais",
+    element: <SaibaMais/>, 
+  },
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
