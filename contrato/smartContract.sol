@@ -43,12 +43,13 @@ contract MeuContrato {
         uint valorAparelho;
         uint IMEI;
     }
-
+    // Estrutura para armazenar um pedido de indenizacao do smart contract
    Indenizacao[] public indenizacao;
     struct Indenizacao{
         address carteiraUsuario;
         uint valorPedido;
         string justificativa;
+        uint imeiSolicitacao;
     }
     
     // Endereço do proprietário do contrato, que é o ADMINISTRADOR [IMPORTANTE: apenas o proprietário pode adicionar e remover usuários]
@@ -79,26 +80,37 @@ contract MeuContrato {
     }   
 
      function verSolicitacao() external view apenasAdmin returns(Aprovar[] memory) {
+         // retorna a lista de úsuarios a serem aprovados
          return aprovar;
      }
 
-    function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
-        if (resposta == 0){
-            for (uint i = 0; i < aprovar.length; i++) {
-                if (aprovar[i].carteiraUsuario == usuario){
-                    delete aprovar[i];
-                }
-            }
-        }
 
-        if (resposta == 1){
-            for (uint i = 0; i < aprovar.length; i++) {
-                if (aprovar[i].carteiraUsuario == usuario){
-                adicionarUsuario(aprovar[i].carteiraUsuario, aprovar[i].valorAparelho ,aprovar[i].IMEI);
-                }
+//função para aprovar solicitação de alguem para entra no contrato
+function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
+    // se a resposta for não remove a pessoa da lista de espera
+    if (resposta == 0){
+        for (uint i = 0; i < aprovar.length; i++) {
+            if (aprovar[i].carteiraUsuario == usuario){
+                // Move o último elemento do array para o índice vazio
+                aprovar[i] = aprovar[aprovar.length - 1];
+                aprovar.pop();
+                break;
             }
         }
     }
+    // se a resposta for sim aceita a  pessoa no contrato
+    if (resposta == 1){
+        for (uint i = 0; i < aprovar.length; i++) {
+            if (aprovar[i].carteiraUsuario == usuario){
+                adicionarUsuario(aprovar[i].carteiraUsuario, aprovar[i].valorAparelho ,aprovar[i].IMEI);
+                // Move o último elemento do array para o índice vazio
+                aprovar[i] = aprovar[aprovar.length - 1];
+                aprovar.pop();
+                break;
+            }
+        }
+    }
+}
 
 
     
@@ -243,12 +255,32 @@ contract MeuContrato {
     }
 
     //função para enviar solicitacao de aprovacao de indenizacao
-    function solicitacaoIndenizacao(uint valorID,string memory valorAparelho) public {
+    function solicitacaoIndenizacao(uint valorID,string memory justificativa) public {
         // Adiciona o usuário à lista de carteiras que pediram indenizacao
-        indenizacao.push(Indenizacao(msg.sender, valorID, valorAparelho));  
+        uint imeiDoPedido;
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == msg.sender)
+                imeiDoPedido = carteira[i].IMEI;
+        } 
+        indenizacao.push(Indenizacao(msg.sender, valorID, justificativa, imeiDoPedido));  
     }  
 
+    //função para ver pedidos de idenizacao
+     function verSolicitacaoIndenizacao() external view apenasAdmin returns(Indenizacao[] memory) {
+         //retorna a lista de aprovação de solicitacao
+         return indenizacao;
+     }
 
+    
+    //função para aprovar a solicitação de idenizacao
+    function aprovarIndenizacao(uint imeiDaSolicitacao) public apenasAdmin{
+        //passa por todos os pedidos e executa o que foi aprovado
+        for (uint i = 0; i < indenizacao.length; i++){
+            if (indenizacao[i].imeiSolicitacao == imeiDaSolicitacao){
+            indenizar(indenizacao[i].carteiraUsuario, indenizacao[i].valorPedido, imeiDaSolicitacao);  
+            }
+        }
+    }
  
 
 
