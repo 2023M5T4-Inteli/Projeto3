@@ -6,6 +6,7 @@ import { Home } from './routers/Home';
 import { Enter } from './routers/Enter';
 import { SaibaMais } from './routers/SaibaMais';
 import {Menu} from './routers/MenuPrincipal';
+import {SolicitacaoIndenizacao} from './routers/SolicitacaoIndenizacao';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 const router = createBrowserRouter ([
@@ -25,6 +26,10 @@ const router = createBrowserRouter ([
     path: "/Menu",
     element: <Menu/>, 
   },
+  {
+    path: "/SolicitacaoIndenizacao",
+    element: <SolicitacaoIndenizacao/>,
+  }
 ]);
 
 
