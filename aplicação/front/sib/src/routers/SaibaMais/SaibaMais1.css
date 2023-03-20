@@ -1,5 +1,6 @@
 .logo {
-  display: flex-end;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
@@ -8,6 +9,15 @@
 
 body {
   background-color: #151a20;
+}
+
+.al {
+
+  width: 100%;
+
+
+
+
 }
 
 .caixa1 {

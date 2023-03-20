@@ -21,12 +21,10 @@ export const Home = () => {
             </p>
         </div>
         <div className="Alinhamento">
-        <img src={Globe} className="" alt="logo" />
-        <div className="Alinhamento-bt">
-        <Bt title={'Enter'} link={"../Enter"} />
-        </div>
-
-      
+            <img src={Globe} className="" alt="logo" />
+            <div className="Alinhamento-bt">
+                <Bt title={'Enter'} link={"../Enter"} />
+            </div>
         </div>
 
         </div>

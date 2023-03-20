@@ -1,22 +1,25 @@
-import Layout  from "../../componentes/Layout";
 import Logo from '../../Assets/logoCoover.svg';
 import Seta from '../../Assets/St.svg';
-import caixinha from "./img/caixaverde.png";
-import monitor from "./img/IconMonitor.png";
+import caixinha from "../../Assets/caixaverde.png";
+import monitor from "../../Assets/IconMonitor.png";
+import "./SaibaMais1.css"
+import Layout from '../../componentes/Layout';
 
-export default function App() {
+export const SaibaMais = () => {
   return (
+    <Layout>
     <div className="logo">
       <div>
-        <img className="seta" src={Seta} alt="setinha" />
+        {/* <img className="seta" src={Seta} alt="setinha" /> */}
         <img src={Logo} alt="Logo" />
       </div>
       <div className="caixa1">
         <p className="texto1">Sobre o nosso sistema</p>
-      </div>
-      <div>
+        <div className='al'>
         <img className="caixinha" src={caixinha} alt="caixinha" />
       </div>
+      </div>
+
       <div>
         <img className="monitor" src={monitor} alt="monitor" />
       </div>
@@ -35,5 +38,8 @@ export default function App() {
         </p>
       </div>
     </div>
+    </Layout>
   );
 }
+
+export default SaibaMais;

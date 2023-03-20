@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { Home } from './routers/Home';
 import { Enter } from './routers/Enter';
 import { SaibaMais } from './routers/SaibaMais';
-
+import {Menu} from './routers/MenuPrincipal';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 const router = createBrowserRouter ([
@@ -20,6 +20,10 @@ const router = createBrowserRouter ([
   {
     path: "/SaibaMais",
     element: <SaibaMais/>, 
+  },
+  {
+    path: "/Menu",
+    element: <Menu/>, 
   },
 ]);
 

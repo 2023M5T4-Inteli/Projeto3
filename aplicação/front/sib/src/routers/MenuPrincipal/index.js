@@ -1,13 +1,13 @@
-import "./styles.css";
-import suaLogo from "./img/logocoover.svg";
-import icone1 from "./img/icone1Valor.png";
-import icone2 from "./img/icone2Pessoa.png";
-import icone3 from "./img/icone3Contrato.png";
-import icone4 from "./img/icone4Dashboard.png";
-import icone5 from "./img/icone5SaibaMais.png";
-import vector from "./img/Vector.png";
+import "./Menu.css";
+import suaLogo from "../../Assets/logoCoover.svg";
+import icone1 from "../../Assets/icone1Valor.png";
+import icone2 from "../../Assets/icone2Pessoa.png";
+import icone3 from "../../Assets/icone3Contrato.png";
+import icone4 from "../../Assets/icone4Dashboard.png";
+import icone5 from "../../Assets/icone5SaibaMais.png";
+import vector from "../../Assets/Vector.png";
 
-export default function App() {
+export const Menu = () => {
   return (
     <div className="logo">
       <div className="texto">
@@ -45,3 +45,5 @@ export default function App() {
     </div>
   );
 }
+
+export default Menu;
