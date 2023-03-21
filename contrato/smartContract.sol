@@ -126,10 +126,11 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
         // Incrementa a quantidade de usuários
         quantUsuario++;
     }
-    
+
     //função para uma carteira adicionar dinheiro no smart contract
+
     function adicionarDinheiro() public payable{
-        
+
         //armazena a taxa do adminstrador
         uint taxa = taxaAdmin;
         
@@ -304,6 +305,13 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
             }
         }
     }
+
+    //calcula quanto o úsuario ira efetivamente depositar apos a retirada da taxa
+    function valorPosTaxa(uint valor) external view returns(uint) {
+        uint valorComTaxa = valor + (valor * taxaAdmin / 100);
+        return valorComTaxa;
+    }   
+
     
     // corresponde user storie 8, o código abaixo, supre parte da user stories de número 8, pois ao criar condições que verificam se o contrato está válido e
     // se possui o número necessário de pessoas para continuar, pode ser usado para garantir que o contrato só seja executado caso atenda as condições para ser iniciado
