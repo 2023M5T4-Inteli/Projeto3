@@ -6,7 +6,6 @@ import icone3 from "../../Assets/icone3Contrato.png";
 import icone4 from "../../Assets/icone4Dashboard.png";
 import icone5 from "../../Assets/icone5SaibaMais.png";
 import vector from "../../Assets/Vector.png";
-import Layout from '../../componentes/Layout';
 
 export const Menu = () => {
   return (
@@ -14,7 +13,7 @@ export const Menu = () => {
       <div className="logo">
         <div className="texto">
           <img src={suaLogo} alt="Sua Logo" />
-          <p> Página Inicial </p>
+          <p> Pagina Inicial </p>
           <div className="button-container">
             <button> Contratos </button>
             <div>
