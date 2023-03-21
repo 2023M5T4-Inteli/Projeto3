@@ -7,6 +7,7 @@ import { Enter } from './routers/Enter';
 import { SaibaMais } from './routers/SaibaMais';
 import {Menu} from './routers/MenuPrincipal';
 import {SolicitacaoIndenizacao} from './routers/SolicitacaoIndenizacao';
+import {SaibaMaisPrincipal} from './routers/SaibaMaisPrincipal';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 const router = createBrowserRouter ([
@@ -29,6 +30,10 @@ const router = createBrowserRouter ([
   {
     path: "/SolicitacaoIndenizacao",
     element: <SolicitacaoIndenizacao/>,
+  },
+  {
+    path: "/SaibaMaisPrincipal",
+    element: <SaibaMaisPrincipal/>,
   }
 ]);
 
