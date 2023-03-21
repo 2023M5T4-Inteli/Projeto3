@@ -6,9 +6,14 @@ import { Home } from './routers/Home';
 import { Enter } from './routers/Enter';
 import { SaibaMais } from './routers/SaibaMais';
 import {Menu} from './routers/MenuPrincipal';
+<<<<<<< Updated upstream
 import {SolicitacaoIndenizacao} from './routers/SolicitacaoIndenizacao';
 import {SaibaMaisPrincipal} from './routers/SaibaMaisPrincipal';
+=======
+import {Contrato} from './routers/Contrato';
+>>>>>>> Stashed changes
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 
 const router = createBrowserRouter ([
   {
@@ -28,12 +33,17 @@ const router = createBrowserRouter ([
     element: <Menu/>, 
   },
   {
+<<<<<<< Updated upstream
     path: "/SolicitacaoIndenizacao",
     element: <SolicitacaoIndenizacao/>,
   },
   {
     path: "/SaibaMaisPrincipal",
     element: <SaibaMaisPrincipal/>,
+=======
+    path: "/Contrato",
+    element: <Contrato/>,
+>>>>>>> Stashed changes
   }
 ]);
 
