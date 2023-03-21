@@ -168,9 +168,6 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
         
             // Retorna o saldo do úsuario
             return carteira[i].saldo;
-            
-            // Sai do loop
-            break;
             }
         }
     }
@@ -256,7 +253,7 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
         }
     }
     //funcao para calcular o valor maximo que um úsuario pode pedir de idenizacao
-    function maximoIndenizavel() external view returns(uint){
+    function maximoIndenizavel() public returns(uint){
         uint maximoId;
         for (uint i = 0; i < carteira.length; i++){
             if (carteira[i].carteiraUsuario == msg.sender){
@@ -274,6 +271,7 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
     //função para enviar solicitacao de aprovacao de indenizacao
     function solicitacaoIndenizacao(uint valorID,string memory justificativa) public {
             // Adiciona o usuário à lista de carteiras que pediram indenizacao
+        if (valorID <= maximoIndenizavel()){
             uint imeiDoPedido;
             for (uint i = 0; i < carteira.length; i++){
                 //encontra o usuario e confere se o valor e possivel de ser indenizado, de acorodo com seu saldo restante
@@ -282,7 +280,11 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
                     indenizacao.push(Indenizacao(msg.sender, valorID, justificativa, imeiDoPedido));  
                 }
             }  
-        }  
+        }
+        else {
+            revert("A solicitacao execede o limite maximo indenizavel");
+        }
+    }  
 
     //função para ver pedidos de idenizacao
      function verSolicitacaoIndenizacao() external view apenasAdmin returns(Indenizacao[] memory) {
