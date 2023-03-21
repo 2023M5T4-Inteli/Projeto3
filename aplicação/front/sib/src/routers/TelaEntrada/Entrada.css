@@ -1,0 +1,63 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .verificar img{
+    align-items:center; 
+    width: 80px; 
+    margin-left: 70px;
+  
+  }
+  body{
+    background-color: #151A20;
+  }
+  
+  .saldo{
+    color: white;
+  }
+  
+  .endereco{
+    color: white
+  }
+  
+  .logo{
+    display: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+  
+  .endereco-da-wallet,
+  .saldo,
+  .continuar,
+  .desconcentar,
+  .deseja-continuar {
+    color: white;
+  }
+  
+  .caixas p {
+    color: white;
+  }
+  
+  .verificar p{
+    color:white
+    
+  }
+  .botao1{
+    background-color: #303030;
+  }
+  
+  .botao2{
+    background-color: #303030;
+  }
+  
+  .desconectar{
+    background-color: #FF2626;
+    display:center;
+  }
+  
+  .continuar{
+    background-color: #02DE82;
+  }

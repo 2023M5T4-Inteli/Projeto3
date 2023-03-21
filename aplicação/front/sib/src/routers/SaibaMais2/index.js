@@ -1,12 +1,12 @@
 import "./index.css";
-import Logo from "./img/logo.png";
-import Caixa from "./img/verdinho.png";
-import Escudo from "./img/escudo.png";
+import Logo from "./img/logoCoover.svg";
+import Caixa from "./img/caixaverde.png";
+import Escudo from "./img/IconEscudo.png";
 import hour from "./img/hour.png";
 
 export default function App() {
   return (
-    <div className="logo">
+    <div className="logoCoover">
       <img src={Logo} alt="Logo" />
       <img src={hour} alt="hour" />
 
