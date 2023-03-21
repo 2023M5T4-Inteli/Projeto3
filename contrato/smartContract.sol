@@ -76,6 +76,7 @@ contract MeuContrato {
 
     function solicitacaoAprovacao(uint valorAparelho, uint imei) public {
         // Adiciona o usuário à lista de carteiras com seu saldo e valor do aparelho celular
+
         aprovar.push(Aprovar(msg.sender, valorAparelho, imei));  
     }   
 
@@ -254,17 +255,34 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
             }
         }
     }
+    //funcao para calcular o valor maximo que um úsuario pode pedir de idenizacao
+    function maximoIndenizavel() external view returns(uint){
+        uint maximoId;
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == msg.sender){
+                if(carteira[i].saldo >= carteira[i].valorAparelho/2){
+                    maximoId = carteira[i].valorAparelho;
+                }
+                if(carteira[i].saldo <= carteira[i].valorAparelho/2){
+                    maximoId = carteira[i].saldo*2;
+                }
+            }
+                return maximoId;    
+        }
+    }
 
     //função para enviar solicitacao de aprovacao de indenizacao
     function solicitacaoIndenizacao(uint valorID,string memory justificativa) public {
-        // Adiciona o usuário à lista de carteiras que pediram indenizacao
-        uint imeiDoPedido;
-        for (uint i = 0; i < carteira.length; i++){
-            if (carteira[i].carteiraUsuario == msg.sender)
-                imeiDoPedido = carteira[i].IMEI;
-        } 
-        indenizacao.push(Indenizacao(msg.sender, valorID, justificativa, imeiDoPedido));  
-    }  
+            // Adiciona o usuário à lista de carteiras que pediram indenizacao
+            uint imeiDoPedido;
+            for (uint i = 0; i < carteira.length; i++){
+                //encontra o usuario e confere se o valor e possivel de ser indenizado, de acorodo com seu saldo restante
+                if (carteira[i].carteiraUsuario == msg.sender){
+                    imeiDoPedido = carteira[i].IMEI;
+                    indenizacao.push(Indenizacao(msg.sender, valorID, justificativa, imeiDoPedido));  
+                }
+            }  
+        }  
 
     //função para ver pedidos de idenizacao
      function verSolicitacaoIndenizacao() external view apenasAdmin returns(Indenizacao[] memory) {
