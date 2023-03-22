@@ -521,8 +521,28 @@ truffle deploy --network goerli
    ```
 truffle deploy --network goerli
 ```
-  
-## Histórico de Lançamento
+
+## Principais Arquivos de Código Utilizados:
+
+&emsp;&emsp; Na construção do Front-end da aplicação, foram utilizadas as seguintes linguagens: HTML - linguagem de marcação, CSS - linguagem de estilo, JavaScript - linguagem de programação e React - biblioteca JavaScript front-end gratuita e de código aberto. <br>
+
+&emsp;&emsp; O React é usado para a criação de interfaces de usuário interativas e aplicativos da web de maneira rápida e eficiente com muito menos código do que faria com o JavaScript básico. Com o React, é possível criar componentes reutilizáveis que podem ser utilizados em diferentes partes da aplicação. Isso reduz o tempo de desenvolvimento e facilita a manutenção do código, o que torna mais fácil o processo de criação de interface e suas funcionalidades. <br>
+
+**Estrutura de Pastas no VsCode:**
+
+src 
+ |
+ - > Assets: trata-se de uma pasta que é utilizada para armazenar as imagens utilziadas na aplicação Front-end.
+ - > components: é uma pasta em que são colocados todos os arquivos de componentes criados para serem reutilizados na aplicação.
+ - > routers: é uma pasta em que todos os caminhos e rotas das páginas são colocadas, ou seja, é onde é feita a configuração e a junção de todas as rotas do projeto.
+
+
+**Componentes:**
+
+**Vídeo de Demonstração do Fron-tend:**
+
+&emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: (link) <br>
+
 
 <ul><li>24/02/2023 - Criação do Readme.md da documentação do Smart Contract</li></ul>
 <ul><li>26/02/2023 - Criação da pasta código - imagens</li></ul>
