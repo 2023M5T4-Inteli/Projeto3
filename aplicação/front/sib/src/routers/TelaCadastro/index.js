@@ -1,8 +1,8 @@
 import "./styles.css";
-import Logo from "./img/logo.png";
-import seta from "./img/setinha.png";
+import Logo from "../../Assets/logoCoover.svg";
+import seta from "../../Assets/setinha.png";
 
-export default function App() {
+export const TelaCadastro = () => {
   return (
     <div className="seta">
         <img src={seta} alt="seta" />
@@ -45,3 +45,5 @@ export default function App() {
     </div>
   );
 }
+
+export default TelaCadastro;

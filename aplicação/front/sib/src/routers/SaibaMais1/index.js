@@ -5,7 +5,7 @@ import monitor from "../../Assets/IconMonitor.png";
 import "./SaibaMais1.css"
 import Layout from '../../componentes/Layout';
 
-export const SaibaMais = () => {
+export const SaibaMais1 = () => {
   return (
     <Layout>
     <div className="logo">
@@ -42,4 +42,4 @@ export const SaibaMais = () => {
   );
 }
 
-export default SaibaMais;
+export default SaibaMais1;
