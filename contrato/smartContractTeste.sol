@@ -69,4 +69,21 @@ contract contratoTeste {
         //confere seu foi calculado corretamente
         Assert.equal(maximoIndenizavel,valorEsperado, "Maximo indenizavel incorreto");
     }
+
+    /// #sender: account-0
+    //função para conferir se a viabiliade do contrato esta funcionado
+    function testeViabilidadeContrato() public{
+    //cria o contrato definindo o min de pessaos como 1 e o maximo com 3
+    MeuContrato meuContrato = new MeuContrato(1, 3, 5);
+    //adiciona 2 pessoas ao contrato
+    meuContrato.adicionarUsuario(TestsAccounts.getAccount(1),10, 123);
+    meuContrato.adicionarUsuario(TestsAccounts.getAccount(2),15, 124);
+    //verifica se o contrato tem um numero valido de pessoas
+    uint resposta = meuContrato.viabilidadeContrato();
+    //define que a reposata esperada e 1, valido, pois temos 2 pessoas, valor este que esta entre 1 e 3 definidos no min e max
+    uint respostaEsperada = 1;
+    //confere seu foi calculado corretamente
+    Assert.equal(resposta,respostaEsperada, "Resposta Incorreta");
+    }
 }
+
