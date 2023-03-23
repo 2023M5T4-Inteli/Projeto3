@@ -350,8 +350,19 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
             revert("Erro ao verificar o contrato");
         }
     }
-    //Area de testes
 
+
+
+
+
+
+
+
+
+
+
+
+    //Area de testes
     //funcaoes para o teste 3, para ver se um usuario foi registrado corretamente na lista de espera para entrar no contrato, cada uma retonando um atributo
     function teste3A() public returns(uint) {
         return aprovar[0].IMEI;
