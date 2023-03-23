@@ -532,6 +532,11 @@ truffle deploy --network goerli
 
 &emsp;&emsp; A parte principal da estrutura de pastas utilizada para o desenvolvimento das telas da aplicação é a seguinte: <br>
 
+|-->**src** <br>
+&emsp;&emsp;|-->**Assets** <br>
+&emsp;&emsp;|-->**componentes** <br>
+&emsp;&emsp;|-->**routers** <br>
+
 **src** 
  |
  - > **Assets**: trata-se de uma pasta que armazena as imagens e ícones utilizados na aplicação front-end. Essa pasta é usada em projetos de desenvolvimento de front-end para armazenar recursos como imagens, ícones, arquivos de fonte e outros arquivos que não são código-fonte, mas que são usados na aplicação. <br>
@@ -540,13 +545,25 @@ truffle deploy --network goerli
  
  - > **componentes**: nessa pasta, são armazenados os arquivos de código-fonte para componentes reutilizáveis que podem ser utilizados em diferentes partes do projeto. <br>
  
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_componentes.png"/> <br>
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_componentes.png"/> <br>
  
- - > **routers**: é uma pasta em que todos os caminhos e rotas das páginas são colocadas, ou seja, é onde é feita a configuração e a junção de todas as rotas do projeto. Em outras palavras, esses arquivos determinam qual função ou método deve ser chamado quando uma determinada URL é acessada. <br>
+- > **routers**: é uma pasta em que todos os caminhos e rotas das páginas são colocadas, ou seja, é onde é feita a configuração e a junção de todas as rotas do projeto. Em outras palavras, esses arquivos determinam qual função ou método deve ser chamado quando uma determinada URL é acessada. <br>
  
- <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_routers.png"/> <br>
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_routers.png"/> <br>
+ 
+&emsp;&emsp; A pasta "routers" da aplicação front-end contém os arquivos responsáveis por gerenciar a navegação da aplicação. <br>
+ 
+&emsp;&emsp; Dentro da pasta "routers", há um arquivo principal que define as rotas da aplicação denominado "index.js". Este arquivo está padronizado em toda as pastas que correspondem à diferentes telas, com esse arquivo é possível importar e configurar as rotas, definindo quais componentes serão exibidos para cada rota específica. <br>
+ 
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Routers.png"/> <br>
+ 
+ &emsp;&emsp; Segundo a imagem acima, é possível notar que todas as pastas que correspondem à telas diferentes, possuem os mesmos tipos de arquivo: 
+ 
+ - **index.js**: arquivo que define a lógica de programação da aplicação em JavaScript, incluindo a interação do usuário e a manipulação do DOM. 
+ 
+ - **styles.css**: arquivo que define o estilo visual da página, incluindo as cores, fontes e layout. <br>
 
-&emsp;&emsp; No entanto, abaixo segue toda a estrutura de pasta do nosso projeto: <br>
+&emsp;&emsp; Ademais, abaixo está toda a estrutura de pasta da aplicação front-end do projeto: <br>
 
 <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Estrutura_pasta_VsCode.png?raw=true"/> <br>
 
@@ -559,11 +576,14 @@ truffle deploy --network goerli
 - > **Pasta "node_modules"**: é onde ficam as dependências do projeto, instaladas através do gerenciador de pacotes npm.
 
 - > **Arquivo "package.json"**: contém informações sobre o projeto e suas dependências, bem como scripts para tarefas como compilação e execução.
+
+- > **README.md**: arquivo que fornece informações gerais sobre o projeto, como a descrição, a instalação e a utilização.
  
 **Vídeo de Demonstração do Fron-tend:**
 
-&emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: (link) <br>
+&emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: (link) <br><br>
 
+## Histórico de Lançamentos:
 
 <ul><li>24/02/2023 - Criação do Readme.md da documentação do Smart Contract</li></ul>
 <ul><li>26/02/2023 - Criação da pasta código - imagens</li></ul>
