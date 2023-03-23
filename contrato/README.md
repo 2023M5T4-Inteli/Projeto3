@@ -532,6 +532,11 @@ truffle deploy --network goerli
 
 &emsp;&emsp; A parte principal da estrutura de pastas utilizada para o desenvolvimento das telas da aplicação é a seguinte: <br>
 
+|-->**src** <br>
+&emsp;&emsp;|-->**Assets** <br>
+&emsp;&emsp;|-->**componentes** <br>
+&emsp;&emsp;|-->**routers** <br>
+
 **src** 
  |
  - > **Assets**: trata-se de uma pasta que armazena as imagens e ícones utilizados na aplicação front-end. Essa pasta é usada em projetos de desenvolvimento de front-end para armazenar recursos como imagens, ícones, arquivos de fonte e outros arquivos que não são código-fonte, mas que são usados na aplicação. <br>
