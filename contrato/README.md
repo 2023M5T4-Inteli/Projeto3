@@ -530,15 +530,36 @@ truffle deploy --network goerli
 
 **Estrutura de Pastas no VsCode:**
 
-src 
+&emsp;&emsp; A parte principal da estrutura de pastas utilizada para o desenvolvimento das telas da aplicação é a seguinte: <br>
+
+**src** 
  |
- - > Assets: trata-se de uma pasta que é utilizada para armazenar as imagens utilziadas na aplicação Front-end.
- - > components: é uma pasta em que são colocados todos os arquivos de componentes criados para serem reutilizados na aplicação.
- - > routers: é uma pasta em que todos os caminhos e rotas das páginas são colocadas, ou seja, é onde é feita a configuração e a junção de todas as rotas do projeto.
+ - > **Assets**: trata-se de uma pasta que armazena as imagens e ícones utilizados na aplicação front-end. Essa pasta é usada em projetos de desenvolvimento de front-end para armazenar recursos como imagens, ícones, arquivos de fonte e outros arquivos que não são código-fonte, mas que são usados na aplicação. <br>
+ 
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_assets.png"/> <br>
+ 
+ - > **componentes**: nessa pasta, são armazenados os arquivos de código-fonte para componentes reutilizáveis que podem ser utilizados em diferentes partes do projeto. <br>
+ 
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_componentes.png"/> <br>
+ 
+ - > **routers**: é uma pasta em que todos os caminhos e rotas das páginas são colocadas, ou seja, é onde é feita a configuração e a junção de todas as rotas do projeto. Em outras palavras, esses arquivos determinam qual função ou método deve ser chamado quando uma determinada URL é acessada. <br>
+ 
+ <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Pasta_routers.png"/> <br>
 
+&emsp;&emsp; No entanto, abaixo segue toda a estrutura de pasta do nosso projeto: <br>
 
-**Componentes:**
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Estrutura_pasta_VsCode.png?raw=true"/> <br>
 
+ &emsp;&emsp; Todos os arquivos do projeto estão incluídos na pasta denominada sib - Smart Insurance Bloockchain, seguindo a estrutura de pasta acima. <br>
+ 
+- > **Pasta "src"**: é onde fica todo o código fonte da aplicação, como arquivos HTML, CSS, JavaScript e imagens. Dentro dessa pasta, pode-se criar outras pastas para organizar o código, como "components" para armazenar componentes reutilizáveis, "pages" para páginas da aplicação e "assets" para recursos como imagens e arquivos de fontes.
+
+- > **Pasta "public"**: é onde ficam arquivos estáticos, como imagens e fontes, que são utilizados pela aplicação. Esse diretório é normalmente acessado diretamente pelo navegador.
+
+- > **Pasta "node_modules"**: é onde ficam as dependências do projeto, instaladas através do gerenciador de pacotes npm.
+
+- > **Arquivo "package.json"**: contém informações sobre o projeto e suas dependências, bem como scripts para tarefas como compilação e execução.
+ 
 **Vídeo de Demonstração do Fron-tend:**
 
 &emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: (link) <br>
