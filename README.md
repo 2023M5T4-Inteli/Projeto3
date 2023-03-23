@@ -62,7 +62,6 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
 
 # :wrench: Teste Automatizado
 
-🛠 Teste Unitário
 Nesse momento, realizamos dois testes seguindo metodologias utilizadas em testes de software. Esses testes são realizados para verificação das pequenas partes do código, chamadas de unidades, que devem apresentar o funcionamento perfeitamente, seguindo uma pré-condição, procedimento e pós-condição. Os testes foram executados em um ambiente isolado do contrato principal, em um arquivo denominado “coin_test.sol”. Essa metodologia ajuda a garantir que cada parte do código esteja funcionando corretamente antes de ser integrada a outras partes.
 
 Instruções de teste unitário no ambiente de desenvolvimento:<br>
