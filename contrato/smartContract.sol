@@ -339,11 +339,11 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
     // Verifica a viabilidade do contrato
     function viabilidadeContrato() public view returns (uint) {
         
-        //Verifica se o contrato está válido mas não possui o número ideal de pessoas para funcionar
+        //Verifica se o contrato está válido 
         if (quantUsuario >= minPessoas  && quantUsuario <= maxPessoas) {
             return 1; // Contrato Ativo
             
-        //Verifica se o contrato está válido mas não possui o número de pessoas ideal para funcionar
+        //Verifica se o contrato está Invalido
         } else if (quantUsuario < minPessoas || quantUsuario >= maxPessoas) {
             return 2; // Contrato em Progresso        
         } else {
