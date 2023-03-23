@@ -253,6 +253,7 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
         }
     }
     //funcao para calcular o valor maximo que um úsuario pode pedir de idenizacao
+    //obs: o úsuario deve ter pelo menos 50% do valor do aparelho para indenização maxima, abaixo disso sera propocional ao seu saldo
     function maximoIndenizavel() public returns(uint){
         uint maximoId;
         for (uint i = 0; i < carteira.length; i++){
@@ -349,4 +350,25 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
             revert("Erro ao verificar o contrato");
         }
     }
-}
+    //Area de testes
+
+    //funcaoes para o teste 3, para ver se um usuario foi registrado corretamente na lista de espera para entrar no contrato, cada uma retonando um atributo
+    function teste3A() public returns(uint) {
+        return aprovar[0].IMEI;
+    }
+        function teste3B() public returns(uint) {
+        return aprovar[0].valorAparelho;
+    }
+
+    //funcao para o teste 4, testar maximo indenizavel 
+    function maximoIndenizavelParaTeste(uint saldo,uint valorAparelho) public returns(uint){
+        uint maximoId = valorAparelho;
+        if(saldo <= valorAparelho){
+            maximoId = saldo*2;
+        }
+        if(saldo >= valorAparelho){
+            maximoId = valorAparelho;
+        }
+        return maximoId; 
+    }  
+} 
