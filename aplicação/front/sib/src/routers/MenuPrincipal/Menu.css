@@ -24,7 +24,7 @@
   
 .button-container button {
     margin-bottom: 25px;
-    width: 312px;
+    width: 272px;
     height: 40px;
     align-items: center;
     text-align: center;
@@ -37,7 +37,7 @@
   
 .botao-sair {
     margin-bottom: 25px;
-    width: 312px;
+    width: 280px;
     height: 50px;
     background-color: red;
     border: red;
@@ -85,7 +85,7 @@ body {
 }
   
 .vector {
-    margin-left: 280px;
+    margin-left: 240px;
     display: flex;
     margin-top: -17px;
 }
