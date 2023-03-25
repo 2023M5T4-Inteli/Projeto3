@@ -3,8 +3,16 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    margin-left: -14px;
+    margin-left: 12px;
 }
+
+.logo_menu {
+    display: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 30px;
+} 
   
 .logo img {
     max-height: 68px;

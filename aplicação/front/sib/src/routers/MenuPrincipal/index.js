@@ -11,9 +11,9 @@ import Layout from '../../componentes/Layout';
 export const Menu = () => {
   return (
     <Layout>
-      <div className="logo">
+      <div>
         <div className="texto">
-          <img src={suaLogo} alt="Sua Logo" />
+          <img src={suaLogo} className="logo" alt="Sua Logo" />
           <p> Página Inicial </p>
           <div className="button-container">
             <button> Contratos </button>

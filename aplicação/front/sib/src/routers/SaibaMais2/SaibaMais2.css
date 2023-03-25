@@ -1,10 +1,10 @@
-.logo- {
+.logo_ {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  margin-left: 70px;
+  margin-left: 72px;
 }
 
 .caixinha {
@@ -14,21 +14,13 @@
   margin-top: -42px;
 }
 
-.monitor- {
-  margin-left: 65.5px;
-  display: flex;
-  width: 24px;
-  height: 21px;
-  margin-top: -26px;
-  background-color: white;
-}
 
 
 body {
   background-color: #151a20;
   max-width: 400px !important;
   padding: 0 !important;
-  margin-left: 40px !important;
+  margin: 0 auto !important;
   }
 
 .al {
@@ -37,9 +29,9 @@ body {
 
 }
 
-.caixa0 {
+.caixa1_ {
   margin-top: 10px;
-  margin-left: 37px;
+  margin-left: 45px;
   border: 1px solid #303030;
   border-radius: 8px;
   display: flex;
@@ -51,14 +43,14 @@ body {
   height: 50px;
 }
 
-.texto10 {
-  margin-left: 30px;
-  margin-top: 18px;
+.texto1_ {
+  margin-left: 40px;
+  margin-top: 20px;
   font-size: 18px;
   color: white;
 }
 
-.caixa2 {
+.caixa2_ {
   margin-left: 40px;
   margin-top: 40px;
   border: 1px solid #303030;
@@ -71,7 +63,7 @@ body {
   width: 300px;
 }
 
-.caixa3 {
+.caixa3_ {
   margin-left: 40px;
   margin-top: 40px;
   border: 1px solid #303030;
@@ -84,12 +76,25 @@ body {
   width: 300px;
 }
 
-.texto {
+.caixa4_ {
+  margin-left: 40px;
+  margin-top: 40px;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  display:block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+  width: 300px;
+}
+
+.texto_ {
   text-align: initial;
   font-size: 18px;
   color: white;
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 

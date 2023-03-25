@@ -1,5 +1,4 @@
 import Logo from '../../Assets/logoCoover.svg';
-import Seta from '../../Assets/St.svg';
 import caixinha from "../../Assets/caixaverde.png";
 import monitor from "../../Assets/IconMonitor.png";
 import escudo from "../../Assets/IconEscudo.png";
@@ -16,38 +15,37 @@ export const SaibaMaisPrincipal = () => {
             </div>
             <div className="iconesaibamais">
                 <img src={iconesaibamais} alt="iconesaibamais" />
-                <p className='texto'> Saiba Mais</p>
+                <p className='texto11'> Saiba Mais</p>
             </div>
-            <div className='texto2'>
+            <div className='texto22'>
                 <p> Venha entender mais sobre o nosso serviço! </p>
             </div>
-            <div className="caixa">
-                <p className="texto3">
-                    Aqui você pode ver sobre como funciona o nossso sistema e conhecer mais sobre a Coover
-                </p>
+
+            <div className="caixa_">
+
+             <p className="texto33">
+             Aqui você pode ver sobre como funciona o nossso sistema e conhecer mais sobre a Coover!
+            </p>
             </div>
-            <div className="caixa1">
-                <p className="texto4">Sobre o nosso sistema</p>
-                <div className='al'>
-                    <img className="caixinha" src={caixinha} alt="caixinha" />
-                </div>
+
+            <div className="caixa2_">
+
+            <p className="texto34">
+            Sobre o nosso sistema &rarr;
+            </p>
             </div>
-            <div>
-                <img className="monitor" src={monitor} alt="monitor" />
+
+            <div className="caixa2_">
+
+            <p className="texto34">
+            Sobre a Coover &rarr;
+            </p>
             </div>
-            <div className="caixa1">
-                <p className="texto5">Sobre a Coover</p>
-                <div className='al'>
-                    <img className="caixinha" src={caixinha} alt="caixinha" />
-                    <div>
-                        <img className="escudo" src={escudo} alt="escudo" />
-                        <img className="vector" src={vector} alt="vector" />
-                    </div>
-                </div>
-            </div>
-            <div className='vector1'>
-                <img className="vector" src={vector} alt="vector" />
-            </div>
+
+    
+
+            
+            
         </Layout>
     );
 }
