@@ -32,7 +32,7 @@
   
 .button-container button {
     margin-bottom: 25px;
-    width: 272px;
+    width: 290px;
     height: 40px;
     align-items: center;
     text-align: center;
@@ -93,7 +93,7 @@ body {
 }
   
 .vector {
-    margin-left: 240px;
+    margin-left: 200px;
     display: flex;
     margin-top: -17px;
 }

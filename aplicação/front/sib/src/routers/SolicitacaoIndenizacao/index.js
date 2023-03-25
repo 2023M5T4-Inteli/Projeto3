@@ -19,7 +19,7 @@ export const SolicitacaoIndenizacao = () => {
 
             <div>
                 <p className="texto1-"> Pedido de indenização enviado com sucesso!</p> 
-                <p className="texto2-"> Suas solicitação já foi enviada! Agora só falta aguardar pela resposta da seguradora. </p>
+                <p className="texto2-"> Sua solicitação já foi enviada! Agora só falta aguardar pela resposta da seguradora. </p>
                 <p className="texto3-">Status da sua solicitação</p>
 
             </div>
