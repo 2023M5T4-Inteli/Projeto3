@@ -1,43 +1,54 @@
-import "./index.css";
-import Logo from "./img/logoCoover.svg";
-import Caixa from "./img/caixaverde.png";
-import Escudo from "./img/IconEscudo.png";
-import hour from "./img/hour.png";
+import Logo from '../../Assets/logoCoover.svg';
+import Escudo from "../../Assets/escudo.png";
+import caixinha from "../../Assets/caixaverde.png";
+import "./SaibaMais2.css"
+import Layout from '../../componentes/Layout';
 
-export default function App() {
+export const SaibaMais2 = () => {
   return (
-    <div className="logoCoover">
-      <img src={Logo} alt="Logo" />
-      <img src={hour} alt="hour" />
-
-      <div className="caixa">
-        <img className="Caixa" src={Caixa} alt="Caixa" />
-        <img className="Escudo" src={Escudo} alt="Escudo" />
-
-        <p className="texto1">Sobre a Coover</p>
+    <Layout>
+    <div>
+    <div>
+        <img src={Logo} class="logo_" alt="Logo" />
       </div>
 
-      <div className="caixa2">
-        <p className="texto2">
-          Utilizamos tecnologia para simplificar e agilizar o processo de
-          contratação de seguros.
+      <div className="caixa1_">
+        <p className="texto1_">Sobre a Coover</p>
+       </div>  
+
+      <div className='al'>
+        <img className="caixinha" src={caixinha} alt="caixinha" />
+      </div>
+      
+      <div>
+        <img className="monitor-" src={Escudo} alt="monitor" />
+      </div>
+
+      <div className="caixa2_">
+        <p className="texto_">
+          Não há uma única autoridade que controla ou gerencia a blockchain.
         </p>
       </div>
 
-      <div className="caixa3">
-        <p className="texto3">
-          Empresa de seguros focada em melhorar a usabilidade dos nossos
-          usuários.{" "}
+      <div className="caixa3_">
+        <p className="texto_">
+          Permite que todos os usuários vejam todas as transações registradas em
+          um registro público e imutável, o que torna difícil para alguém
+          alterar ou adulterar as informações.
         </p>
       </div>
 
-      <div className="caixa4">
-        <p className="texto4">
-          Oferecemos uma ampla gama de seguros. Nossos clientes podem comparar
-          diferentes planos de seguros e escolher o que melhor atende às suas
-          necessidades e orçamento.
+      <div className="caixa4_">
+        <p className="texto_">
+          Permite que todos os usuários vejam todas as transações registradas em
+          um registro público e imutável, o que torna difícil para alguém
+          alterar ou adulterar as informações.
         </p>
       </div>
+
     </div>
+    </Layout>
   );
 }
+
+export default SaibaMais2;

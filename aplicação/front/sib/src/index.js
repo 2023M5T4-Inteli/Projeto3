@@ -15,6 +15,7 @@ import {Contrato} from './routers/Contrato';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {TelaCadastro} from './routers/TelaCadastro';
 import {PedirIdenizacao} from './routers/PedirIdenizacao';
+import { SaibaMais2 } from './routers/SaibaMais2';
 
 
 const router = createBrowserRouter ([
@@ -42,7 +43,8 @@ const router = createBrowserRouter ([
   {
     path: "/SaibaMaisPrincipal",
     element: <SaibaMaisPrincipal/>,
-//=======
+  },
+  {
     path: "/Contrato",
     element: <Contrato/>,
 //>>>>>>> Stashed changes
@@ -54,6 +56,10 @@ const router = createBrowserRouter ([
     {
     path: "/PedirIdenizacao",
     element: <PedirIdenizacao/>,
+  },
+  {
+    path: "/SaibaMais2",
+    element: <SaibaMais2/>, 
   }
 
 ]);

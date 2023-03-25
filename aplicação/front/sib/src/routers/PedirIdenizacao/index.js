@@ -2,7 +2,7 @@ import Layout from '../../componentes/Layout';
 import './PedirIdenizacao.css'
 import Logo from '../../Assets/logoCoover.svg'
 import FotoPerfil from '../../Assets/foto_perfil.png'
-import Bt from "../../componentes/Button";
+
 
 export const PedirIdenizacao = () => {
     return (

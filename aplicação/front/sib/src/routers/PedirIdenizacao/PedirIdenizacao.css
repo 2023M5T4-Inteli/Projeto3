@@ -67,8 +67,10 @@ h1{
     color: white;
   }
 
-  .texto1{
+  .texto2{
     color: #C1C1C1;
+    margin-left: 0px;
+    font-size: large;
   }
 
   .formulario{
