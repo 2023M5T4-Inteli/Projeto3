@@ -23,11 +23,9 @@
 
 .texto1- {
     color: #f2f2f2;
-//<<<<<<< HEAD
     margin-top: 50px;
-//=======
+
     margin-top: 10px;
-//>>>>>>> 84f55b30b8ed20a474143039624cd99a898499b6
     text-align: center;
 }
 
@@ -53,17 +51,15 @@
     margin-top: 10px;
     width: 145px;
     height: 30px;
-//<<<<<<< HEAD
-    margin-left: 210px;
-//=======
-//>>>>>>> 84f55b30b8ed20a474143039624cd99a898499b6
+    margin-left: 10px;
     background-color: #c9c100;
+    border: #c9c100;
     color: white;
     font-size: large;
 }
 
 .button2 {
-    margin-top: 30px;
+    margin-top: 20px;
     width: 312px;
     height: 47px;
     background-color: #02de82;
@@ -74,7 +70,7 @@
 }
 
 .button3 {
-    margin-top: 20px;
+    margin-top: 15px;
     width: 264px;
     height: 44px;
     background-color: #858585;

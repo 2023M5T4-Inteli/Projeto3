@@ -1,20 +1,21 @@
-import "./Entrada.css";
-import Logo from "./img/logoCoover.svg";
-import verificar from "./img/IconCheck.png";
+import "./TelaEntrada.css";
+import Logo from '../../Assets/logoCoover.svg'
+import Check from "../../Assets/IconCheck.png";
 
-export default function App() {
+export const TelaEntrada = () => {
   return (
     <div className="logo">
       <img src={Logo} alt="Logo" />
-      <br />
-            <br />
       <div className="IconCheck">
-        <img src={verificar} alt="IconCheck" />
+        <img src={Check} alt="IconCheck" />
+      </div>
+      <div>
         <p>Wallet conectada com sucesso!</p>{" "}
         {/* aqui está o novo elemento <p> */}
         <br />
+      </div>
         <div className="endereco">
-          <p className="texto">Endereço da wallet</p>
+          <p className="texto55">Endereço da wallet</p>
           <div className="caixas">
             <input
               className="botao1"
@@ -26,7 +27,7 @@ export default function App() {
           </div>
         </div>
         <div className="saldo">
-          <p className="texto">Saldo</p>
+          <p>Saldo</p>
           <div className="caixas"> </div>
         </div>
         <div className="caixas">
@@ -36,16 +37,13 @@ export default function App() {
           <p>Deseja continuar com esse endereço de wallet ou alterar?</p>
         </div>
         <div className="continuar">
-          <p className="escrita">
-            Continuar
-            <br />
-            <br />
+          <p className="textcontinue">Continuar</p>
+        </div>
             <div className="desconectar">
-              <p className="escrita2">Desconectar</p>
-            </div>
-          </p>
+              <p className="textdesconect">Desconectar</p>
         </div>
       </div>
-    </div>
   );
 }
+
+export default TelaEntrada;

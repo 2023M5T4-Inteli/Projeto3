@@ -1,10 +1,10 @@
 import Layout from '../../componentes/Layout';
-import './PedirIdenizacao.css'
+import './PedirIndenizacao.css'
 import Logo from '../../Assets/logoCoover.svg'
 import FotoPerfil from '../../Assets/foto_perfil.png'
 
 
-export const PedirIdenizacao = () => {
+export const PedirIndenizacao = () => {
     return (
       <Layout>
       <div className="Alinhamento">
@@ -62,4 +62,4 @@ export const PedirIdenizacao = () => {
     );
   }
   
-  export default PedirIdenizacao;
+  export default PedirIndenizacao;

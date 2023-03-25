@@ -2,6 +2,7 @@ import "./SolicitacaoIndenizacao.css";
 import Layout from "../../componentes/Layout";
 import Logo from '../../Assets/logoCoover.svg'
 import Check from "../../Assets/IconCheck.png";
+import vector from "../../Assets/Vector.png";
 
 export const SolicitacaoIndenizacao = () => {
     return (

@@ -24,7 +24,7 @@ export const SaibaMais1 = () => {
         <img className="monitor-" src={monitor} alt="monitor" />
       </div>
 
-      <div className="caixa2">
+      <div className="caixona">
         <h3 className="texto">Descentralização</h3>
         <p className="texto">
           Não há uma única autoridade que controla ou gerencia a blockchain.

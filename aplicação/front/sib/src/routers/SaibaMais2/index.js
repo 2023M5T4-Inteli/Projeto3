@@ -26,23 +26,19 @@ export const SaibaMais2 = () => {
 
       <div className="caixa2_">
         <p className="texto_">
-          Não há uma única autoridade que controla ou gerencia a blockchain.
+        Utilizamos tecnologia para simplificar e agilizar o processo de contratação de seguros.
         </p>
       </div>
 
       <div className="caixa3_">
         <p className="texto_">
-          Permite que todos os usuários vejam todas as transações registradas em
-          um registro público e imutável, o que torna difícil para alguém
-          alterar ou adulterar as informações.
+        Empresa de seguros focada em melhorar a usabilidade dos nossos usuários. 
         </p>
       </div>
 
       <div className="caixa4_">
         <p className="texto_">
-          Permite que todos os usuários vejam todas as transações registradas em
-          um registro público e imutável, o que torna difícil para alguém
-          alterar ou adulterar as informações.
+        Oferecemos uma ampla gama de seguros. Nossos clientes podem comparar diferentes planos de seguros e escolher o que melhor atende às suas necessidades e orçamento.
         </p>
       </div>
 

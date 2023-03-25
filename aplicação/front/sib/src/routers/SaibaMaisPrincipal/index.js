@@ -28,17 +28,19 @@ export const SaibaMaisPrincipal = () => {
             </p>
             </div>
 
-            <div className="caixa2_">
+            <div className="caixa2">
 
             <p className="texto34">
-            Sobre o nosso sistema &rarr;
+            Sobre o nosso sistema 
+            <img className="vector" src={vector} alt="vector" />
             </p>
             </div>
 
-            <div className="caixa2_">
+            <div className="caixa2">
 
             <p className="texto34">
-            Sobre a Coover &rarr;
+            Sobre a Coover
+            <img className="vector" src={vector} alt="vector" />
             </p>
             </div>
 
