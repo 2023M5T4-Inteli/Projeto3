@@ -579,10 +579,19 @@ truffle deploy --network goerli
 
 - > **README.md**: arquivo que fornece informações gerais sobre o projeto, como a descrição, a instalação e a utilização.
  
-**Vídeo de Demonstração do Fron-tend:**
+## Vídeo de Demonstração do Front-End
 
-&emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: 
-&emsp;&emsp;&emsp;&emsp; https://drive.google.com/file/d/1nCrp7ifpHgPiMtwfJAQ4GhFOLAw7Itm0/view?usp=sharing <br><br>
+
+&emsp;&emsp; Para um melhor entendimento das telas e Front-End da aplicação, o seguinte link  refere-se à um vídeo que demonstra em formato de navegação comentada descrevendo sobre as principais funcionalidades implementadas em nossa aplicação blockchain.
+
+
+
+https://user-images.githubusercontent.com/99209712/227751686-65dc1df0-8a1b-43de-b077-5767293139a1.mp4
+
+
+
+
+&emsp;&emsp;&emsp;&emsp; https://drive.google.com/file/d/14jmhQU0H1tF-74lmf1vCp_jJKu9jZc4I/view?usp=sharing <br><br>
 
 ## Histórico de Lançamentos:
 
