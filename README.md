@@ -320,6 +320,17 @@ Em resumo, os testes de automatizados são importantes para garantir que pequena
 
 ## 💻 Configuração para desenvolvimento
 
+
+
+## 🎥 Vídeo de Demonstração 
+
+Para um melhor entendimento das telas e Front-End da aplicação, foi desenvolvido um vídeo em formato de navegação comentada descrevendo sobre as principais funcionalidades implementadas em nossa aplicação blockchain.
+
+
+
+https://user-images.githubusercontent.com/99209712/227748746-a8983cbe-d324-4268-b92b-fd4b1d9cdbe2.mp4
+
+
 ### 🛠 Instalação
 
 Instruções para a configuração do ambiente de desenvolvimento:
