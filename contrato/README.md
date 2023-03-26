@@ -581,7 +581,8 @@ truffle deploy --network goerli
  
 **Vídeo de Demonstração do Fron-tend:**
 
-&emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: (link) <br><br>
+&emsp;&emsp; O seguinte link refere-se à um vídeo que demonstra e explica todo o Front-end da aplicação: 
+&emsp;&emsp;&emsp;&emsp; https://drive.google.com/file/d/1nCrp7ifpHgPiMtwfJAQ4GhFOLAw7Itm0/view?usp=sharing <br><br>
 
 ## Histórico de Lançamentos:
 
