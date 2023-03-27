@@ -524,6 +524,8 @@ truffle deploy --network goerli
 
 ## Documentação das telas - Frontend:
 
+
+
 - Plataforma do usuário
 
 **Tela Inicial** <br>
@@ -561,19 +563,19 @@ truffle deploy --network goerli
 
 **Tela para Participação em um Grupo/Contrato** <br>
 
-&emsp;&emsp;Página em que os usuários podem visualizar todos os tipos de grupos e selecionar algum que queira participar. Vale ressaltar que só será possível um usuário entrar em um grupo se ele tiver antes de tudo, fornecido as informações sobre os seus dados do aparelho.
+&emsp;&emsp;Página onde o usuário pode visuzalizar todos os tipos de grupos de seguros e selecionar o grupo que ele deseja ingressar e ter participaçãp. Vale ressaltar que a entrada só será possível caso o usuário forneca todas as informações e dados sobre sua conta e aparelho. Informações incluidno modelo, valor de celular, Imei, entre outros, fundamental para o bom funcionamento da aplicação. 
 
 <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaContratos.png"/> <br>
 
 **Tela de Pedido de Indenização** <br>
 
-&emsp;&emsp;Trata-se de uma tela que informa o status da indenização que o usuário esteja desenvolvendo, além de disponibilizar a categoria de indenização (roubo/furto, queda na água, entre outros.) Além disso, ela garante também um espaço para que o usuário possa descrever um pouco mais o ocorrido para que o gestor responsável compreenda um pouco mais a situação, e há também a possibilidade de anexar imagens, B.O’s etc. <br>
+&emsp;&emsp;Trata-se de uma tela que informa o status da indenização que o usuário esteja desenvolvendo, além de disponibilizar a categoria de indenização (roubo/furto, queda na água, entre outros.) Além disso, ela garante também um espaço para que o usuário possa descrever um pouco mais o ocorrido para que o gestor responsável da Coover compreenda um pouco mais a situação. ALém disso, essa página traz a possibilidade do usuário anexar informações e srquivos tais como imagens, BO's (Boletins de Ocorrênci) etc. <br>
 
 <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaPedidoIndenizacao.png"/> <br>
 
 **Tela de Status da Solicitação de Indenização** <br>
 
-&emsp;&emsp;Tela que mostra para o usuário sobre o status de seus pedidos de indenização, além de confirmar que uma solicitação foi enviada. <br>
+&emsp;&emsp;Tela responsável para nformar ao usuário o status de seus pedidos de indenização, além de confirmar que o envio das solicitacções.<br>
 
 <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaSolicitacaoIndenizacao.png"/> <br>
 
@@ -581,10 +583,10 @@ truffle deploy --network goerli
 
 <img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaSaibaMais.png"/> <br>
 
-&emsp;&emsp;Tela em que o usuário terá informações sobre o serviço, trazendo então a possibilidade de redirecionar o usuário para duas telas: 
+&emsp;&emsp;Tela em que o usuário terá informações sobre o serviço, trazendo então a possibilidade de redirecionar o usuário para duas telas distintas: 
 
-- Sobre a Coover: espaço em que o usuário pode compreender um pouco mais sobre a empresa e suas características. 
 - Sobre o nosso sistema: descrição sobre a aplicação, princípios e pilares.
+- Sobre a Coover: espaço em que o usuário pode compreender um pouco mais sobre a empresa e suas características. 
 
 ## Principais Arquivos de Código Utilizados:
 
