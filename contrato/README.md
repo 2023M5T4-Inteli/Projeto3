@@ -522,6 +522,70 @@ truffle deploy --network goerli
 truffle deploy --network goerli
 ```
 
+## Documentação das telas - Frontend:
+
+- Plataforma do usuário
+
+**Tela Inicial** <br>
+
+&emsp;&emsp;Página de entrada da aplicação, em que recepciona o usuário e o direciona diretamente para a tela de entrada no sistema para que o usuário se conecte através de uma Wallet (carteira digital), uma vez que a conexão é feita com uma carteira digital da Metamask. <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaInicial.png"/> <br>
+
+**Tela De Login** <br>
+
+&emsp;&emsp;Página responsável pela conexão entre o usuário e sua conta/wallet da Metamask. Essa conexão é essencial para que o usuário consiga utilizar o sistema da aplicação. Caso o usuário não tenha uma carteira, ele será redirecionado para uma extensão em que poderá criar a sua própria conta na Metamask e ter uma Wallet (carteira digital).<br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaEntrada.png"/> <br>
+
+**Tela de Validação da Entrada** <br>
+
+&emsp;&emsp;Essa tela é responsável por informar o usuário sobre a confirmação do seu login, ou seja, retorna para o usuário que o cadastro foi realizado caso a Wallet tenha sido conectada com sucesso com a aplicação. Além disso, essa tela disponibiliza informações importantes da carteira digital do usuário, como por exemplo: o endereço da wallet e seu respectivo saldo. <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaEntrada2.png"/> <br>
+
+**Tela do Menu Principal** <br>
+
+&emsp;&emsp;Trata-se da página de menu que serve como um guia para melhorar a expedição do usuário, e tornar sua jornada pelo aplicativo mais intuitiva e satisfatória. Nessa tela, estão incluídos todos os serviçoes do sistema, tais como: Contratos, Meus Contratos, Dados para Contrato, Indenização e Saiba mais. <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaMenu.png"/> <br>
+
+**Tela de Dados do Aparelho** <br>
+&emsp;&emsp;Página em que os usuários devem inserir as informações a respeito de seus aparelhos, para que assim eles possam participar dos grupos de seguro. Essa tela é responsável por armazenar informações importantes sobre o aparelho do usuário tais como Imei do celular e valor do aparelho. Essas informações são fundamentais para que o usuário seja aprovado para entrar em algum grupo.
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaDadosAparelho.png"/> <br>
+
+**Tela de Edição dos Dados do Aparelho** <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaDadosAparelho2.png"/> <br>
+
+**Tela para Participação em um Grupo/Contrato** <br>
+
+&emsp;&emsp;Página em que os usuários podem visualizar todos os tipos de grupos e selecionar algum que queira participar. Vale ressaltar que só será possível um usuário entrar em um grupo se ele tiver antes de tudo, fornecido as informações sobre os seus dados do aparelho.
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaContratos.png"/> <br>
+
+**Tela de Pedido de Indenização** <br>
+
+&emsp;&emsp;Trata-se de uma tela que informa o status da indenização que o usuário esteja desenvolvendo, além de disponibilizar a categoria de indenização (roubo/furto, queda na água, entre outros.) Além disso, ela garante também um espaço para que o usuário possa descrever um pouco mais o ocorrido para que o gestor responsável compreenda um pouco mais a situação, e há também a possibilidade de anexar imagens, B.O’s etc. <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaPedidoIndenizacao.png"/> <br>
+
+**Tela de Status da Solicitação de Indenização** <br>
+
+&emsp;&emsp;Tela que mostra para o usuário sobre o status de seus pedidos de indenização, além de confirmar que uma solicitação foi enviada. <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaSolicitacaoIndenizacao.png"/> <br>
+
+**Tela do Saiba Mais** <br>
+
+<img src="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Frontend_TelaSaibaMais.png"/> <br>
+
+&emsp;&emsp;Tela em que o usuário terá informações sobre o serviço, trazendo então a possibilidade de redirecionar o usuário para duas telas: 
+
+- Sobre a Coover: espaço em que o usuário pode compreender um pouco mais sobre a empresa e suas características. 
+- Sobre o nosso sistema: descrição sobre a aplicação, princípios e pilares.
+
 ## Principais Arquivos de Código Utilizados:
 
 &emsp;&emsp; Na construção do Front-end da aplicação, foram utilizadas as seguintes linguagens: HTML - linguagem de marcação, CSS - linguagem de estilo, JavaScript - linguagem de programação e React - biblioteca JavaScript front-end gratuita e de código aberto. <br>
