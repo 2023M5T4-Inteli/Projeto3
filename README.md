@@ -326,7 +326,7 @@ Em resumo, os testes de automatizados são importantes para garantir que pequena
 
 Para um melhor entendimento das telas e Front-End da aplicação, foi desenvolvido um vídeo em formato de navegação comentada descrevendo sobre as principais funcionalidades implementadas em nossa aplicação blockchain. Para ter acesso ao vídeo, clique no link a seguir: 
 
-https://drive.google.com/file/d/1X-JsiTrSsrzHnJV9my20wRaezGuZmAlP/view?usp=sharing
+https://drive.google.com/file/d/1X-JsiTrSsrzHnJV9my20wRaezGuZmAlP/view
 
 ### 🛠 Instalação
 
