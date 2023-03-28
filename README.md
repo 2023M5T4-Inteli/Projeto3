@@ -61,23 +61,6 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
 <br>
 
 
-## 💻 Configuração para desenvolvimento
-
-
-
-## 🎥 Vídeo de Demonstração 
-
-Para um melhor entendimento das telas e Front-End da aplicação, foi desenvolvido um vídeo em formato de navegação comentada descrevendo sobre as principais funcionalidades implementadas em nossa aplicação blockchain. Para ter acesso ao vídeo, clique no link a seguir: 
-
-https://drive.google.com/file/d/1X-JsiTrSsrzHnJV9my20wRaezGuZmAlP/view
-
-### 🛠 Instalação
-
-Instruções para a configuração do ambiente de desenvolvimento:
-```
-
-```
-
 ## 🗃 Histórico de lançamentos (versões)
 
 * 5.0 - 07/04/2023
