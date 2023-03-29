@@ -4,10 +4,24 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Home } from './routers/Home';
 import { Enter } from './routers/Enter';
-import { SaibaMais } from './routers/SaibaMais';
+import { SaibaMais1 } from './routers/SaibaMais1';
 import {Menu} from './routers/MenuPrincipal';
+//<<<<<<< Updated upstream
 import {SolicitacaoIndenizacao} from './routers/SolicitacaoIndenizacao';
+import {SaibaMaisPrincipal} from './routers/SaibaMaisPrincipal';
+//=======
+import {Contrato} from './routers/Contrato';
+//>>>>>>> Stashed changes
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+<<<<<<< HEAD
+import SaibaMais2 from './routers/SaibaMais2';
+=======
+import {TelaCadastro} from './routers/TelaCadastro';
+import {TelaEntrada} from './routers/TelaEntrada';
+import {PedirIndenizacao} from './routers/PedirIndenizacao';
+import { SaibaMais2 } from './routers/SaibaMais2';
+
+>>>>>>> 07e8623083abad410fa1d47c57ce0b7c65ab2a00
 
 const router = createBrowserRouter ([
   {
@@ -15,21 +29,52 @@ const router = createBrowserRouter ([
     element: <Home/>,
   },
   {
+    path: "/Ho",
+    element: <SaibaMais2/>,
+  },
+  {
     path: "/Enter",
     element: <Enter/>,
   },
   {
-    path: "/SaibaMais",
-    element: <SaibaMais/>, 
+    path: "/SaibaMais1",
+    element: <SaibaMais1/>, 
   },
   {
     path: "/Menu",
     element: <Menu/>, 
   },
   {
+//<<<<<<< Updated upstream
     path: "/SolicitacaoIndenizacao",
     element: <SolicitacaoIndenizacao/>,
+  },
+  {
+    path: "/SaibaMaisPrincipal",
+    element: <SaibaMaisPrincipal/>,
+  },
+  {
+    path: "/Contrato",
+    element: <Contrato/>,
+//>>>>>>> Stashed changes
+  },
+  {
+    path: "/TelaCadastro",
+    element: <TelaCadastro/>,
+  },
+    {
+    path: "/PedirIndenizacao",
+    element: <PedirIndenizacao/>,
+  },
+  {
+    path: "/SaibaMais2",
+    element: <SaibaMais2/>, 
+  },
+  {
+    path: "/TelaEntrada",
+    element: <TelaEntrada/>,
   }
+
 ]);
 
 

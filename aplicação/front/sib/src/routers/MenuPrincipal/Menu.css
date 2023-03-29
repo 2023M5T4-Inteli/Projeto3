@@ -3,8 +3,16 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    margin-left: -14px;
+    margin-left: 12px;
 }
+
+.logo_menu {
+    display: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 30px;
+} 
   
 .logo img {
     max-height: 68px;
@@ -24,7 +32,7 @@
   
 .button-container button {
     margin-bottom: 25px;
-    width: 312px;
+    width: 290px;
     height: 40px;
     align-items: center;
     text-align: center;
@@ -37,7 +45,7 @@
   
 .botao-sair {
     margin-bottom: 25px;
-    width: 312px;
+    width: 280px;
     height: 50px;
     background-color: red;
     border: red;
@@ -85,7 +93,7 @@ body {
 }
   
 .vector {
-    margin-left: 280px;
+    margin-left: 200px;
     display: flex;
     margin-top: -17px;
 }

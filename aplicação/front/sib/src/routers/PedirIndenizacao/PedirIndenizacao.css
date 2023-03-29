@@ -1,0 +1,164 @@
+.logo_pequena {
+    margin-top: 35.00%;
+    max-width:140px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+
+
+.linha {
+    display: block;
+    width: 80%;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #02de82;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+h1{
+    color:beige;
+}
+
+.foto_perfil {
+
+    margin-top: 0;
+    max-width:70px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+
+    color: white;
+    font-size: small;
+}
+
+.caixa1 {
+    margin-top: 0px;
+    margin-left: 0px;
+    border: 1px solid #303030;
+    border-radius: 8px;
+    display: flex;
+    border-left: 0px;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #303030;
+
+    width: 320px;
+    height: 40px;
+    padding-bottom: 15px;
+
+  }
+
+  .texto1{
+    margin-top: 30px;
+    margin-left: 0px;
+    color: white;
+  }
+
+  .texto2{
+    color: #C1C1C1;
+    margin-left: 0px;
+    font-size: large;
+  }
+
+  .formulario{
+    background-color: #303030;
+    color: #C1C1C1;
+    font-size: 20px;
+    border-radius: 9px;
+    padding-inline: 100px;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .texto3{
+    color: #C1C1C1;
+    }
+
+.formulario2{
+    background-color: #303030;
+    color: #C1C1C1;
+    font-size: 20px;
+    border-radius: 9px;
+    padding-inline: 10px;
+    width: 90%;
+    height: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+      }
+
+.anexo{
+    font-size: large;
+}
+
+.botao_solicitar {
+    margin-bottom: 25px;
+    width: 312px;
+    height: 50px;
+    background-color:#02DE82;
+    border: #02DE82;
+    border-radius: 8px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.botao_cancelar {
+    width: 312px;
+    height: 50px;
+    background-color: red;
+    border: red;
+    border-radius: 8px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.botao_solicitar {background-color: #02DE82}
+
+.botao_solicitar:active {
+    background-color: #00a963;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
+.botao_cancelar {background-color: red}
+
+.botao_cancelar:active {
+      background-color: rgb(202, 0, 0);
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+
+
+
+
+
+

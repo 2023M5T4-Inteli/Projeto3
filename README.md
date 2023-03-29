@@ -60,14 +60,6 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
 
 <br>
 
-## 💻 Configuração para desenvolvimento
-
-### 🛠 Instalação
-
-Instruções para a configuração do ambiente de desenvolvimento:
-```
-
-```
 
 ## 🗃 Histórico de lançamentos (versões)
 

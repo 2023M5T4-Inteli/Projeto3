@@ -8,14 +8,9 @@
     height: 100vh;
     background-color: #151A20;
     align-items: center;
-    text-align: center;
 
 }
 
-.teste {
-    background-color: black;
-    color: black;
-}
 
 .Alinhamento {
     display: flex;

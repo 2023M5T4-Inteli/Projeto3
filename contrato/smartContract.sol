@@ -76,6 +76,7 @@ contract MeuContrato {
 
     function solicitacaoAprovacao(uint valorAparelho, uint imei) public {
         // Adiciona o usuário à lista de carteiras com seu saldo e valor do aparelho celular
+
         aprovar.push(Aprovar(msg.sender, valorAparelho, imei));  
     }   
 
@@ -167,9 +168,6 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
         
             // Retorna o saldo do úsuario
             return carteira[i].saldo;
-            
-            // Sai do loop
-            break;
             }
         }
     }
@@ -254,16 +252,39 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
             }
         }
     }
+    //funcao para calcular o valor maximo que um úsuario pode pedir de idenizacao
+    //obs: o úsuario deve ter pelo menos 50% do valor do aparelho para indenização maxima, abaixo disso sera propocional ao seu saldo
+    function maximoIndenizavel() public returns(uint){
+        uint maximoId;
+        for (uint i = 0; i < carteira.length; i++){
+            if (carteira[i].carteiraUsuario == msg.sender){
+                if(carteira[i].saldo >= carteira[i].valorAparelho/2){
+                    maximoId = carteira[i].valorAparelho;
+                }
+                if(carteira[i].saldo <= carteira[i].valorAparelho/2){
+                    maximoId = carteira[i].saldo*2;
+                }
+            }
+                return maximoId;    
+        }
+    }
 
     //função para enviar solicitacao de aprovacao de indenizacao
     function solicitacaoIndenizacao(uint valorID,string memory justificativa) public {
-        // Adiciona o usuário à lista de carteiras que pediram indenizacao
-        uint imeiDoPedido;
-        for (uint i = 0; i < carteira.length; i++){
-            if (carteira[i].carteiraUsuario == msg.sender)
-                imeiDoPedido = carteira[i].IMEI;
-        } 
-        indenizacao.push(Indenizacao(msg.sender, valorID, justificativa, imeiDoPedido));  
+            // Adiciona o usuário à lista de carteiras que pediram indenizacao
+        if (valorID <= maximoIndenizavel()){
+            uint imeiDoPedido;
+            for (uint i = 0; i < carteira.length; i++){
+                //encontra o usuario e confere se o valor e possivel de ser indenizado, de acorodo com seu saldo restante
+                if (carteira[i].carteiraUsuario == msg.sender){
+                    imeiDoPedido = carteira[i].IMEI;
+                    indenizacao.push(Indenizacao(msg.sender, valorID, justificativa, imeiDoPedido));  
+                }
+            }  
+        }
+        else {
+            revert("A solicitacao execede o limite maximo indenizavel");
+        }
     }  
 
     //função para ver pedidos de idenizacao
@@ -318,15 +339,47 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
     // Verifica a viabilidade do contrato
     function viabilidadeContrato() public view returns (uint) {
         
-        //Verifica se o contrato está válido mas não possui o número ideal de pessoas para funcionar
+        //Verifica se o contrato está válido 
         if (quantUsuario >= minPessoas  && quantUsuario <= maxPessoas) {
             return 1; // Contrato Ativo
             
-        //Verifica se o contrato está válido mas não possui o número de pessoas ideal para funcionar
+        //Verifica se o contrato está Invalido
         } else if (quantUsuario < minPessoas || quantUsuario >= maxPessoas) {
             return 2; // Contrato em Progresso        
         } else {
             revert("Erro ao verificar o contrato");
         }
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+    //Area de testes
+    //funcaoes para o teste 3, para ver se um usuario foi registrado corretamente na lista de espera para entrar no contrato, cada uma retonando um atributo
+    function teste3A() public returns(uint) {
+        return aprovar[0].IMEI;
+    }
+        function teste3B() public returns(uint) {
+        return aprovar[0].valorAparelho;
+    }
+
+    //funcao para o teste 4, testar maximo indenizavel 
+    function maximoIndenizavelParaTeste(uint saldo,uint valorAparelho) public returns(uint){
+        uint maximoId = valorAparelho;
+        if(saldo <= valorAparelho){
+            maximoId = saldo*2;
+        }
+        if(saldo >= valorAparelho){
+            maximoId = valorAparelho;
+        }
+        return maximoId; 
+    }  
+} 

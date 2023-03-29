@@ -521,8 +521,8 @@ truffle deploy --network goerli
    ```
 truffle deploy --network goerli
 ```
-  
-## Histórico de Lançamento
+
+## Histórico de Lançamentos:
 
 <ul><li>24/02/2023 - Criação do Readme.md da documentação do Smart Contract</li></ul>
 <ul><li>26/02/2023 - Criação da pasta código - imagens</li></ul>
