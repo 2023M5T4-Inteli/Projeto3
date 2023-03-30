@@ -586,4 +586,5 @@ truffle deploy --network goerli
 <ul><li>07/03/2023 - Atualização na estrutura da documentação do Deploy e Teste do Smart Contract</li>
 <ul><li>12/03/2023 - Atualização da Estrutura do Smart Contract com explicação textual</li>
 <ul><li>12/03/2023 - Revisão da Documentação do Deploy e Testes de Smart Contracts</li>
+<ul><li>30/03/2023 - Atualização da documentação antiga do README.md (Struct e variáveis globais)</li>
 </ul>
