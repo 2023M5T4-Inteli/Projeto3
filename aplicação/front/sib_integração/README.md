@@ -15,7 +15,7 @@
 -   Tailwind CSS
 -   ESLint
 -   Prettier
-<!-- -   Absolute Import and Path Alias --->
+<!-- -   Absolute Import and Path Alias -->
 
 ## Getting Started
 

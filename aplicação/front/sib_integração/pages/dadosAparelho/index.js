@@ -23,7 +23,8 @@ const valorAparelho = valCelular.value; // exemplo de valor do aparelho
 const imei = imeiCel.value; // exemplo de IMEI do aparelho
 
 const contrato = new web3.eth.Contract(abi, enderecoContrato);
-const data = contrato.methods.solicitacaoAprovacao(valorAparelho, imei).encodeABI();
+const data = contrato.methods.adicionarDinheiro(valorAparelho, imei).encodeABI();
+
 web3.eth.getTransactionCount(carteira).then((nonce) => {
   const txParams = {
     nonce: nonce,

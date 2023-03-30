@@ -10,27 +10,11 @@ import Button from "../../components/Bt"
 export const Adm = () => {
 
     async function connectToMetamask() {
-        console.log("Oj")
         try {
             // Verifique se o Metamask está instalado e se o usuário está conectado
             if (typeof window.ethereum !== 'undefined') {
                 await window.ethereum.request({ method: 'eth_requestAccounts' });
-    
-                const web3Provider = new Web3(window.ethereum);
-                const accounts = await web3Provider.eth.getAccounts();
-                const account = accounts[0];
-    
-                // Obtenha o saldo da conta
-                const balanceWei = await web3Provider.eth.getBalance(account);
-                const balanceEth = web3Provider.utils.fromWei(balanceWei, 'ether');
-    
-                // Armazene os dados no localStorage
-                localStorage.setItem('address', account);
-                localStorage.setItem('balance', balanceEth);
-    
-                console.log(`Endereço da conta: ${account}`);
-                console.log(`Saldo da conta: ${balanceEth} ETH`);
-                window.location.href = "./Aprovacao"
+                window.location.href = "./Adm/Aprovacao"
             } else {
                 console.error('A carteira Metamask não está instalada neste navegador.');
             }

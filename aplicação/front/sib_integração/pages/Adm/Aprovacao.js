@@ -3,80 +3,70 @@ import Image from 'next/image';
 import Pr from '../../assets/Perfil.svg'
 import Button from '../../components/Bt';
 import Web3 from 'web3';
-
-function Aprova(){
-  const web3 = new Web3(window.ethereum);
-
-const enderecoContrato = '0x4204ae36bE6bb52aC176b9D56b4827e55faB13Cc';
-const abi = require('../../contract/MeuContrato.json').abi;
-
-const carteira = window.ethereum.selectedAddress;
-
-const contrato = new web3.eth.Contract(abi, enderecoContrato);
-const data = contrato.methods.solicitacaoAprovacao(clienteEndereco).encodeABI();
-
-web3.eth.getTransactionCount(carteira).then((nonce) => {
-const txParams = {
-  nonce: nonce,
-  to: enderecoContrato,
-  from: carteira,
-  data: data
-};
-
-web3.eth.sendTransaction(txParams)
-  .on('receipt', (receipt) => {
-    alert('Transação concluída', receipt);
-    console.log('Transação concluída', receipt)
-  })
-  .on('error', (error) => {
-    console.error('Erro na transação', error);
-  });
-});
-
-
-}
+import { useState } from 'react';
+import logout from '../../assets/logout.svg'
 
 
 
+function Aprova(resp, cart) {
 
-
-
-
-
-function mandaDado() {
-
-  let cart = document.getElementById('cart')
   const web3 = new Web3(window.ethereum);
 
   const enderecoContrato = '0x4204ae36bE6bb52aC176b9D56b4827e55faB13Cc';
   const abi = require('../../contract/MeuContrato.json').abi;
 
-  const carteira = '0xaa00310795ECDcb40a70BC5002D475cFF867F09F';
+  const carteira = window.ethereum.selectedAddress;
 
-const contrato = new web3.eth.Contract(abi, enderecoContrato);
+  const contrato = new web3.eth.Contract(abi, enderecoContrato);
+  const data = contrato.methods.aprovarSolicitacao(resp, cart).encodeABI();
 
-contrato.methods.visualizarCarteiras().call({ from: carteira })
-  .then((result) => {
-    console.log('Resultado', result);
-    cart.value = result.carteiraUsuario;
-  })
-  .catch((error) => {
-    console.error('Erro ao chamar a função', error);
+  web3.eth.getTransactionCount(carteira).then((nonce) => {
+    const txParams = {
+      nonce: nonce,
+      to: enderecoContrato,
+      from: carteira,
+      data: data
+    };
+
+    web3.eth.sendTransaction(txParams)
+      .on('receipt', (receipt) => {
+        alert('Transação concluída', receipt);
+        console.log('Transação concluída', receipt)
+      })
+      .on('error', (error) => {
+        console.error('Erro na transação', error);
+      });
   });
+
 
 }
 
-
-
-
-
-
-
-
-
-
-
 export const Aprovacao = () => {
+
+  const [dados, setDados] = useState([]);
+
+  if (typeof window !== "undefined") {
+    // Código que depende do objeto window pode ser executado aqui
+
+    const web3 = new Web3(window.ethereum);
+    const enderecoContrato = '0x4204ae36bE6bb52aC176b9D56b4827e55faB13Cc';
+    const abi = require('../../contract/MeuContrato.json').abi;
+
+    const carteira = '0xaa00310795ECDcb40a70BC5002D475cFF867F09F';
+
+    const contrato = new web3.eth.Contract(abi, enderecoContrato);
+
+    contrato.methods.verSolicitacao().call({ from: carteira })
+      .then((result) => {
+        console.log('Resultado', result);
+        setDados(result);
+
+      })
+      .catch((error) => {
+        console.error('Erro ao chamar a função', error);
+      });
+
+  }
 
 
 
@@ -94,13 +84,23 @@ export const Aprovacao = () => {
           width={50}
         />
       </div>
-      <div className='flex felx-row'>
+      <div className='flex flex-row'>
 
         <div className='flex flex-col pt-10 mx-10'>
 
           <p className='font-bold text-white text-2xl'> Painel inicial</p>
 
-          <Button text='Aprovação dos Dados' onclick={() => mandaDado()} color='bg-[#A5A4FF] mt-7 mx-0 text-white' />
+          <Button text='Aprovação dos Dados' onclick={() => mandaDado()} color='bg-[#A5A4FF] mt-7 mx-0 text-sm text-white' />
+          <div className='items-center h-full'>
+            <div className=' bottom-8 mt-[120%] flex flex-row'>
+              <Image
+                src={logout}
+                alt="My Image"
+                width={20}
+              />
+              <p className='text-white text-lg m-2'>logout</p>
+            </div>
+          </div>
 
         </div>
 
@@ -111,36 +111,41 @@ export const Aprovacao = () => {
           <div className='w-full items-center text-center '>
             <div className='bg-[#303030] '>
             </div>
+
+
+
           </div>
           <div className='flex flex-row items-start justify-between px-10'>
             <Button text='STATUS' color='bg-[#303030] mt-7 mx-0 text-white font-normal' />
             <Button text='SOLICITAÇÕES' color='bg-[#303030] mt-7 mx-0 text-white font-normal' />
           </div>
-          <div className='w-full bg-[#FFFFFF] flex flex-row mt-7 rounded-xl'>
-            <div className='flex flex-col mx-2'>
-              <p className='my-1'>10/03/2023</p>
-              <p className='my-1'>Carteira solicitante: <span id='cart'>0xaa00310795ECDcb40a70BC5002D475cFF867F09F</span> </p>
-              <p className='my-1'>Valor do Aparelho: R$ 1.800,00</p>
-              <p className='my-1'>IMEI: 529460054727407</p>
-            </div>
-            <div className='flex flex-row items-start justify-between mt-8'>
-              <div className='bg-[#02DE82] mx-10 w-[100px] h-[60px] text-center'>
-                <p className='font-bold mt-4'>Aceitar</p>
+
+          <div class="h-[350px] overflow-y-auto scroll-invi mt-3">
+
+            {dados.map(dd => (
+              <div key={dd.id} className='w-full bg-[#FFFFFF] flex flex-row mt-7 rounded-xl'>
+                <div className='flex flex-col mx-2'>
+                  <p className='my-1'>10/03/2023</p>
+                  <p className='my-1'>Carteira solicitante: <span id='cart'>{dd.carteiraUsuario}</span> </p>
+                  <p className='my-1'>Valor do Aparelho: R$ {dd.valorAparelho}</p>
+                  <p className='my-1'>IMEI: {dd.IMEI}</p>
+                </div>
+                <div className='flex flex-row items-start justify-between mt-8'>
+                  <div className='bg-[#02DE82] mx-10 w-[100px] h-[60px] text-center' onClick={() => Aprova(1, dd.carteiraUsuario)}>
+                    <p className='font-bold mt-4'>Aceitar</p>
+                  </div>
+                  <div className='bg-[#FC3E3E] mx-10 w-[100px] h-[60px] text-center' onClick={() => Aprova(0, dd.carteiraUsuario)}>
+                    <p className='font-bold mt-4'>Negar </p>
+                  </div>
+                </div>
               </div>
-              <div className='bg-[#FC3E3E] mx-10 w-[100px] h-[60px] text-center'>
-                <p className='font-bold mt-4'>Negar </p>
-              </div>
-            </div>
-     
+            ))}
+
           </div>
 
-        </div>
-        <div id='resposta'>
-              <input placeholder='Digite a carteira'>
-              </input>
-              
 
-            </div>
+        </div>
+
 
 
       </div>
