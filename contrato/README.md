@@ -32,19 +32,75 @@ Abaixo é possível visualizar as variáveis responsáveis para o funcionamento 
 - **carteira**: armazena a lista de carteiras de usuários, que são definidas usando a struct Carteira.
 
 - **admin**: variável do tipo address, onde armazena o endereço do proprietário do contrato, que é o administrador.
+- **Aprovar[]**: Armazena a lista de usuários que estão esperando aprovação para entrar no contrato. A estrutura Aprovar tem os campos carteiraUsuario (endereço da carteira do usuário), valorAparelho (valor do aparelho do usuário) e IMEI (número de identificação do aparelho).
+
+- **Indenizacao[]**: Armazena a lista de solicitações de indenização feitas pelos usuários do contrato. A estrutura Indenizacao tem os campos carteiraUsuario (endereço da carteira do usuário solicitante), valorPedido (valor do pedido de indenização), justificativa (texto explicando a razão da solicitação) e imeiSolicitacao (número de identificação da solicitação).
 
 ### 1.2 - Structs do contrato:
 
 &emsp;&emsp;|-->O “struct `Carteira`" é uma estrutura de dados que é usada para armazenar informações sobre a carteira de um usuário. No código fornecido, a struct Carteira armazena o endereço da carteira do usuário, o valor do aparelho celular, o saldo da carteira do usuário e o número de IMEI do aparelho celular.<br>
 
-&emsp;Abaixo há a estrutura dentro do `struct Carteira` definida no nosso smart contract.
+&emsp;Abaixo há a estrutura dentro do `struct Carteira` definida no nosso smart contract.<br>
 
 - **carteiraUsuario**: é um elemento do tipo "address" e armazena o endereço da carteira do usuário.
 - **valorAparelho**: é um elemento do tipo "uint" e armazena o valor do aparelho celular do usuário.
 - **saldo**: é um elemento do tipo "uint" e armazena o saldo da carteira do usuário.
 - **IMEI**:  é um elemento do tipo "uint" e armazena o número de IMEI do aparelho celular do usuário.
 
-&emsp;Esses elementos são usados para armazenar informações relevantes sobre a carteira do usuário dentro do smart contract.<br>
+&emsp;Abaixo há o struct completo no formato de código:<br>
+```
+    // Estrutura para armazenar a Carteira de um *Usuário*
+    struct Carteira {
+        address carteiraUsuario;
+        uint valorAparelho;
+        uint saldo;
+        uint IMEI;
+    }
+```
+
+&emsp;Esses elementos são usados para armazenar informações relevantes sobre a carteira do usuário dentro do smart contract.<br><br>
+
+&emsp;&emsp;|-->O "struct `Aprovar`" é uma estrutura para armazenar um pedido de entrada no smart contract, contendo os seguintes atributos:<br>
+
+&emsp;Abaixo há a estrutura dentro do `struct Aprovar` definida no nosso smart contract.
+
+- **carteiraUsuario**: endereço da carteira do usuário que solicitou a entrada no contrato;<br>
+- **valorAparelho**: valor do aparelho do usuário que solicitou a entrada no contrato;<br>
+- **IMEI**: número de identificação do aparelho do usuário que solicitou a entrada no contrato.<br>
+
+&emsp;Abaixo há o struct completo no formato de código:<br>
+```
+    // Estrutura para armazenar um pedido de entrada no smart contract
+    struct Aprovar {
+        address carteiraUsuario;
+        uint valorAparelho;
+        uint IMEI;
+    }
+```
+
+&emsp;Essas informações são armazenadas na estrutura Aprovar até que o proprietário do contrato as aprove ou rejeite.<br><br>
+
+&emsp;&emsp;|-->O "struct `Indenizacao`" é utilizado para armazenar os pedidos de indenização realizados pelos usuários. Se um usuário precisar de uma indenização por ter sofrido um dano em seu aparelho, ele poderá enviar uma solicitação contendo o endereço de sua carteira, o valor do pedido, a justificativa e o número IMEI da solicitação.<br>
+
+&emsp;Abaixo há a estrutura dentro do `struct Indenizacao` definida no nosso smart contract.<br>
+
+- **carteiraUsuario**: o endereço da carteira do usuário que solicitou a indenização;<br>
+- **valorPedido**: valor solicitado pelo usuário na indenização;<br>
+- **justificativa**: descrição da justificativa para a indenização solicitada pelo usuário;<br>
+- **imeiSolicitacao**: número de identificação da solicitação de indenização.<br>
+
+&emsp;Abaixo há o struct completo no formato de código:<br>
+```
+   Indenizacao[] public indenizacao;
+    struct Indenizacao{
+        address carteiraUsuario;
+        uint valorPedido;
+        string justificativa;
+        uint imeiSolicitacao;
+    }
+```
+
+&emsp;Essas informações são armazenadas na estrutura Indenizacao para posterior avaliação e resolução do proprietário do contrato.
 
 ### 1.3 - constructor:
 &emsp;O constructor é uma função especial que é executada apenas uma vez, quando o contrato é criado. É usado para inicializar as variáveis globais do contrato com valores iniciais. No código fornecido, o constructor recebe três parâmetros: _minPessoas, _maxPessoas e _taxaAdmin.<br>
