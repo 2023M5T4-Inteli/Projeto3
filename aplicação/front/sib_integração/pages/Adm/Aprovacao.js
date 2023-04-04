@@ -126,8 +126,8 @@ export const Aprovacao = () => {
               <div key={dd.id} className='w-full bg-[#FFFFFF] flex flex-row mt-7 rounded-xl'>
                 <div className='flex flex-col mx-2'>
                   <p className='my-1'>10/03/2023</p>
-                  <p className='my-1'>Carteira solicitante: <span id='cart'>{dd.carteiraUsuario}</span> </p>
-                  <p className='my-1'>Valor do Aparelho: R$ {dd.valorAparelho}</p>
+                  <p className='my-1'>Carteira solicitante: <span id='cart' className='font-normal'>{dd.carteiraUsuario}</span> </p>
+                  <p className='my-1  '>Valor do Aparelho: R$ {dd.valorAparelho}</p>
                   <p className='my-1'>IMEI: {dd.IMEI}</p>
                 </div>
                 <div className='flex flex-row items-start justify-between mt-8'>

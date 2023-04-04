@@ -7,11 +7,16 @@ import Setinha from '../assets/setinha.svg'
 import { Main } from "next/document";
 
 export const Layout2 = ({ children }: { children: React.ReactNode }) => {
+    function redirect() {
+        var lastPage = document.referrer;
+        window.location.href = lastPage
+    }
+      
 
     return (
         <main className="flex flex-col bg-[#151A20] text-white pt-4 flex-1 w-full min-h-screen items-center h-full">
             <div className="flex flex-row h-[80px] items-center text-black">
-                <div className="absolute left-6">
+                <div className="absolute left-6" onClick={redirect}>
                 <Image
                     src={Setinha}
                     alt="My Image"

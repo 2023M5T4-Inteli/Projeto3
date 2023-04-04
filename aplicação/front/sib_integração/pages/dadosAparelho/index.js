@@ -7,48 +7,46 @@ import Web3 from 'web3';
 
 
 
-function mandaDado(){
-    
+function mandaDado() {
     const web3 = new Web3(window.ethereum);
 
-const enderecoContrato = '0x4204ae36bE6bb52aC176b9D56b4827e55faB13Cc';
-const abi = require('../../contract/MeuContrato.json').abi;
+    const enderecoContrato = '0x4204ae36bE6bb52aC176b9D56b4827e55faB13Cc';
+    const abi = require('../../contract/MeuContrato.json').abi;
 
-const valCelular = document.getElementById("cel");
-const imeiCel = document.getElementById("imei");
+    const valCelular = document.getElementById("cel");
+    const imeiCel = document.getElementById("imei");
 
+    const carteira = window.ethereum.selectedAddress;
+    const valorAparelho = valCelular.value; // exemplo de valor do aparelho
+    const imei = imeiCel.value; // exemplo de IMEI do aparelho
 
-const carteira = window.ethereum.selectedAddress;
-const valorAparelho = valCelular.value; // exemplo de valor do aparelho
-const imei = imeiCel.value; // exemplo de IMEI do aparelho
+    const contrato = new web3.eth.Contract(abi, enderecoContrato);
 
-const contrato = new web3.eth.Contract(abi, enderecoContrato);
-const data = contrato.methods.adicionarDinheiro(valorAparelho, imei).encodeABI();
+    web3.eth.getTransactionCount(carteira).then((nonce) => {
+        const txParams = {
+            nonce: nonce,
+            to: enderecoContrato,
+            from: carteira,
+            data: contrato.methods.solicitacaoAprovacao(valorAparelho, imei).encodeABI(),
+            gasPrice: web3.utils.toWei('10', 'gwei'), // definindo um preço de gás de 10 gwei
+            gasLimit: 300000 // definindo um limite de gás de 300.000
+        };
 
-web3.eth.getTransactionCount(carteira).then((nonce) => {
-  const txParams = {
-    nonce: nonce,
-    to: enderecoContrato,
-    from: carteira,
-    data: data
-  };
-
-  web3.eth.sendTransaction(txParams)
-    .on('receipt', (receipt) => {
-      alert('Transação concluída', receipt);
-      console.log('Transação concluída', receipt)
-    })
-    .on('error', (error) => {
-      console.error('Erro na transação', error);
+        web3.eth.sendTransaction(txParams)
+            .on('receipt', (receipt) => {
+                alert('Transação concluída');
+                console.log('Transação concluída', receipt);
+            })
+            .on('error', (error) => {
+                console.error('Erro na transação', error);
+            });
     });
-});
-
-
 }
 
 
+
 export const dadosAparelho = () => {
-    
+
     let address;
     let balance;
 

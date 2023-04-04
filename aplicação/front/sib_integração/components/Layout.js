@@ -6,7 +6,7 @@ import Image from "next/image";
 import Logo from '../assets/logoCoover.svg';
 import Setinha from '../assets/setinha.svg';
 
-const Layout = ({
+ export const Layout = ({
     title,
     rota,
     showImage,

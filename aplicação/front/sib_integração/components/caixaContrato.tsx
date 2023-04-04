@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { useState } from 'react';
+import Image from 'next/image';
 import info from '../assets/info2.svg';
 
 interface CaixinhaProps {
@@ -9,9 +10,18 @@ interface CaixinhaProps {
 }
 
 export const Caixinha: React.FC<CaixinhaProps> = ({ membros, tipoSeguro, taxaAdm, valorMinimo }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
+
   return (
-    <div className="items-center ">
-      <div className="flex flex-col mt-5 bg-[#303030] rounded-xl w-[300px] py-2">
+    <div
+      className={`items-center ${isSelected ? 'border-green-500 border-4 mt-3 border- rounded-xl' : ''}`}
+      onClick={handleClick}
+    >
+      <div className="flex flex-col bg-[#303030] rounded-xl w-[300px] py-2">
         <div className="flex flex-row items-start justify-between mb-1 mx-3">
           <p className="font-bold text-2xl"> Grupo 1</p>
           <div className="mt-1">

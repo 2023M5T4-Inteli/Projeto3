@@ -24,7 +24,6 @@ const Login = () => {
     const Web3 = require('web3');
 
     async function connectToMetamask() {
-        console.log("Oj")
         try {
             // Verifique se o Metamask está instalado e se o usuário está conectado
             if (typeof window.ethereum !== 'undefined') {
