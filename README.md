@@ -24,8 +24,6 @@
 - <a href="https://www.linkedin.com/in/patrick-victorino-miranda-7ab911231">Patrick Victorino Miranda</a>
 - <a href="https://www.linkedin.com/in/pedrocrezende/">Pedro de Carvalho Rezende</a>
 - <a href="https://www.linkedin.com/in/rodrigo-campos-8b70191ab">Rodrigo Campos Rodrigues</a>
-<br>
-
 
 ## 📲 Descrição
 
@@ -40,20 +38,31 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
 
 - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos">📁</a><b>Documentos</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros">📂</a><b>outros</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Apresenta%C3%A7%C3%B5es">📺</a><b>Apresentações</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/C%C3%B3digo%20-%20Imagens">📷</a><b>Código - Imagens</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Organiza%C3%A7%C3%A3o%20da%20Equipe">📑</a> <b>Organização da Equipe</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Apresenta%C3%A7%C3%B5es">📺</a> <b>Apresentações</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/C%C3%B3digo%20-%20Imagens">📷</a> <b>Capturas de telas - Imagens</b> <br>
         - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/outros/Templates">📔</a> <b>Templates</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Video_Frontend"><img src="https://user-images.githubusercontent.com/99209356/229899378-db4f8190-f820-4a8d-a7fe-69e6532881d9.svg" width="18px" height="18px"></a>  <b>Videos_Frontend</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%201">📂</a><b>Sprint 1</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%202">📂</a><b>Sprint 2</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/Sprint%202/T4_G3_V2_SIBDoc.pdf"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> T4_G3_V2_SIBDoc.pdf<br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/Sprint%202/T4_G3_V2_SIBDoc.docx"><img src="https://user-images.githubusercontent.com/99209356/174968001-e5dfbc94-09e5-43d3-a5ab-60a684e673b3.svg" width="18px" height="18px"></a> T4_G3_V2_SIBDoc.docx<br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%203">📂</a><b>Sprint 3</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%204">📂</a><b>Sprint 4</b> <br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/Sprint%204/T4_G3_V4_SIBDoc.pdf"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> T4_G3_V4_SIBDoc.pdf<br>
+        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/Sprint%204/T4_G3_V4_SIBDoc.docx"><img src="https://user-images.githubusercontent.com/99209356/174968001-e5dfbc94-09e5-43d3-a5ab-60a684e673b3.svg" width="18px" height="18px"></a> T4_G3_V4_SIBDoc.docx<br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%205">📂</a><b>Sprint 5</b> <br>
+
+- <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/aplica%C3%A7%C3%A3o">📁</a><b>aplicação</b> <br>
+  - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/aplica%C3%A7%C3%A3o/front"><img src="https://user-images.githubusercontent.com/99209356/229909031-29eca6bc-76bb-4850-ba5f-287dda7df6eb.svg" width="18px" height="18px"></a> <b>front</b>
+  - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/aplica%C3%A7%C3%A3o/Readme.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a> <b>README.md</b> [Instrução do frontend]<br> 
 
 - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato">📁</a><b>contrato</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/contrato/smartContract.sol"><img src="https://user-images.githubusercontent.com/99209356/221511260-74a25bc5-7a37-451a-8430-376afef29f45.svg" width="18px" height="18px"></a> smartContract.sol<br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato/deploy_contrato">📂</a><b>deploy_contrato</b> <br>
+      - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato/deploy_contrato"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a> <b>README.md</b> [Instruções referente ao deploy]<br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato/diagrama%20produzidos">📂</a><b>diagramas produzidos</b> <br>
+      - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato/diagrama%20produzidos"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a> <b>README.md</b> [Instruções dos diagramas produzidos]<br>
+    - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato/testes_automatizados">📂</a><b>testes_automatizados</b> <br>
+      - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/contrato/testes_automatizados/smartContractTeste.sol"><img src="https://user-images.githubusercontent.com/99209356/221511260-74a25bc5-7a37-451a-8430-376afef29f45.svg" width="18px" height="18px"></a> smartContractTeste.sol<br>
+      - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/contrato/testes_automatizados"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a> <b>README.md</b> [Instruções referente aos testes automatizados]<br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/contrato/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a> <b>README.md</b> [Instrução dos arquivos]<br>
 
 - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/README.md"><img src="https://user-images.githubusercontent.com/99209356/218608553-099590b4-6f09-4590-8380-83f0dfd12653.svg" width="18px" height="18px"></a><b> README.md</b> <br>
