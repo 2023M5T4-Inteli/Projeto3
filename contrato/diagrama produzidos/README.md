@@ -45,7 +45,7 @@
 &emsp;&emsp;Os diagramas de sequência UML são úteis para entender o fluxo de informações em um sistema, permitindo que os desenvolvedores e analistas de sistemas entendam a lógica do sistema e detectem possíveis problemas de design ou implementação. Eles também podem ser usados para documentar e comunicar o comportamento do sistema para outras partes interessadas. <br>
 &emsp;&emsp;Abaixo há um diagrama de sequência UML que representa o fluxo de interações entre os participantes do processo de aprovação de membros em um grupo de seguro, incluindo a carteira do usuário, o usuário, a plataforma web (usuário), o administrador do seguro (AdminCoover), a plataforma web (administrador) e o contrato inteligente (Smart Contract). As setas representam as mensagens trocadas entre os participantes, indicando o fluxo de controle. Cada caixa vertical representa um participante, com suas ações e respostas organizadas em uma linha horizontal. <br>
 
-![diagrama de Sequência UML](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Diagrama_Sequencia_UML_Sprint5.png)<br>
+![diagrama de Sequência UML - Sprint 5](https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/outros/Captura%20de%20telas%20-%20Imagens/Diagrama%20de%20Sequ%C3%AAncia%20UML%20-%20Sprint%205.png)<br>
 
 ## Smart Contract em Diagrama de Implantação UML, com descrição
 &emsp;&emsp; Um diagrama de implementação UML é um diagrama que descreve a arquitetura física de um sistema de software, incluindo o que cada parte armazena e sua utilidade para o sistema em geral. Ele representa os componentes do sistema, como servidores, computadores, e como eles se relacionam entre si para criar uma solução completa.<br>
