@@ -194,8 +194,8 @@ function aprovarSolicitacao(uint resposta, address usuario) public apenasAdmin{
     function retirarTaxas(uint256 quantidade) public apenasAdmin{
         
         //confere se o contrato tem dinheiro suficiente
-        require(address(this).balance >= quantidade, "Saldo insuficiente no contrato");
-        
+        require(fundosAdm >= quantidade, "Saldo insuficiente no contrato");
+        fundosAdm -= quantidade;
         //trafere o valor já "separado" das taxas cobradas para o adiministrador, quando chama esta função
         payable(msg.sender).transfer(quantidade);
     }
