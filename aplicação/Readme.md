@@ -139,6 +139,7 @@ https://user-images.githubusercontent.com/99209712/227753006-cb0ae84e-ab9d-45de-
 
 &emsp;&emsp; Esse vídeo demonstra toda a integração das telas do front-end com o sistema desenvolvido que utilizada a tecnlogia Blockchain e smart contract. Portanto, trata-se de um vídeo que mostra todo o funcionamento do sistema. Abaixo segue o link para o vídeo:
 
+
 &emsp;&emsp;&emsp;&emsp; https://drive.google.com/file/d/14-89jcUPTCe6OKh7_uLV5xurYEhUMw-6/view?usp=sharing
 
 
