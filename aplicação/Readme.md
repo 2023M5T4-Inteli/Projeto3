@@ -129,11 +129,16 @@ Ela pode irá incluir algumas informações como<br>
 ## Vídeo de Demonstração do Front-End
 
 
-
 &emsp;&emsp; Para um melhor entendimento das telas e Front-End da aplicação, o seguinte link  refere-se à um vídeo que demonstra em formato de navegação comentada descrevendo sobre as principais funcionalidades implementadas em nossa aplicação blockchain.
 
 https://user-images.githubusercontent.com/99209712/227753006-cb0ae84e-ab9d-45de-9d7d-8eff4ccabd69.mp4
 
-
 &emsp;&emsp;&emsp;&emsp; https://drive.google.com/file/d/1tDQQCtRCu0vCDJa5nhL0Abgcm1KpkOWl/view?usp=sharing <br><br>
+
+## Vídeo de Demonstração da Integração
+
+&emsp;&emsp; Esse vídeo demonstra toda a integração das telas do front-end com o sistema desenvolvido que utilizada a tecnlogia Blockchain e smart contract. Portanto, trata-se de um vídeo que mostra todo o funcionamento do sistema. Abaixo segue o link para o vídeo:
+
+&emsp;&emsp;&emsp;&emsp; https://drive.google.com/file/d/14-89jcUPTCe6OKh7_uLV5xurYEhUMw-6/view?usp=sharing
+
 
