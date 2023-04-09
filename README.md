@@ -46,8 +46,6 @@ A Coover é uma startup inovadora que visa revolucionar a indústria de seguros 
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%202">📂</a><b>Sprint 2</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%203">📂</a><b>Sprint 3</b> <br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%204">📂</a><b>Sprint 4</b> <br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/Sprint%204/T4_G3_V4_SIBDoc.pdf"><img src="https://user-images.githubusercontent.com/99209356/174968401-abc5cae1-7a1e-4f06-aca6-c859c993c038.svg" width="18px" height="18px"></a> T4_G3_V4_SIBDoc.pdf<br>
-        - <a href="https://github.com/2023M5T4-Inteli/Projeto3/blob/main/Documentos/Sprint%204/T4_G3_V4_SIBDoc.docx"><img src="https://user-images.githubusercontent.com/99209356/174968001-e5dfbc94-09e5-43d3-a5ab-60a684e673b3.svg" width="18px" height="18px"></a> T4_G3_V4_SIBDoc.docx<br>
     - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/Documentos/Sprint%205">📂</a><b>Sprint 5</b> <br>
 
 - <a href="https://github.com/2023M5T4-Inteli/Projeto3/tree/main/aplica%C3%A7%C3%A3o">📁</a><b>aplicação</b> <br>
